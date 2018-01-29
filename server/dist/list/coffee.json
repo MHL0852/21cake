@@ -1,0 +1,102 @@
+{
+  "name": "咖啡",
+  "cat": {
+    "name": "分类",
+    "content": [
+      {
+        "name": "咖啡",
+        "title": "配饮",
+        "description": "挂耳咖啡",
+        "cat_ids": "35",
+        "sort": "1"
+      }
+    ]
+  },
+  "tags": [],
+  "goodsArr": {
+    "1": {
+      "name": "咖啡",
+      "title": "配饮",
+      "description": "挂耳咖啡",
+      "cat_ids": "35",
+      "goods": [
+        {
+          "bn": "57",
+          "site_goods_id": "540",
+          "label": [],
+          "cat_id": "35",
+          "type": "normal",
+          "img_url": "/goods/1486465322000.jpg",
+          "cake_goods_id": "389",
+          "name": "（十连包）耶加雪菲挂耳咖啡",
+          "en_name": "Yirgacheffe Coffee",
+          "order": 3,
+          "product_id": "7841",
+          "price": "100.00",
+          "spec": "盒",
+          "has_stock": 258,
+          "custom_sort": "50",
+          "tag_ids": "",
+          "tags": []
+        },
+        {
+          "bn": "56",
+          "site_goods_id": "538",
+          "label": [],
+          "cat_id": "35",
+          "type": "normal",
+          "img_url": "/goods/1486373064000.jpg",
+          "cake_goods_id": "388",
+          "name": "（十连包）巴西喜拉多挂耳咖啡",
+          "en_name": "Brazil Coffee",
+          "order": 2,
+          "product_id": "7761",
+          "price": "100.00",
+          "spec": "盒",
+          "has_stock": 154,
+          "custom_sort": "51",
+          "tag_ids": "",
+          "tags": []
+        },
+        {
+          "bn": "201607",
+          "site_goods_id": "400",
+          "label": [],
+          "cat_id": "35",
+          "type": "normal",
+          "img_url": "/goods/14624494532004.jpg",
+          "cake_goods_id": "183",
+          "name": "耶加雪菲挂耳咖啡",
+          "en_name": "Yirgacheffe Coffee",
+          "order": 0,
+          "product_id": "4365",
+          "price": "10.00",
+          "spec": "包",
+          "has_stock": 47708,
+          "custom_sort": "52",
+          "tag_ids": "",
+          "tags": []
+        },
+        {
+          "bn": "201609",
+          "site_goods_id": "402",
+          "label": [],
+          "cat_id": "35",
+          "type": "normal",
+          "img_url": "/goods/14624494721257.jpg",
+          "cake_goods_id": "185",
+          "name": "巴西喜拉多挂耳咖啡",
+          "en_name": "Brazil Coffee",
+          "order": 1,
+          "product_id": "4469",
+          "price": "10.00",
+          "spec": "包",
+          "has_stock": 42987,
+          "custom_sort": "53",
+          "tag_ids": "",
+          "tags": []
+        }
+      ]
+    }
+  }
+}

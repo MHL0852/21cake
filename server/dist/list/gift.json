@@ -1,0 +1,153 @@
+{
+  "name": "设计师礼品",
+  "cat": {
+    "name": "分类",
+    "content": [
+      {
+        "name": "礼品",
+        "title": "礼品",
+        "description": "设计师礼品专区",
+        "cat_ids": "52",
+        "sort": "1"
+      }
+    ]
+  },
+  "tags": {
+    "fa22bf77a31700498f707fc3b9d86dff": {
+      "name": "口味",
+      "content": [
+        {
+          "id": "5",
+          "name": "巧克力"
+        },
+        {
+          "id": "6",
+          "name": "坚果"
+        }
+      ]
+    }
+  },
+  "goodsArr": {
+    "1": {
+      "name": "礼品",
+      "title": "礼品",
+      "description": "设计师礼品专区",
+      "cat_ids": "52",
+      "goods": [
+        {
+          "bn": "20180204",
+          "site_goods_id": "689",
+          "label": [
+            {
+              "name": "新品",
+              "icon": "/upload/images/1e22720bd656f7bac246159010c7e1f4.png"
+            }
+          ],
+          "cat_id": "52",
+          "type": "normal",
+          "img_url": "/upload/images/763533fa078125a2aed963f80afed8c7.jpg",
+          "cake_goods_id": "698",
+          "name": "碎碎平安",
+          "en_name": "PowerBall",
+          "order": 6,
+          "product_id": "12007",
+          "price": "99.00",
+          "spec": "个",
+          "has_stock": 799867,
+          "custom_sort": "1",
+          "tag_ids": "5,6,19,22,30",
+          "tags": [
+            {
+              "id": "19",
+              "content": "童趣"
+            },
+            {
+              "id": "22",
+              "content": "聚会"
+            },
+            {
+              "id": "30",
+              "content": "新品"
+            }
+          ]
+        },
+        {
+          "bn": "20171205",
+          "site_goods_id": "671",
+          "label": [],
+          "cat_id": "52",
+          "type": "normal",
+          "img_url": "/upload/images/7441e479b4d5765a0e26e939430c38bd.jpg",
+          "cake_goods_id": "593",
+          "name": "拷贝蜡烛-抹茶和栗",
+          "en_name": "Candle",
+          "order": 5,
+          "product_id": "10838",
+          "price": "8.00",
+          "spec": "个",
+          "has_stock": 1099,
+          "custom_sort": "20",
+          "tag_ids": "",
+          "tags": []
+        },
+        {
+          "bn": "20171206",
+          "site_goods_id": "669",
+          "label": [],
+          "cat_id": "52",
+          "type": "normal",
+          "img_url": "/upload/images/eb6066c7d9c25ca55e338ee611c897da.jpg",
+          "cake_goods_id": "594",
+          "name": "拷贝蜡烛-爱尔兰咖啡",
+          "en_name": "Candle",
+          "order": 4,
+          "product_id": "10846",
+          "price": "8.00",
+          "spec": "个",
+          "has_stock": 78907,
+          "custom_sort": "30",
+          "tag_ids": "",
+          "tags": []
+        },
+        {
+          "bn": "G58C249B0D6C56",
+          "site_goods_id": "574",
+          "label": [],
+          "cat_id": "52",
+          "type": "normal",
+          "img_url": "/goods/1490576478000.jpg",
+          "cake_goods_id": "405",
+          "name": "设计师牛皮本",
+          "en_name": "Kraft book",
+          "order": 1,
+          "product_id": "8002",
+          "price": "8.00",
+          "spec": "个",
+          "has_stock": 455,
+          "custom_sort": "40",
+          "tag_ids": "24",
+          "tags": []
+        },
+        {
+          "bn": "G58C248B33AC93",
+          "site_goods_id": "560",
+          "label": [],
+          "cat_id": "52",
+          "type": "normal",
+          "img_url": "/goods/1489414467000.jpg",
+          "cake_goods_id": "404",
+          "name": "设计师八音盒",
+          "en_name": "Music box",
+          "order": 2,
+          "product_id": "7994",
+          "price": "80.00",
+          "spec": "个",
+          "has_stock": 426,
+          "custom_sort": "50",
+          "tag_ids": "",
+          "tags": []
+        }
+      ]
+    }
+  }
+}

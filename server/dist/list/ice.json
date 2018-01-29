@@ -1,0 +1,74 @@
+{
+  "name": "冰淇淋",
+  "cat": {
+    "name": "分类",
+    "content": [
+      {
+        "name": "冰淇淋",
+        "title": "＋Gelato10",
+        "description": "10天生命的意式杰拉朵冰淇淋",
+        "cat_ids": "29,61",
+        "sort": "1"
+      }
+    ]
+  },
+  "tags": {
+    "fa22bf77a31700498f707fc3b9d86dff": {
+      "name": "口味",
+      "content": [
+        {
+          "id": "4",
+          "name": "冰淇淋"
+        }
+      ]
+    }
+  },
+  "goodsArr": {
+    "1": {
+      "name": "冰淇淋",
+      "title": "＋Gelato10",
+      "description": "10天生命的意式杰拉朵冰淇淋",
+      "cat_ids": "29,61",
+      "goods": [
+        {
+          "bn": "YWNRBQL",
+          "site_goods_id": "373",
+          "label": [],
+          "cat_id": "29",
+          "type": "normal",
+          "img_url": "/upload/images/6a5b972b8252ce318109f9caccaba019.jpg",
+          "cake_goods_id": "156",
+          "name": "原味牛乳冰淇淋",
+          "en_name": "Milk Gelato",
+          "order": 6,
+          "product_id": "3938",
+          "price": "45.00",
+          "spec": "盒",
+          "has_stock": 1439,
+          "custom_sort": "30",
+          "tag_ids": "4",
+          "tags": []
+        },
+        {
+          "bn": "20160712",
+          "site_goods_id": "449",
+          "label": [],
+          "cat_id": "29",
+          "type": "normal",
+          "img_url": "/goods/1468572870494.jpg",
+          "cake_goods_id": "256",
+          "name": "夏日-Affogato组合",
+          "en_name": "Affogato",
+          "order": 0,
+          "product_id": "5465",
+          "price": "55.00",
+          "spec": "份",
+          "has_stock": 77915,
+          "custom_sort": "181",
+          "tag_ids": "4",
+          "tags": []
+        }
+      ]
+    }
+  }
+}

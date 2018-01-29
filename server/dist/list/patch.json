@@ -1,0 +1,170 @@
+{
+  "name": "小切块",
+  "cat": {
+    "name": "分类",
+    "content": [
+      {
+        "name": "小切块",
+        "title": "小切块",
+        "description": "55g，6种口味",
+        "cat_ids": "37",
+        "sort": "3"
+      }
+    ]
+  },
+  "tags": {
+    "fa22bf77a31700498f707fc3b9d86dff": {
+      "name": "口味",
+      "content": [
+        {
+          "id": "1",
+          "name": "乳脂奶油"
+        },
+        {
+          "id": "2",
+          "name": "慕斯"
+        },
+        {
+          "id": "5",
+          "name": "巧克力"
+        },
+        {
+          "id": "6",
+          "name": "坚果"
+        },
+        {
+          "id": "7",
+          "name": "水果"
+        },
+        {
+          "id": "9",
+          "name": "咖啡"
+        }
+      ]
+    }
+  },
+  "goodsArr": {
+    "3": {
+      "name": "小切块",
+      "title": "小切块",
+      "description": "55g，6种口味",
+      "cat_ids": "37",
+      "goods": [
+        {
+          "bn": "G582018DA97080",
+          "site_goods_id": "504",
+          "label": [],
+          "cat_id": "37",
+          "type": "normal",
+          "img_url": "/upload/images/88851927b43f611df1fe944ebe8dd0e6.jpg",
+          "cake_goods_id": "338",
+          "name": "小切块-栗蓉暗香",
+          "en_name": "Chestnut Cream ",
+          "order": 16,
+          "product_id": "6882",
+          "price": "36.00",
+          "spec": "份",
+          "has_stock": 6576,
+          "custom_sort": "2",
+          "tag_ids": "1,6",
+          "tags": []
+        },
+        {
+          "bn": "20171108",
+          "site_goods_id": "667",
+          "label": [],
+          "cat_id": "37",
+          "type": "normal",
+          "img_url": "/upload/images/7f4b55947d9042387415747d068a0a1a.jpg",
+          "cake_goods_id": "547",
+          "name": "小切块-心语心愿",
+          "en_name": "Heartfelt Wish",
+          "order": 17,
+          "product_id": "10854",
+          "price": "36.00",
+          "spec": "份",
+          "has_stock": 99987,
+          "custom_sort": "2",
+          "tag_ids": "",
+          "tags": []
+        },
+        {
+          "bn": "G572C025163423",
+          "site_goods_id": "409",
+          "label": [],
+          "cat_id": "37",
+          "type": "normal",
+          "img_url": "/upload/images/ac53847994d7a824e9b7cf00186bebc2.jpg",
+          "cake_goods_id": "199",
+          "name": "小切块-松仁淡奶",
+          "en_name": "Pine Stone Cowboy",
+          "order": 9,
+          "product_id": "4652",
+          "price": "36.00",
+          "spec": "份",
+          "has_stock": 84444,
+          "custom_sort": "4",
+          "tag_ids": "1,6",
+          "tags": []
+        },
+        {
+          "bn": "20160701",
+          "site_goods_id": "446",
+          "label": [],
+          "cat_id": "37",
+          "type": "normal",
+          "img_url": "/upload/images/2b317bcc7058a06d8f316687ab1588e1.jpg",
+          "cake_goods_id": "252",
+          "name": "小切块-芒果慕斯",
+          "en_name": "Mango Jerry",
+          "order": 14,
+          "product_id": "5433",
+          "price": "36.00",
+          "spec": "份",
+          "has_stock": 94073,
+          "custom_sort": "6",
+          "tag_ids": "2,7",
+          "tags": []
+        },
+        {
+          "bn": "20160630",
+          "site_goods_id": "443",
+          "label": [],
+          "cat_id": "37",
+          "type": "normal",
+          "img_url": "/upload/images/d0f6a2490518946ba1027fb1b72ac05f.jpg",
+          "cake_goods_id": "249",
+          "name": "小切块-黑白巧克力慕斯",
+          "en_name": "Black and White Chocolate Mousse",
+          "order": 18,
+          "product_id": "5385",
+          "price": "36.00",
+          "spec": "块",
+          "has_stock": 85245,
+          "custom_sort": "8",
+          "tag_ids": "2,5",
+          "tags": []
+        },
+        {
+          "bn": "G572C02166C107",
+          "site_goods_id": "408",
+          "label": [],
+          "cat_id": "37",
+          "type": "normal",
+          "img_url": "/goods/14635433047528.jpg",
+          "cake_goods_id": "198",
+          "name": "小切块-卡布其诺",
+          "en_name": "Cappuccino",
+          "order": 19,
+          "product_id": "4500",
+          "price": "36.00",
+          "spec": "份",
+          "has_stock": 94290,
+          "custom_sort": "10",
+          "tag_ids": "1,9",
+          "tags": []
+        }
+      ]
+    }
+  }
+}

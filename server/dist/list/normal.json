@@ -1,0 +1,101 @@
+{
+  "name": "常温蛋糕",
+  "cat": {
+    "name": "分类",
+    "content": [
+      {
+        "name": "常温蛋糕",
+        "title": "常温蛋糕",
+        "description": "方便携带，可配送至全国",
+        "cat_ids": "36",
+        "sort": "2"
+      }
+    ]
+  },
+  "tags": {
+    "fa22bf77a31700498f707fc3b9d86dff": {
+      "name": "口味",
+      "content": [
+        {
+          "id": "5",
+          "name": "巧克力"
+        },
+        {
+          "id": "6",
+          "name": "坚果"
+        },
+        {
+          "id": "7",
+          "name": "水果"
+        }
+      ]
+    }
+  },
+  "goodsArr": {
+    "2": {
+      "name": "常温蛋糕",
+      "title": "常温蛋糕",
+      "description": "方便携带，可配送至全国",
+      "cat_ids": "36",
+      "goods": [
+        {
+          "bn": "20160504",
+          "site_goods_id": "405",
+          "label": [],
+          "cat_id": "36",
+          "type": "normal",
+          "img_url": "/goods/14624512959108.jpg",
+          "cake_goods_id": "195",
+          "name": "常温蛋糕-布朗尼",
+          "en_name": "Brownie",
+          "order": 0,
+          "product_id": "4437",
+          "price": "23.00",
+          "spec": "份",
+          "has_stock": 88527,
+          "custom_sort": "70",
+          "tag_ids": "5",
+          "tags": []
+        },
+        {
+          "bn": "20160502",
+          "site_goods_id": "399",
+          "label": [],
+          "cat_id": "36",
+          "type": "normal",
+          "img_url": "/goods/1462454357530.jpg",
+          "cake_goods_id": "182",
+          "name": "常温蛋糕-百香果",
+          "en_name": "Passion fruit",
+          "order": 1,
+          "product_id": "4299",
+          "price": "15.00",
+          "spec": "份",
+          "has_stock": 83421,
+          "custom_sort": "71",
+          "tag_ids": "7",
+          "tags": []
+        },
+        {
+          "bn": "20160503",
+          "site_goods_id": "404",
+          "label": [],
+          "cat_id": "36",
+          "type": "normal",
+          "img_url": "/goods/14624506742604.jpg",
+          "cake_goods_id": "194",
+          "name": "常温蛋糕-核桃",
+          "en_name": "Juglans",
+          "order": 2,
+          "product_id": "4445",
+          "price": "15.00",
+          "spec": "份",
+          "has_stock": 81656,
+          "custom_sort": "72",
+          "tag_ids": "6",
+          "tags": []
+        }
+      ]
+    }
+  }
+}
