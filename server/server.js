@@ -9,11 +9,13 @@ let bodyParser = require('body-parser');
 
 app.use(bodyParser.json()); // 解析请求体的中间件 req.body上为解析后的结果
 // cors是一个第三方模块 专门解决跨域
+
 app.use(session({
     resave: true,
     saveUninitialized: false,
     secret: 'zfpx'
 })); // req.session进行设置内容了
+
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "http://localhost:9000");
     res.header("Access-Control-Allow-Credentials", true);
@@ -35,7 +37,7 @@ let returnData = function (res, path) {
 };
 
 app.listen(10086, () => {
-    console.log("success");
+    console.log("服务启动成功，请从端口号  localhost:10086  获取与上传数据");
 });
 
 app.use(express.static('dist'));//静态资源地址
