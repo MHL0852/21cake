@@ -32,6 +32,8 @@ let returnData = function (res, path) {
             res.json("出错了,等会儿再发送一次");
             return
         }
+        data=JSON.parse(data).goodsArr[1].goods;
+        console.log(data);
         res.json(data)
     });
 };
