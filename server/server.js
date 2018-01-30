@@ -60,7 +60,15 @@ app.get(`/home`, (req, res) => {
             }).catch(err => {
             });
         }
-            returnData(res, './dist/home.json');
+        fs.readFile('./dist/home.json', 'utf8', (err, data) => {
+            if (err) {
+                res.json("出错了,等会儿再发送一次");
+                return
+            }
+            data=JSON.parse(data);
+            console.log(data);
+            res.json(data)
+        });
 
 
     });
