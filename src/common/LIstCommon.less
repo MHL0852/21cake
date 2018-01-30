@@ -1,0 +1,76 @@
+a{
+  color: black;
+}
+.listCommon{
+  width: 100%;
+  color: #000;
+  ul{
+    padding: 0 0.05rem;
+    li{
+      float: left;
+      position: relative;
+      box-sizing: border-box;
+      padding:0 0.15rem;
+      width: 50%;
+      height: 4rem;
+
+      .list-item-link{
+        display: block;
+        overflow: hidden;
+
+        .item-link-img{
+          width: 100%;
+          height: 2.5rem;
+          img{
+            opacity: 1;
+            width: 100%;
+          }
+        }
+        h3{
+          line-height: 1.2em;
+          width: 100%;
+          font-size: 0.18rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+
+          span{
+            display: block;
+            margin: 0.05rem 0;
+            width: 100%;
+            letter-spacing: 0.02rem;
+            font-weight: normal;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+        .title{
+          display: block;
+          color: #c4c4c4;
+          letter-spacing: 0.02rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .price{
+          display: block;
+          color: #aaa;
+          font-weight: normal;
+          font-family: "Microsoft YaHei UI";
+          font-size: 0.18rem;
+          margin-top: 0.15rem;
+        }
+      }
+      .list-item-cart{
+        position: absolute;
+        right: 6%;
+        bottom: 7%;
+        img{
+          width: 0.30rem;
+          height: 0.30rem;
+        }
+      }
+    }
+  }
+}
