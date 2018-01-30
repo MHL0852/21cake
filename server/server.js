@@ -17,7 +17,7 @@ app.use(session({
 })); // req.session进行设置内容了
 
 app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "http://localhost:9000");
+    res.header("Access-Control-Allow-Origin", "http://localhost:10086");
     res.header("Access-Control-Allow-Credentials", true);
     res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
     res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
@@ -27,7 +27,7 @@ app.use(function (req, res, next) {
 });
 
 let returnData = function (res, path) {
-    fs.readFileSync(path, 'utf8', (err, data) => {
+    fs.readFile(path, 'utf8', (err, data) => {
         if (err) {
             res.json("出错了,等会儿再发送一次");
             return
@@ -59,7 +59,7 @@ app.get(`/home`, (req, res) => {
             });
         }
             returnData(res, './dist/home.json');
-            clearTimeout(timer);
+
 
     });
 
@@ -82,7 +82,7 @@ app.get(`/list/cake`, (req, res) => {
             });
         }
             returnData(res, './dist/list/cake.json');
-            clearTimeout(timer);
+
 
     });
 });
@@ -92,6 +92,7 @@ app.get(`/list/ice`, (req, res) => {
         fs.writeFile('./dist/list/ice.json', JSON.stringify(val.data))
     };
     fs.exists('./dist/list/ice.json', exists => {
+
         if (!exists) {
             fs.createWriteStream('./dist/list/ice.json');
             axios({
@@ -100,10 +101,11 @@ app.get(`/list/ice`, (req, res) => {
             }).then((res) => {
                 eval(res.data);
             }).catch(err => {
+                console.log(err);
             });
         }
-            returnData(res, './dist/list/ice.json');
-            clearTimeout(timer);
+        returnData(res, './dist/list/ice.json');
+
     });
 });
 
@@ -125,7 +127,7 @@ app.get(`/list/patch`, (req, res) => {
             });
         }
             returnData(res, './dist/list/patch.json');
-            clearTimeout(timer);
+
     });
 });
 
@@ -147,7 +149,7 @@ app.get(`/list/coffee`, (req, res) => {
             });
         }
             returnData(res, './dist/list/coffee.json');
-            clearTimeout(timer);
+
     });
 });
 
@@ -169,7 +171,7 @@ app.get(`/list/normal`, (req, res) => {
             });
         }
             returnData(res, './dist/list/normal.json');
-            clearTimeout(timer);
+
     });
 });
 
@@ -191,7 +193,7 @@ app.get(`/list/gift`, (req, res) => {
             });
         }
             returnData(res, './dist/list/gift.json');
-            clearTimeout(timer);
+
     });
 });
 
