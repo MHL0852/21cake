@@ -8,6 +8,8 @@ import Shop from "./container/shop/Shop";
 import Community from "./container/community/Community";
 import User from "./container/user/User";
 import Detail from "./container/detail/Detail";
+import "./common/reset.min.css";
+
 render(<HashRouter>
     <App>
         <Switch>
