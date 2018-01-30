@@ -27,12 +27,12 @@ app.use(function (req, res, next) {
 });
 
 let returnData = function (res, path) {
-    fs.readFile(path, 'utf8', (err, data) => {
+    fs.readFileSync(path, 'utf8', (err, data) => {
         if (err) {
-            res.end("出错了,等会儿再发送一次");
+            res.json("出错了,等会儿再发送一次");
             return
         }
-        res.end(data)
+        res.json(data)
     });
 };
 
@@ -58,10 +58,9 @@ app.get(`/home`, (req, res) => {
             }).catch(err => {
             });
         }
-        let timer = setTimeout(() => {
             returnData(res, './dist/home.json');
             clearTimeout(timer);
-        }, 100);
+
     });
 
 });
@@ -82,10 +81,9 @@ app.get(`/list/cake`, (req, res) => {
             }).catch(err => {
             });
         }
-        let timer = setTimeout(() => {
             returnData(res, './dist/list/cake.json');
             clearTimeout(timer);
-        }, 200);
+
     });
 });
 
@@ -104,10 +102,8 @@ app.get(`/list/ice`, (req, res) => {
             }).catch(err => {
             });
         }
-        let timer = setTimeout(() => {
             returnData(res, './dist/list/ice.json');
             clearTimeout(timer);
-        }, 200);
     });
 });
 
@@ -128,10 +124,8 @@ app.get(`/list/patch`, (req, res) => {
                 console.log(err);
             });
         }
-        let timer = setTimeout(() => {
             returnData(res, './dist/list/patch.json');
             clearTimeout(timer);
-        }, 200);
     });
 });
 
@@ -152,10 +146,8 @@ app.get(`/list/coffee`, (req, res) => {
                 console.log(err);
             });
         }
-        let timer = setTimeout(() => {
             returnData(res, './dist/list/coffee.json');
             clearTimeout(timer);
-        }, 200);
     });
 });
 
@@ -176,10 +168,8 @@ app.get(`/list/normal`, (req, res) => {
                 console.log(err);
             });
         }
-        let timer = setTimeout(() => {
             returnData(res, './dist/list/normal.json');
             clearTimeout(timer);
-        }, 200);
     });
 });
 
@@ -197,13 +187,11 @@ app.get(`/list/gift`, (req, res) => {
                 eval(res.data);
             }).catch(err => {
                 res.state("404");
-                res.end("数据未找到")
+                res.json("数据未找到")
             });
         }
-        let timer = setTimeout(() => {
             returnData(res, './dist/list/gift.json');
             clearTimeout(timer);
-        }, 200);
     });
 });
 
