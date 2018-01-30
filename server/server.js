@@ -13,11 +13,11 @@ app.use(bodyParser.json()); // 解析请求体的中间件 req.body上为解析�
 app.use(session({
     resave: true,
     saveUninitialized: false,
-    secret: 'zfpx'
+    secret: '21cake'
 })); // req.session进行设置内容了
 
 app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "http://localhost:10086");
+    res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Credentials", true);
     res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
     res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
@@ -261,4 +261,3 @@ app.post('/shoppingCart/download',(req,res)=>{
     }
 
 });
-
