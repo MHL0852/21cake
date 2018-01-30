@@ -215,11 +215,13 @@ app.post('/register', (req, res) => {
         password=md5(password);
         userList.push({username,password});
         fs.writeFile('./dist/user/user.json',JSON.stringify(userList),err=>{
-            console.log(err);});
+            console.log(err);
+        });
         res.json({msg:'注册成功',err:0});
     }
 
 });
+
 app.post('/login',(req,res)=>{
     let {username, password} = req.body;
     let userList = JSON.parse(fs.readFileSync('./dist/user/user.json'));
@@ -236,4 +238,35 @@ app.post('/login',(req,res)=>{
     }
 });
 
+app.post('/shoppingCart/UpData',(req,res)=>{
+    let {username, goods} = req.body;
+    let userList = JSON.parse(fs.readFileSync('./dist/user/user.json'));
+    let user=userList.find(item => item.username === username);
+    if(!Object.prototype.toString.call(goods)==='[object Array]'){
+        res.json({err:1,msg:"参数类型错误"})
+    }else if(user){
+        userList.forEach(item=>{
+            if(item.username=username){
+                item.goods=[...goods];
+            }
+        });
+        fs.writeFileSync('./dist/user/user.json',JSON.stringify(userList));
+        res.json({err:0,msg:"加入购物车成功"})
+    }else{
+        res.json({err:1,msg:"请先登陆"})
+    }
+
+});
+
+app.post('/shoppingCart/download',(req,res)=>{
+    let {username,password} = req.body;
+    let userList = JSON.parse(fs.readFileSync('./dist/user/user.json'));
+    let user=userList.find(item => item.username === username);
+    if(user){
+        res.json({msg:'数据拉取成功',err:0,goods:user.goods||[]});
+    }else{
+        res.json({msg:'未知错误',err:1})
+    }
+
+});
 
