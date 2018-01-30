@@ -17,7 +17,7 @@ app.use(session({
 })); // req.session进行设置内容了
 
 app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Origin", "localhost:9000");
     res.header("Access-Control-Allow-Credentials", true);
     res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
     res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
@@ -33,7 +33,6 @@ let returnData = function (res, path) {
             return
         }
         data=JSON.parse(data).goodsArr[1].goods;
-        console.log(data);
         res.json(data)
     });
 };
@@ -45,6 +44,7 @@ app.listen(10086, () => {
 app.use(express.static('dist'));//静态资源地址
 
 app.get(`/home`, (req, res) => {
+    console.log(1);
     let Zepto1517235725075 = function (val) {
         fs.writeFile('./dist/home.json', JSON.stringify(val.data))
     };
@@ -207,6 +207,19 @@ app.get(`/list/gift`, (req, res) => {
     });
 });
 
+app.get(`/detail`,(req,res)=>{
+    let dataId = req.headers.id;
+    fs.readFile(`./dist/particulars/cake/${dataId}.json`,(err,data)=>{
+        if(err){
+            res.json({reg:'参数获取失败',err:1});
+            return;
+        }
+        data=JSON.parse(data);
+        console.log(data);
+        res.json({reg:'参数获取成功',err:0,data})
+    })
+});
+
 app.post('/register', (req, res) => {
     let {username, password} = req.body;
     let userList = JSON.parse(fs.readFileSync('./dist/user/user.json'));
@@ -271,3 +284,4 @@ app.post('/shoppingCart/download',(req,res)=>{
     }
 
 });
+;
