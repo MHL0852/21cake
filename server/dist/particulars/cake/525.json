@@ -1,0 +1,28 @@
+{
+  "productsArr": {
+    "1506476087.470419": {
+      "id": "10176",
+      "size": "13x13cm",
+      "suite_amount": "适合3-4人分享",
+      "booking_hour_limited": "24",
+      "cutlery_content": "赠送5份餐具",
+      "price": "268.00",
+      "spec": "1.0磅",
+      "pound": "1.00",
+      "has_spec_img": 1,
+      "img_url": "/themes/wap/img/1.00P-full-13.00.jpg",
+      "is_default": "true",
+      "has_stock": 1001282,
+      "cat_id": "4",
+      "bn": "20170927-10"
+    }
+  },
+  "saleTime": {
+    "date": "明天",
+    "start_time": "15:00",
+    "end_time": "18:30"
+  },
+  "catId": "4",
+  "goodsId": "525",
+  "type": "normal"
+}
