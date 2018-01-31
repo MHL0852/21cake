@@ -267,3 +267,14 @@ app.post('/shoppingCart/download',(req,res)=>{
     }
 
 });
+
+app.get(`/magazine`, (req, res) => {
+            fs.readFile('./dist/magazine.json', 'utf8', (err, data) => {
+                if (err) {
+                    res.json({msg:'数据获取失败',err:1,});
+                    return
+                }
+                data=JSON.parse(data);
+                res.json({msg:'数据获取成功',err:0,data})
+            });
+});

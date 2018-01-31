@@ -7,10 +7,10 @@ import store from "./store";
 import Home from "./container/home/Home";
 import Type from "./container/type/Type";
 import Shop from "./container/shop/Shop";
-import Community from "./container/community/Community";
 import User from "./container/user/User";
 import Detail from "./container/detail/Detail";
 import "./common/reset.min.css";
+import Community from './container/community/Magazine';
 
 render(<Provider store={store}>
     <HashRouter>
