@@ -3,16 +3,19 @@ a{
 }
 .listCommon{
   width: 100%;
+  height: 100%;
   color: #000;
   ul{
+    height: 9rem;
     padding: 0 0.05rem;
+
+    overflow-y: scroll;
     li{
       float: left;
       position: relative;
       box-sizing: border-box;
       padding:0 0.15rem;
       width: 50%;
-      height: 4rem;
 
       .list-item-link{
         display: block;
@@ -20,7 +23,7 @@ a{
 
         .item-link-img{
           width: 100%;
-          height: 2.5rem;
+          //height: 2.5rem;
           img{
             opacity: 1;
             width: 100%;
@@ -65,12 +68,25 @@ a{
       .list-item-cart{
         position: absolute;
         right: 6%;
-        bottom: 7%;
+        bottom: 0%;
         img{
           width: 0.30rem;
           height: 0.30rem;
         }
       }
+    }
+    .lastList{
+      margin: 0.2rem 0;
+      padding: 0 1.5rem;
+      width: 100%;
+      height: 0.7rem;
+      line-height: 0.7rem;
+      font-size: 14px;
+      color: #c4c4c4;
+      text-align: right;
+      background: url("../common/images/list-empty.png") no-repeat;
+      background-size: 0.7rem 0.7rem;
+      background-position: 90% 0;
     }
   }
 }
