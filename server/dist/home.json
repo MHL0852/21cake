@@ -89,8 +89,56 @@
     "template": "floorV2",
     "data": [
       {
+        "title": "榜单",
+        "imgUrl": "",
+        "sort": 1,
+        "contents": [
+          {
+            "productId": "377",
+            "name": "百利甜情人",
+            "description": "爱尔兰百利甜酒/新西兰奶油/云南玫瑰甘露",
+            "href": "goods-12.html",
+            "target": "_blank",
+            "imageUrl": "/upload/images/de7f5cade140bd0c5a49cb853b8249f1.jpg",
+            "price": "298.00",
+            "spec": "2.0磅"
+          },
+          {
+            "productId": "9178",
+            "name": "芒果奶油",
+            "description": "21cake配方芒果百香果慕斯夹心",
+            "href": "/goods-472.html",
+            "target": "_blank",
+            "imageUrl": "/upload/images/d0e6a2b4a647a736585cd5e50de8234d.jpg",
+            "price": "198.00",
+            "spec": "2.0磅"
+          },
+          {
+            "productId": "401",
+            "name": "卡百利",
+            "description": "今日凌晨采摘，缀着草莓的奶油蛋糕",
+            "href": "/goods-13.html",
+            "target": "_blank",
+            "imageUrl": "/upload/images/c6b27cb66b0f859e47e44555a3b9dfae.jpg",
+            "price": "268.00",
+            "spec": "2.0磅"
+          },
+          {
+            "productId": "7946",
+            "name": "（新）栗蓉暗香",
+            "description": "鲜栗蓉，点缀手工比利时黑巧克力豆",
+            "href": "/goods-400.html",
+            "target": "_blank",
+            "imageUrl": "/upload/images/1b4ae908ef24edeed6099d0f95a4537d.jpg",
+            "price": "298.00",
+            "spec": "2.0磅"
+          }
+        ]
+      },
+      {
         "title": "人气",
         "href": "gallery/tag/31.html",
+
         "imgUrl": "",
         "sort": 1,
         "contents": [
@@ -200,40 +248,5 @@
         "sort": 3
       }
     ]
-  },
-  {
-    "title": "廿一客·文章",
-    "template": "magazine",
-    "data": [
-      {
-        "id": "178",
-        "banner": "public/images/38/58/43/6593ccc095aaab42d068f1269d342b8a.jpg",
-        "name": "十二月刊·松子",
-        "href": "/magazine/detail/178.html",
-        "description": ""
-      },
-      {
-        "id": "172",
-        "banner": "public/images/3b/3f/ad/3af3dce391beec7fa9baf2385c605e17.jpg",
-        "name": "十一月刊·栗子",
-        "href": "/magazine/detail/172.html",
-        "description": ""
-      },
-      {
-        "id": "167",
-        "banner": "public/images/de/4d/14/6988184bf5114d5868437d27ddab478a.jpg",
-        "name": "十月刊·啤酒",
-        "href": "/magazine/detail/167.html",
-        "description": ""
-      },
-      {
-        "id": "163",
-        "banner": "public/images/a9/75/d9/24361110e115f5fe45681b0c5c2b0f5c.jpg",
-        "name": "九月刊·茉莉",
-        "href": "/magazine/detail/163.html",
-        "description": ""
-      }
-    ],
-    "more": "/magazine.html"
   }
 ]

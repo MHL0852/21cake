@@ -17,7 +17,7 @@ app.use(session({
 })); // req.session进行设置内容了
 
 app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "localhost:9000");
+    res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Credentials", true);
     res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
     res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
@@ -29,11 +29,12 @@ app.use(function (req, res, next) {
 let returnData = function (res, path) {
     fs.readFile(path, 'utf8', (err, data) => {
         if (err) {
-            res.json("出错了,等会儿再发送一次");
+            res.json({msg:'数据获取失败',err:1,});
             return
         }
         data=JSON.parse(data).goodsArr[1].goods;
-        res.json(data)
+        console.log(data);
+        res.json({msg:'数据获取成功',err:0,data})
     });
 };
 
