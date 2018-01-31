@@ -24,6 +24,7 @@ export default class ListCommon extends React.Component {
             </a>
           </li>
         </ul>
+        <div className="lastList">没有了。</div>
       </div>
     )
   }

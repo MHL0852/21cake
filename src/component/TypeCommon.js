@@ -4,7 +4,7 @@ import "../common/NavCommon.less";
 export default class TypeCommon extends React.Component {
   constructor(){
     super();
-    this.state={cakeList:[],urlAdrs:''}
+    this.state={cakeList:[],urlAdrs:'',isActive:false}
   }
   componentDidMount(){
     let urlAdrs=this.state.urlAdrs;
@@ -19,7 +19,7 @@ export default class TypeCommon extends React.Component {
       method:"GET"
     }).then((res)=>{
       this.setState({
-        cakeList:res.data.data,
+        cakeList:res.data,
         urlAdrs
       })
     }).catch((val)=>{
@@ -32,7 +32,7 @@ export default class TypeCommon extends React.Component {
         <ul className="clearfix">
           {this.state.cakeList.map((item,index)=>(
             <li id={`list-goods-${item.cake_goods_id}`} key={index}>
-              <a href="#" className="list-item-link">
+              <a href={`loalhost:9000/#/detail/${item.img_url}`} className="list-item-link">
                 <div className="item-link-img">
                   <img src={`http://static.21cake.com/${item.img_url}`} alt=""/>
                 </div>
@@ -44,7 +44,7 @@ export default class TypeCommon extends React.Component {
             数据拟调整黑越橘蛋糕自2011年起使用造型版本
           </span>
                 <span className="price">
-            ¥ {item.price}/{item.spec}磅
+            ¥ {item.price}/{item.spec}
           </span>
               </a>
               <a href="#" className="list-item-cart">
@@ -52,9 +52,8 @@ export default class TypeCommon extends React.Component {
               </a>
             </li>
           ))}
-          <li className="lastList">没了</li>
         </ul>
-
+        <div className="lastList">没有了。</div>
       </div>
     )
   }
