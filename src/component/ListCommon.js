@@ -1,7 +1,5 @@
 import React from 'react';
-import "../../common/LIstCommon.less";
-import a from "../../common/14593363138999.jpg";
-import b from "../../common/list-cart.png";
+import "../common/LIstCommon.less";
 
 export default class ListCommon extends React.Component {
   render() {
@@ -11,7 +9,7 @@ export default class ListCommon extends React.Component {
           <li>
             <a href="#" className="list-item-link">
               <div className="item-link-img">
-                <img src={a} alt=""/>
+                <img src="" alt=""/>
               </div>
               <h3>
                 Blue Monday
@@ -25,7 +23,7 @@ export default class ListCommon extends React.Component {
               </span>
             </a>
             <a href="#" className="list-item-cart">
-              <img src={b} alt=""/>
+              <i className='iconfont icon-gouwuche-copy'></i>
             </a>
           </li>
         </ul>
