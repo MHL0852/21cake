@@ -192,11 +192,12 @@ app.get(`/list/gift`, (req, res) => {
 });
 
 app.get(`/detail`,(req,res)=>{
-    let dataId = req.headers.id;
-    fs.readFile(`./dist/particulars/cake/${dataId}.json`,(err,data)=>{
+    let dataId = req.query.id;
+  fs.readFile(`./dist/particulars/cake/${dataId}.json`,(err,data)=>{
         if(err){
             res.json({reg:'参数获取失败',err:1});
-            return;
+          console.log(err);
+          return;
         }
         data=JSON.parse(data);
         res.json({reg:'参数获取成功',err:0,data})
