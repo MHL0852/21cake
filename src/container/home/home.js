@@ -14,22 +14,21 @@ import HomeActive from "./HomeActive";
 export default class Home extends React.Component {
     componentWillMount() {
         this.props.getHomeAPI();
-        console.log(this.props);
     }
 
     render() {
-        let {sliders, navList,activity} = this.props;
+        let {sliders, navList,activity,bangdan,newProduct,renqi} = this.props;
         return <div>
             <Header><Link to='' className='city'><i></i>北京</Link></Header>
             <div className='content'>
                 {sliders.length ? <HomeSlider sliders={sliders}/> : null}
                 <HomeNav navList={navList}/>
-                <HomeFocus/>
-                <HomeList>
+                <HomeFocus bangdan={bangdan}/>
+                <HomeList list={newProduct}>
                     <h3>廿一客·<span>新品</span></h3>
                     {/*<img src={} alt=''/>*/}
                 </HomeList>
-                <HomeList>
+                <HomeList list={renqi}>
                     <h3>廿一客·<span>推荐</span></h3>
                     {/*<img src={} alt=''/>*/}
                 </HomeList>

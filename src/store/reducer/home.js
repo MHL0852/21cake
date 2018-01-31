@@ -10,7 +10,10 @@ let initState = {
         name: "",
         remain: "",
         target: ''
-    }]
+    }],
+    bangdan: [],
+    renqi: {},
+    newProduct: {}
 };
 
 function home(state = initState, action) {
@@ -20,6 +23,9 @@ function home(state = initState, action) {
                 ...state.home,
                 sliders: action.payload[0].data,
                 navList: action.payload[2].data,
+                bangdan: action.payload[3].data[0].contents,
+                newProduct: action.payload[3].data[1],
+                renqi: action.payload[3].data[2],
                 activity: action.payload[4].data
             };
     }
