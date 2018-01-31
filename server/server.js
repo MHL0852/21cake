@@ -32,7 +32,7 @@ let returnData = function (res, path) {
             res.json({msg:'数据获取失败',err:1,});
             return
         }
-        data=JSON.parse(data).goodsArr[1].goods;;
+        data=JSON.parse(data).goodsArr[1].goods;
         res.json({msg:'数据获取成功',err:0,data})
     });
 };
