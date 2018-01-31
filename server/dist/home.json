@@ -114,7 +114,7 @@
       {
         "title": "新品",
         "subTitle": "专区",
-        "banner": "/upload/images/460eb4e08376d6544843f336ae69cafa.jpg",
+        "banner": "./server/dist/image/pic5.png",
         "description": "本周新品推荐",
         "href": "/gallery/tag/30.html",
         "sort": 1,
@@ -194,7 +194,7 @@
       {
         "title": "人气",
         "subTitle": "专区",
-        "banner": "/upload/images/98e81e5173b76ffeb264a336e5ed83c3.jpg",
+        "banner": "./server/dist/image/pic6.png",
         "description": "人气",
         "href": "/gallery/tag/31.html",
         "sort": 2,
