@@ -8,12 +8,19 @@ export default class TypeCommon extends React.Component {
   }
   componentDidMount(){
     let urlAdrs=this.state.urlAdrs;
+    let utlA=this.props.location.pathname;
+    let urlTest=/[a-z]+$/;
+    urlAdrs=urlTest.exec(utlA)[0];
+    if(urlAdrs==='type'){
+      urlAdrs="cake";
+    }
     ajax({
       url:`http://localhost:10086/list/${urlAdrs}`,
       method:"GET"
     }).then((res)=>{
       this.setState({
-        cakeList:res.data.data
+        cakeList:res.data.data,
+        urlAdrs
       })
     }).catch((val)=>{
       console.log(val);
