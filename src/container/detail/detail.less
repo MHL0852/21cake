@@ -1,0 +1,28 @@
+.detail{
+  margin-top: 1rem;
+  //图片展示
+  .detailSlider{
+    width: 100%;
+    position: relative;
+    img{
+      width: 100%;
+    }
+    .dots{
+      position: absolute;
+      bottom: 0.3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      span{
+        display: inline-block;
+        margin: 0 0.05rem;
+        width: 0.15rem;
+        height: 0.15rem;
+        background: #ffffff;
+        &.active{
+          background: black;
+        }
+      }
+    }
+  }
+  
+}
