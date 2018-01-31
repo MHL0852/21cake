@@ -15,9 +15,7 @@ export default class ListCommon extends React.Component {
                 Blue Monday
                 <span>黑越橘</span>
               </h3>
-              <span className="title">
-                数据拟调整黑越橘蛋糕自2011年起使用造型版本
-              </span>
+
               <span className="price">
                 ¥ 268.00/2.0磅
               </span>

@@ -1,15 +1,15 @@
 import React from 'react';
-import ajax from "axios";
-import "../types.less";
-import "../../../common/NavCommon.less";
-export default class Cake extends React.Component {
-    constructor(){
-        super();
-        this.state={cakeList:[]}
-    }
+import ajax from "axios/index";
+import "../common/NavCommon.less";
+export default class TypeCommon extends React.Component {
+  constructor(){
+    super();
+    this.state={cakeList:[],urlAdrs:''}
+  }
   componentDidMount(){
+    let urlAdrs=this.state.urlAdrs;
     ajax({
-      url:"http://localhost:10086/list/cake",
+      url:`http://localhost:10086/list/${urlAdrs}`,
       method:"GET"
     }).then((res)=>{
       this.setState({
@@ -19,14 +19,13 @@ export default class Cake extends React.Component {
       console.log(val);
     });
   }
-    render() {
-      console.log(this.state.cakeList);
-      return(
+  render() {
+    return(
       <div className="listCommon">
         <ul className="clearfix">
           {this.state.cakeList.map((item,index)=>(
             <li id={`list-goods-${item.cake_goods_id}`} key={index}>
-              <a href={`http://www.21cake.com/goods-${item.site_goods_id}.html`} className="list-item-link">
+              <a href="#" className="list-item-link">
                 <div className="item-link-img">
                   <img src={`http://static.21cake.com/${item.img_url}`} alt=""/>
                 </div>
@@ -35,8 +34,8 @@ export default class Cake extends React.Component {
                   <span>{item.name}</span>
                 </h3>
                 <span className="title">
-                  
-                </span>
+            数据拟调整黑越橘蛋糕自2011年起使用造型版本
+          </span>
                 <span className="price">
             ¥ {item.price}/{item.spec}磅
           </span>
@@ -50,6 +49,6 @@ export default class Cake extends React.Component {
         </ul>
 
       </div>
-      )
-    }
+    )
+  }
 }

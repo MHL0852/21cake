@@ -15,11 +15,14 @@ import ListCommon from "../../component/ListCommon";
 export default class Type extends React.Component {
   render() {
     return (
-     <div className="types">
-       <NavTCommon/>
-       <Cake/>
-       {/*<ListCommon/>*/}
-     </div>
+      <div>
+        <NavTCommon/>
+        <div className="types">
+          <Cake/>
+          {/*<ListCommon/>*/}
+        </div>
+      </div>
+
     )
   }
 }
