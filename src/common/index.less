@@ -1,12 +1,12 @@
 html {
   font-size: 100px;
-  background: grey;
+  background: #f4f4f4;
 }
 
 html, body {
   position: relative;
   height: 100%;
-  overflow: hidden;
+  overflow-x: scroll;
 }
 
 .header {
@@ -17,6 +17,7 @@ html, body {
   height: 1rem;
   background: white;
   text-align: center;
+  z-index: 100;
   i.logo {
     display: inline-block;
     width: 0.5rem;
@@ -32,12 +33,12 @@ html, body {
     transform: translateY(-50%);
     i {
       display: inline-block;
-      height: 17px;
-      width: 14px;
+      height: 12px;
+      width: 10px;
       background: url("./images/address.png") no-repeat;
       background-size: 100%;
-      vertical-align: -4px;
-      margin-right: 4px;
+      vertical-align: -1px;
+      margin-right: 3px;
     }
   }
 }
