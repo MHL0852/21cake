@@ -49,16 +49,6 @@ app.get(`/home`, (req, res) => {
     };
 
     fs.exists('./dist/home.json', exists => {
-        if (!exists) {
-            fs.createWriteStream('./dist/home.json');
-            axios({
-                url: 'http://api.21cake.com/?method=Advertisement.showV2&v=1.0&cityId=1&position=home_top%2Ctips%2Cclassification%2Chome_floor_v2%2Cactivity%2Cmagazine&channel=wap&_=1517235725130&callback=Zepto1517235725075',
-                method: 'GET'
-            }).then((res) => {
-                eval(res.data);
-            }).catch(err => {
-            });
-        }
         fs.readFile('./dist/home.json', 'utf8', (err, data) => {
             if (err) {
                 res.json("出错了,等会儿再发送一次");
@@ -277,4 +267,38 @@ app.post('/shoppingCart/download',(req,res)=>{
     }
 
 });
-;
+
+
+app.get(`/homePC`, (req, res) => {
+    let jQuery111102348861876497681_1517366909260 = function (val) {
+        console.log(val.data);
+        fs.writeFile('./dist/homePC.json', JSON.stringify(val.data))
+    };
+
+    fs.exists('./dist/homePC.json', exists => {
+        if (!exists) {
+            fs.createWriteStream('./dist/homePC.json');
+            axios({
+                url: 'http://api.21cake.com/?method=Advertisement.showV2&v=1.0&callback=jQuery111102348861876497681_1517366909260&cityId=3&position=home_floor%2Cactivity%2Cmagazine&channel=pc&_=1517366909261',
+                method: 'GET'
+            }).then((res) => {
+                console.log(res.data);
+                eval(res.data);
+            }).catch(err => {
+            });
+        }
+        fs.readFile('./dist/homePC.json', 'utf8', (err, data) => {
+            console.log(data);
+            if (err) {
+                res.json("出错了,等会儿再发送一次");
+                return
+            }
+
+            data=JSON.parse(data);
+            res.json(data)
+        });
+
+
+    });
+
+});
