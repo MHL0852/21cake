@@ -136,6 +136,54 @@
         ]
       },
       {
+        "title": "新品",
+        "href": "/gallery/tag/30.html",
+        "imgUrl": "",
+        "sort": 2,
+        "contents": [
+          {
+            "productId": "12007",
+            "name": "碎碎平安",
+            "description": "不超出21cake食材库，时间和人挑选的果子",
+            "href": "/goods-698.html",
+            "target": "_blank",
+            "imageUrl": "/upload/images/c2c018b2c6fe3247d667c4d1f7f48bd2.jpg",
+            "price": "99.00",
+            "spec": "个"
+          },
+          {
+            "productId": "591",
+            "name": "黑越橘",
+            "description": "从苏必利尔湖西端，至安大略湖东端的1400公里，是北美五大湖所经流域",
+            "href": "/goods-19.html",
+            "target": "_blank",
+            "imageUrl": "/upload/images/e70a38c1df0f4210a098b43fda199c7b.jpg",
+            "price": "268.00",
+            "spec": "2.0磅"
+          },
+          {
+            "productId": "239",
+            "name": "黑森林",
+            "description": "向往极北的黑森林，纷飞的雪花里有精灵的歌咏",
+            "href": "/goods-8.html",
+            "target": "_blank",
+            "imageUrl": "/upload/images/0c1dbbf544cbd1d2f242b4eb29708fd0.jpg",
+            "price": "398.00",
+            "spec": "2.0磅"
+          },
+          {
+            "productId": "10174",
+            "name": "深艾尔",
+            "description": "四种精酿啤酒，搭配酸樱桃果酱，风味独特",
+            "href": "/goods-525.html",
+            "target": "_blank",
+            "imageUrl": "/upload/images/e850695c8af205fcf92fd9450aa82a49.jpg",
+            "price": "268.00",
+            "spec": "1.0磅"
+          }
+        ]
+      },
+      {
         "title": "人气",
         "href": "gallery/tag/31.html",
 
@@ -181,54 +229,6 @@
             "imageUrl": "/upload/images/1b4ae908ef24edeed6099d0f95a4537d.jpg",
             "price": "298.00",
             "spec": "2.0磅"
-          }
-        ]
-      },
-      {
-        "title": "新品",
-        "href": "/gallery/tag/30.html",
-        "imgUrl": "",
-        "sort": 2,
-        "contents": [
-          {
-            "productId": "12007",
-            "name": "碎碎平安",
-            "description": "不超出21cake食材库，时间和人挑选的果子",
-            "href": "/goods-698.html",
-            "target": "_blank",
-            "imageUrl": "/upload/images/c2c018b2c6fe3247d667c4d1f7f48bd2.jpg",
-            "price": "99.00",
-            "spec": "个"
-          },
-          {
-            "productId": "591",
-            "name": "黑越橘",
-            "description": "从苏必利尔湖西端，至安大略湖东端的1400公里，是北美五大湖所经流域",
-            "href": "/goods-19.html",
-            "target": "_blank",
-            "imageUrl": "/upload/images/e70a38c1df0f4210a098b43fda199c7b.jpg",
-            "price": "268.00",
-            "spec": "2.0磅"
-          },
-          {
-            "productId": "239",
-            "name": "黑森林",
-            "description": "向往极北的黑森林，纷飞的雪花里有精灵的歌咏",
-            "href": "/goods-8.html",
-            "target": "_blank",
-            "imageUrl": "/upload/images/0c1dbbf544cbd1d2f242b4eb29708fd0.jpg",
-            "price": "398.00",
-            "spec": "2.0磅"
-          },
-          {
-            "productId": "10174",
-            "name": "深艾尔",
-            "description": "四种精酿啤酒，搭配酸樱桃果酱，风味独特",
-            "href": "/goods-525.html",
-            "target": "_blank",
-            "imageUrl": "/upload/images/e850695c8af205fcf92fd9450aa82a49.jpg",
-            "price": "268.00",
-            "spec": "1.0磅"
           }
         ]
       }
