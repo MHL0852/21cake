@@ -1,28 +1,25 @@
 import React from 'react';
-import ajax from "axios";
-import "../types.less";
-import "../../../common/NavCommon.less";
-export default class Normal extends React.Component {
+import ajax from "axios/index";
+import "../common/NavCommon.less";
+export default class TypeCommon extends React.Component {
   constructor(){
     super();
-    this.state={cakeList:[]}
+    this.state={cakeList:[],urlAdrs:''}
   }
-  componentWillMount(){
-    let cakeList={};
+  componentDidMount(){
+    let urlAdrs=this.state.urlAdrs;
     ajax({
-      url:"http://localhost:10086/list/normal",
+      url:`http://localhost:10086/list/${urlAdrs}`,
       method:"GET"
     }).then((res)=>{
-      cakeList=JSON.parse(res.data);
       this.setState({
-        cakeList:JSON.parse(res.data).goodsArr[2].goods
+        cakeList:res.data.data
       })
     }).catch((val)=>{
       console.log(val);
     });
   }
   render() {
-    console.log(this.state.cakeList);
     return(
       <div className="listCommon">
         <ul className="clearfix">
@@ -44,10 +41,11 @@ export default class Normal extends React.Component {
           </span>
               </a>
               <a href="#" className="list-item-cart">
-                <img src="" alt=""/>
+                <i className='iconfont icon-gouwuche-copy'></i>
               </a>
             </li>
           ))}
+          <li className="lastList">没了</li>
         </ul>
 
       </div>

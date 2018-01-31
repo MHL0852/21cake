@@ -29,12 +29,11 @@ app.use(function (req, res, next) {
 let returnData = function (res, path) {
     fs.readFile(path, 'utf8', (err, data) => {
         if (err) {
-            res.json("出错了,等会儿再发送一次");
+            res.json({msg:'数据获取失败',err:1,});
             return
         }
-        data=JSON.parse(data).goodsArr[1].goods;
-        console.log(data);
-        res.json(data)
+        data=JSON.parse(data).goodsArr[1].goods;;
+        res.json({msg:'数据获取成功',err:0,data})
     });
 };
 
@@ -50,23 +49,12 @@ app.get(`/home`, (req, res) => {
     };
 
     fs.exists('./dist/home.json', exists => {
-        if (!exists) {
-            fs.createWriteStream('./dist/home.json');
-            axios({
-                url: 'http://api.21cake.com/?method=Advertisement.showV2&v=1.0&cityId=1&position=home_top%2Ctips%2Cclassification%2Chome_floor_v2%2Cactivity%2Cmagazine&channel=wap&_=1517235725130&callback=Zepto1517235725075',
-                method: 'GET'
-            }).then((res) => {
-                eval(res.data);
-            }).catch(err => {
-            });
-        }
         fs.readFile('./dist/home.json', 'utf8', (err, data) => {
             if (err) {
                 res.json("出错了,等会儿再发送一次");
                 return
             }
             data=JSON.parse(data);
-            console.log(data);
             res.json(data)
         });
 
@@ -77,7 +65,6 @@ app.get(`/home`, (req, res) => {
 
 app.get(`/list/cake`, (req, res) => {
     let Zepto1517239793363 = function (val) {
-        console.log(val.data);
         fs.writeFile('./dist/list/cake.json', JSON.stringify(val.data))
     };
     fs.exists('./dist/list/cake.json', exists => {
@@ -130,7 +117,6 @@ app.get(`/list/patch`, (req, res) => {
                 url: 'http://api.21cake.com/?method=Gallery.goodsList&v=1.0&catId=7&cityId=1&channel=wap&_=1517241945391&callback=Zepto1517241941959',
                 method: 'GET'
             }).then((res) => {
-                console.log(res.data);
                 eval(res.data);
             }).catch(err => {
                 console.log(err);
@@ -152,7 +138,6 @@ app.get(`/list/coffee`, (req, res) => {
                 url: 'http://api.21cake.com/?method=Gallery.goodsList&v=1.0&catId=8&cityId=1&channel=wap&_=1517242807054&callback=Zepto1517242495820',
                 method: 'GET'
             }).then((res) => {
-                console.log(res.data);
                 eval(res.data);
             }).catch(err => {
                 console.log(err);
@@ -174,7 +159,6 @@ app.get(`/list/normal`, (req, res) => {
                 url: 'http://api.21cake.com/?method=Gallery.goodsList&v=1.0&catId=24&cityId=1&channel=wap&_=1517242994447&callback=Zepto1517242495821',
                 method: 'GET'
             }).then((res) => {
-                console.log(res.data);
                 eval(res.data);
             }).catch(err => {
                 console.log(err);
@@ -205,6 +189,18 @@ app.get(`/list/gift`, (req, res) => {
             returnData(res, './dist/list/gift.json');
 
     });
+});
+
+app.get(`/detail`,(req,res)=>{
+    let dataId = req.headers.id;
+    fs.readFile(`./dist/particulars/cake/${dataId}.json`,(err,data)=>{
+        if(err){
+            res.json({reg:'参数获取失败',err:1});
+            return;
+        }
+        data=JSON.parse(data);
+        res.json({reg:'参数获取成功',err:0,data})
+    })
 });
 
 app.post('/register', (req, res) => {
@@ -269,5 +265,40 @@ app.post('/shoppingCart/download',(req,res)=>{
     }else{
         res.json({msg:'未知错误',err:1})
     }
+
+});
+
+
+app.get(`/homePC`, (req, res) => {
+    let jQuery111102348861876497681_1517366909260 = function (val) {
+        console.log(val.data);
+        fs.writeFile('./dist/homePC.json', JSON.stringify(val.data))
+    };
+
+    fs.exists('./dist/homePC.json', exists => {
+        if (!exists) {
+            fs.createWriteStream('./dist/homePC.json');
+            axios({
+                url: 'http://api.21cake.com/?method=Advertisement.showV2&v=1.0&callback=jQuery111102348861876497681_1517366909260&cityId=3&position=home_floor%2Cactivity%2Cmagazine&channel=pc&_=1517366909261',
+                method: 'GET'
+            }).then((res) => {
+                console.log(res.data);
+                eval(res.data);
+            }).catch(err => {
+            });
+        }
+        fs.readFile('./dist/homePC.json', 'utf8', (err, data) => {
+            console.log(data);
+            if (err) {
+                res.json("出错了,等会儿再发送一次");
+                return
+            }
+
+            data=JSON.parse(data);
+            res.json(data)
+        });
+
+
+    });
 
 });

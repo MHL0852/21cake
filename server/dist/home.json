@@ -89,98 +89,175 @@
     "template": "floorV2",
     "data": [
       {
-        "title": "人气",
-        "href": "gallery/tag/31.html",
+        "title": "榜单",
         "imgUrl": "",
         "sort": 1,
         "contents": [
           {
-            "productId": "377",
-            "name": "百利甜情人",
-            "description": "爱尔兰百利甜酒/新西兰奶油/云南玫瑰甘露",
-            "href": "goods-12.html",
-            "target": "_blank",
-            "imageUrl": "/upload/images/de7f5cade140bd0c5a49cb853b8249f1.jpg",
-            "price": "298.00",
-            "spec": "2.0磅"
+            "name": "水果蛋糕",
+            "imageUrl": "./server/dist/image/pic1.png"
           },
           {
-            "productId": "9178",
-            "name": "芒果奶油",
-            "description": "21cake配方芒果百香果慕斯夹心",
-            "href": "/goods-472.html",
-            "target": "_blank",
-            "imageUrl": "/upload/images/d0e6a2b4a647a736585cd5e50de8234d.jpg",
-            "price": "198.00",
-            "spec": "2.0磅"
+            "name": "精品咖啡",
+            "imageUrl": "./server/dist/image/pic2.png"
           },
           {
-            "productId": "401",
-            "name": "卡百利",
-            "description": "今日凌晨采摘，缀着草莓的奶油蛋糕",
-            "href": "/goods-13.html",
-            "target": "_blank",
-            "imageUrl": "/upload/images/c6b27cb66b0f859e47e44555a3b9dfae.jpg",
-            "price": "268.00",
-            "spec": "2.0磅"
+            "name": "应季明星",
+            "imageUrl": "./server/dist/image/pic3.png"
           },
           {
-            "productId": "7946",
-            "name": "（新）栗蓉暗香",
-            "description": "鲜栗蓉，点缀手工比利时黑巧克力豆",
-            "href": "/goods-400.html",
-            "target": "_blank",
-            "imageUrl": "/upload/images/1b4ae908ef24edeed6099d0f95a4537d.jpg",
-            "price": "298.00",
-            "spec": "2.0磅"
+            "name": "设计师礼",
+            "imageUrl": "./server/dist/image/pic4.png"
           }
         ]
       },
       {
         "title": "新品",
+        "subTitle": "专区",
+        "banner": "/upload/images/460eb4e08376d6544843f336ae69cafa.jpg",
+        "description": "本周新品推荐",
         "href": "/gallery/tag/30.html",
-        "imgUrl": "",
+        "sort": 1,
+        "contents": [
+          {
+            "id": "698",
+            "name": "碎碎平安",
+            "description": "时间和人挑选的果子",
+            "imageUrl": "/upload/images/ee290c3d7e3afc8464b299720d68faa3.png",
+            "default": {
+              "price": "99.00",
+              "spec": "个"
+            }
+          },
+          {
+            "id": "631",
+            "name": "枣儿",
+            "description": "红枣奶油戚风与姜撞奶慕斯",
+            "imageUrl": "/upload/images/55da0ebe3e7d99d87238ef7b9383fb63.png",
+            "default": {
+              "price": "298.00",
+              "spec": "2.0磅"
+            }
+          },
+          {
+            "id": "8",
+            "name": "黑森林",
+            "description": "智利黑车厘子浸入樱桃白兰地",
+            "imageUrl": "/upload/images/71975a4da796f56cbbfe57f79e44fbad.png",
+            "default": {
+              "price": "398.00",
+              "spec": "2.0磅"
+            }
+          },
+          {
+            "id": "19",
+            "name": "黑越橘",
+            "description": "裹着粉霜的新鲜蓝莓",
+            "imageUrl": "/upload/images/88c1938763c92f91c008bc239469faf1.png",
+            "default": {
+              "price": "268.00",
+              "spec": "2.0磅"
+            }
+          },
+          {
+            "id": "525",
+            "name": "深艾尔",
+            "description": "精酿啤酒蛋糕",
+            "imageUrl": "/upload/images/941a881afd177b4ce117551bbc2e6041.png",
+            "default": {
+              "price": "268.00",
+              "spec": "1.0磅"
+            }
+          },
+          {
+            "id": "282",
+            "name": "摩卡",
+            "description": "精品咖啡蛋糕",
+            "imageUrl": "/upload/images/414439b52d81914fab36cf62053d6d22.png",
+            "default": {
+              "price": "398.00",
+              "spec": "2.0磅"
+            }
+          },
+          {
+            "id": "415",
+            "name": "新卡",
+            "description": "低温乳脂奶油冷萃耶加雪菲",
+            "imageUrl": "/upload/images/3f1bb01f8d57fe015f995f981ab22a54.png",
+            "default": {
+              "price": "398.00",
+              "spec": "2.0磅"
+            }
+          }
+        ]
+      },
+      {
+        "title": "人气",
+        "subTitle": "专区",
+        "banner": "/upload/images/98e81e5173b76ffeb264a336e5ed83c3.jpg",
+        "description": "人气",
+        "href": "/gallery/tag/31.html",
         "sort": 2,
         "contents": [
           {
-            "productId": "12007",
-            "name": "碎碎平安",
-            "description": "不超出21cake食材库，时间和人挑选的果子",
-            "href": "/goods-698.html",
-            "target": "_blank",
-            "imageUrl": "/upload/images/c2c018b2c6fe3247d667c4d1f7f48bd2.jpg",
-            "price": "99.00",
-            "spec": "个"
+            "id": "12",
+            "name": "百利甜情人",
+            "description": "爱尔兰百利甜酒，新西兰奶油",
+            "imageUrl": "/upload/images/594f5f74fb37172927ad4068fd283bc0.png",
+            "default": {
+              "price": "298.00",
+              "spec": "2.0磅"
+            }
           },
           {
-            "productId": "591",
-            "name": "黑越橘",
-            "description": "从苏必利尔湖西端，至安大略湖东端的1400公里，是北美五大湖所经流域",
-            "href": "/goods-19.html",
-            "target": "_blank",
-            "imageUrl": "/upload/images/e70a38c1df0f4210a098b43fda199c7b.jpg",
-            "price": "268.00",
-            "spec": "2.0磅"
+            "id": "472",
+            "name": "芒果奶油蛋糕",
+            "description": "坚持应季鲜切芒果",
+            "imageUrl": "/upload/images/4a32d02e3b8e265b8a21a26c18c42532.png",
+            "default": {
+              "price": "198.00",
+              "spec": "2.0磅"
+            }
           },
           {
-            "productId": "239",
-            "name": "黑森林",
-            "description": "向往极北的黑森林，纷飞的雪花里有精灵的歌咏",
-            "href": "/goods-8.html",
-            "target": "_blank",
-            "imageUrl": "/upload/images/0c1dbbf544cbd1d2f242b4eb29708fd0.jpg",
-            "price": "398.00",
-            "spec": "2.0磅"
+            "id": "13",
+            "name": "卡百利",
+            "description": "今日凌晨采摘，缀着草莓的奶油蛋糕",
+            "imageUrl": "/upload/images/8fb536bab9588820d45a667267764f41.png",
+            "default": {
+              "price": "268.00",
+              "spec": "2.0磅"
+            }
           },
           {
-            "productId": "10174",
-            "name": "深艾尔",
-            "description": "四种精酿啤酒，搭配酸樱桃果酱，风味独特",
-            "href": "/goods-525.html",
-            "target": "_blank",
-            "imageUrl": "/upload/images/e850695c8af205fcf92fd9450aa82a49.jpg",
-            "price": "268.00",
-            "spec": "1.0磅"
+            "id": "412",
+            "name": " 黑白巧克力慕斯（撒粉约会）",
+            "description": "口感冰凉细腻",
+            "imageUrl": "/upload/images/079093f0b079ad1c1d05f5d5874f8527.png",
+            "default": {
+              "price": "298.00",
+              "spec": "2.0磅"
+            }
+          },
+          {
+            "id": "415",
+            "name": "新卡",
+            "description": "低温乳脂奶油冷萃耶加雪菲",
+            "imageUrl": "/upload/images/34ee3fc4814956e2bfd197c188c98054.png",
+            "default": {
+              "price": "398.00",
+              "spec": "2.0磅"
+            }
+          },
+          {
+            "id": "6",
+            "name": "松仁淡奶",
+            "description": "戚风白坯，甜润淡奶",
+            "imageUrl": "/upload/images/176b5c317b8a6bca61560d72ef8f1016.png",
+            "default": {
+              "price": "298.00",
+              "spec": "2.0磅"
+            }
           }
         ]
       }
@@ -200,40 +277,5 @@
         "sort": 3
       }
     ]
-  },
-  {
-    "title": "廿一客·文章",
-    "template": "magazine",
-    "data": [
-      {
-        "id": "178",
-        "banner": "public/images/38/58/43/6593ccc095aaab42d068f1269d342b8a.jpg",
-        "name": "十二月刊·松子",
-        "href": "/magazine/detail/178.html",
-        "description": ""
-      },
-      {
-        "id": "172",
-        "banner": "public/images/3b/3f/ad/3af3dce391beec7fa9baf2385c605e17.jpg",
-        "name": "十一月刊·栗子",
-        "href": "/magazine/detail/172.html",
-        "description": ""
-      },
-      {
-        "id": "167",
-        "banner": "public/images/de/4d/14/6988184bf5114d5868437d27ddab478a.jpg",
-        "name": "十月刊·啤酒",
-        "href": "/magazine/detail/167.html",
-        "description": ""
-      },
-      {
-        "id": "163",
-        "banner": "public/images/a9/75/d9/24361110e115f5fe45681b0c5c2b0f5c.jpg",
-        "name": "九月刊·茉莉",
-        "href": "/magazine/detail/163.html",
-        "description": ""
-      }
-    ],
-    "more": "/magazine.html"
   }
 ]
