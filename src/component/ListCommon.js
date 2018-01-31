@@ -15,7 +15,6 @@ export default class ListCommon extends React.Component {
                 Blue Monday
                 <span>黑越橘</span>
               </h3>
-
               <span className="price">
                 ¥ 268.00/2.0磅
               </span>
@@ -25,6 +24,7 @@ export default class ListCommon extends React.Component {
             </a>
           </li>
         </ul>
+        <div className="lastList">没有了。</div>
       </div>
     )
   }

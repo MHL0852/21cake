@@ -1,28 +1,26 @@
 import React from 'react';
+import {Route} from "react-router-dom";
 import "../../common/LIstCommon.less";
 import "./types.less";
 import "../../common/NavCommon.less";
 import "../../common/index.less";
-
-import Cake from "./class/Cake";
-import Coffee from "./class/Coffee";
-import Ice from "./class/Ice";
-import Gift from "./class/Gift";
-import Normal from "./class/Normal";
-import Patch from "./class/Patch";
 import NavTCommon from "../../component/NavTCommon";
-import ListCommon from "../../component/ListCommon";
+import TypeCommon from "../../component/TypeCommon";
 export default class Type extends React.Component {
   render() {
     return (
       <div>
         <NavTCommon/>
         <div className="types">
-          <Cake/>
-          {/*<ListCommon/>*/}
+          <Route path='/type' exact={true} component={TypeCommon}/>
+          <Route path='/type/cake' component={TypeCommon}/>
+          <Route path='/type/ice'  component={TypeCommon}/>
+          <Route path='/type/patch'  component={TypeCommon}/>
+          <Route path='/type/coffee'  component={TypeCommon}/>
+          <Route path='/type/normal'  component={TypeCommon}/>
+          <Route path='/type/gift' component={TypeCommon}/>
         </div>
       </div>
-
     )
   }
 }

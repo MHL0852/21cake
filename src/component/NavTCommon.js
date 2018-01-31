@@ -1,12 +1,17 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import {NavLink,withRouter} from 'react-router-dom';
 import "../common/NavCommon.less";
-export default class NavTCommon extends React.Component {
+class NavTCommon extends React.Component {
+  handleTouch=(e)=>{
+    console.log(e.target);
+    let hrefVal=e.target.getAttribute("href");
+    console.log(hrefVal);
+  };
   render() {
     return (
       <div className="nav-box">
-        <ul className="clearfix">
-          <li><NavLink to="/type/cake">蛋糕</NavLink></li>
+        <ul className="clearfix" onTouchEnd={this.handleTouch}>
+          <li><NavLink to="/type/cake" className={this.props.location.pathname==="/type"?"active":""}>蛋糕</NavLink></li>
           <li><NavLink to="/type/ice">冰激凌</NavLink></li>
           <li><NavLink to="/type/patch">小快切</NavLink></li>
           <li><NavLink to="/type/coffee">咖啡</NavLink></li>
@@ -17,3 +22,4 @@ export default class NavTCommon extends React.Component {
     )
   }
 }
+export default withRouter(NavTCommon);
