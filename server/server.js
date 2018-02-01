@@ -203,7 +203,7 @@ app.get(`/detail`, (req, res) => {
                 if (err) return;
                 let val = JSON.parse(data).goodsArr[1].goods.find(item => item.cake_goods_id == dataId) || {};
                 if (val.name) {
-                    resolve (val)
+                    resolve(val)
                 }
             })
         });
@@ -307,44 +307,31 @@ app.get(`/magazine`, (req, res) => {
     });
 });
 
-app.get(`/list/newProduct`,(req,res)=>{
+app.get(`/list/classify`, (req, res) => {
     let dataId = req.query.type;
     let arr = ['cake', 'coffee', 'gift', 'ice', 'normal', 'patch'];
 
     new Promise((resolve, reject) => {
-        let obj;
+        let dataArr = [];
         arr.forEach(item => {
             fs.readFile(`./dist/list/${item}.json`, 'utf8', (err, data) => {
                 if (err) return;
-                let val = JSON.parse(data).goodsArr[1].goods.filter(
-                    item=>{
-                        item.
-                    }
-                ) || {};
-                if (val.name) {
-                    resolve (val)
-                }
+                let val = JSON.parse(data).goodsArr[1].goods.filter(item => {
+                    let flag=false;
+                    item.tags.forEach(key=>{
+                        if (key.content===dataId){
+                           flag=true;
+                       }
+                    });
+                    return flag
+                }) || [];
+                dataArr = [...dataArr, ...val];
             })
         });
-    }).then(val => {
-        let {name, en_name, tags} = val;
-        dataName = name;
-        dataEnName = en_name;
-        dataTags = tags;
-        fs.readFile(`./dist/particulars/cake/${dataId}.json`, (err, data) => {
-
-            if (err) {
-                res.json({reg: '参数获取失败', err: 1});
-                console.log(err);
-                return;
-            }
-
-            data = JSON.parse(data);
-            data.name = dataName;
-            data.tags = dataTags;
-            data.en_name = dataEnName;
-
-            res.json({reg: '参数获取成功', err: 0, data})
-        })
+        setTimeout(()=>{
+            resolve(dataArr)
+        },1000)
+    }).then((dataArr) => {
+        res.json({reg: '参数获取成功', err: 0, data:dataArr})
     });
-})
+});
