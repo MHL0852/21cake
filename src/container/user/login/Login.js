@@ -6,7 +6,8 @@ export default class User extends React.Component {
     constructor() {
         super();
         this.state = {
-            loginFrom: 'account'
+            loginFrom: 'account',
+            tip:''
         }
     }
 
@@ -57,7 +58,7 @@ export default class User extends React.Component {
                                     <button className="sendCode">发送验证码</button>
                                 </li>
                                 <li>
-
+                                    {this.state.tip}
                                 </li>
                             </ul>
 
@@ -74,14 +75,14 @@ export default class User extends React.Component {
                         marginLeft: '18px',
                         fontSize:'0.22rem',
                         lineHeight: '18px'
-                    }} to='/home' className="forget">忘记密码</Link>
+                    }} to='/user/register' className="forget">忘记密码</Link>
                     <Link style={{
                         display: 'inline-block',
                         float: 'right',
                         marginLeft: '18px',
                         fontSize:'0.22rem',
                         lineHeight: '18px'
-                    }} to='/home' className="toRegister">去注册</Link>
+                    }} to='/user/register' className="toRegister">去注册</Link>
                 </div>
             </div>
         </div>
