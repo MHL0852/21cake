@@ -20,7 +20,7 @@ export default class Type extends React.Component {
           <Route path='/type/coffee'  component={TypeCommon}/>
           <Route path='/type/normal'  component={TypeCommon}/>
           <Route path='/type/gift' component={TypeCommon}/>
-          <Route path='/type*' component={Home}/>
+          {/*<Route path='/type*' component={Home}/>*/}
           {/*<Redirect to='/type'/>*/}
         </div>
       </div>
