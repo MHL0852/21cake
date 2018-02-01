@@ -6,7 +6,7 @@ import "../../common/NavCommon.less";
 import "../../common/index.less";
 import NavTCommon from "../../component/NavTCommon";
 import TypeCommon from "../../component/TypeCommon";
-import Home from "../home/home";
+// import Home from "../home/home";
 export default class Type extends React.Component {
   render() {
     return (
@@ -20,7 +20,7 @@ export default class Type extends React.Component {
           <Route path='/type/coffee'  component={TypeCommon}/>
           <Route path='/type/normal'  component={TypeCommon}/>
           <Route path='/type/gift' component={TypeCommon}/>
-          <Route path='/type*' component={Home}/>
+          {/*<Route path='/type*' component={Home}/>*/}
           {/*<Redirect to='/type'/>*/}
         </div>
       </div>

@@ -1,7 +1,5 @@
 import React from 'react';
-import './detail.less';
 import ajax from "axios";
-import TypeCommon from "../../component/TypeCommon";
 import ListCommon from "../../component/ListCommon";
 export default class DetailCake extends React.Component {
   constructor(){
@@ -53,7 +51,28 @@ export default class DetailCake extends React.Component {
                 <a href="" key={index}>{item.content} ›</a>
               ))}
             </div>
-            <div className="pro-detail"></div>
+            <div className="pro-details-taste clearfix">
+              <i className="details-taste-icon"></i><span>红颜草莓，糖度>8% </span>
+            </div>
+            <div className="pro-select">
+              <div className="pro-select-card">
+                <div className="card-title clearfix">
+                  <a href="#">已选择2.0磅<span>></span></a>
+                </div>
+                <div className="details-options-card">
+                  <ul className="details-options clearfix">
+                    <li><i></i> <span>11111111</span></li>
+                    <li><i></i> <span>11111111</span></li>
+                    <li><i></i> <span>11111111</span></li>
+                    <li><i></i> <span>11111111</span></li>
+                  </ul>
+                </div>
+                <ul className="store-info">
+                  <li><img src="../../common/images/fresh.png" alt=""/></li>
+                  <li><img src="../../common/images/sweet.png" alt=""/></li>
+                </ul>
+              </div>
+            </div>
           </div>
           <div className="detailes-intro">
             /红枣奶油戚风，与姜撞奶慕斯/<br/>
