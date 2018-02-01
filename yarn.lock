@@ -1823,6 +1823,10 @@ dom-serializer@0:
     domelementtype "~1.1.1"
     entities "~1.1.1"
 
+dom7@^2.0.1:
+  version "2.0.1"
+  resolved "http://registry.npm.taobao.org/dom7/download/dom7-2.0.1.tgz#a8a2c802cf17c20b051d9414143061472201a233"
+
 domain-browser@^1.1.1:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/domain-browser/-/domain-browser-1.2.0.tgz#3d31f50191a6749dd1375a7f522e823d42e54eda"
@@ -5100,6 +5104,12 @@ svgo@^0.7.0:
 swipe-js-iso@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/swipe-js-iso/-/swipe-js-iso-2.0.4.tgz#3371608112b30182e898f61d5bc02f7e38099c3d"
+
+swiper@^4.1.0:
+  version "4.1.0"
+  resolved "http://registry.npm.taobao.org/swiper/download/swiper-4.1.0.tgz#3d1d97aef948366b8b36fa90d41dcedf5432c88c"
+  dependencies:
+    dom7 "^2.0.1"
 
 symbol-observable@^1.0.3:
   version "1.2.0"
