@@ -306,3 +306,45 @@ app.get(`/magazine`, (req, res) => {
         res.json({msg: '数据获取成功', err: 0, data})
     });
 });
+
+app.get(`/list/newProduct`,(req,res)=>{
+    let dataId = req.query.type;
+    let arr = ['cake', 'coffee', 'gift', 'ice', 'normal', 'patch'];
+
+    new Promise((resolve, reject) => {
+        let obj;
+        arr.forEach(item => {
+            fs.readFile(`./dist/list/${item}.json`, 'utf8', (err, data) => {
+                if (err) return;
+                let val = JSON.parse(data).goodsArr[1].goods.filter(
+                    item=>{
+                        item.
+                    }
+                ) || {};
+                if (val.name) {
+                    resolve (val)
+                }
+            })
+        });
+    }).then(val => {
+        let {name, en_name, tags} = val;
+        dataName = name;
+        dataEnName = en_name;
+        dataTags = tags;
+        fs.readFile(`./dist/particulars/cake/${dataId}.json`, (err, data) => {
+
+            if (err) {
+                res.json({reg: '参数获取失败', err: 1});
+                console.log(err);
+                return;
+            }
+
+            data = JSON.parse(data);
+            data.name = dataName;
+            data.tags = dataTags;
+            data.en_name = dataEnName;
+
+            res.json({reg: '参数获取成功', err: 0, data})
+        })
+    });
+})
