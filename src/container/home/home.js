@@ -11,9 +11,17 @@ import HomeNav from "./HomeNav";
 import HomeList from "./HomeList";
 import HomeActive from "./HomeActive";
 import Swiper from "swiper";
+import City from "./City";
 
 @connect(state => ({...state.home}), actions)
 export default class Home extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            cityName: "北京"
+        }
+    }
+
     componentWillMount() {
         this.props.getHomeAPI();
     }
@@ -22,32 +30,47 @@ export default class Home extends React.Component {
         let mySwiper = new Swiper('.swiper-container', {
             loop: false,
             slidesPerView: 'auto',
-            freeMode : true,
-            freeModeMomentum : false,
+            freeMode: true,
+            freeModeMomentum: false,
         });
         let mySwiper1 = new Swiper('.swiper-container', {
             loop: false,
             slidesPerView: 'auto',
-            freeMode : true,
-            freeModeMomentum : false,
+            freeMode: true,
+            freeModeMomentum: false,
         });
         let mySwiper2 = new Swiper('.swiper-container', {
             loop: false,
             slidesPerView: 'auto',
-            freeMode : true,
-            freeModeMomentum : false,
+            freeMode: true,
+            freeModeMomentum: false,
         });
+    };
+    changeCityStyle = e => {
+        if (e.target.classList.contains('city-box') || e.target.nodeName==="BUTTON") {
+            this.$city.style.display = 'none';
+        }
+    };
+    cityName = (name) => {
+        this.setState({cityName:name});
     };
 
     componentDidUpdate() {
         this.changePosition();
+        this.$city = this.city.refs.cityBox;
     }
 
 
     render() {
         let {sliders, navList, activity, bangdan, newProduct, renqi} = this.props;
         return <div>
-            <Header><Link to='' className='city'><i></i>北京</Link></Header>
+            <Header>
+                <button className='city' onClick={() => {
+                    this.$city.style.display = 'block';
+                }}><i></i>{this.state.cityName}
+                </button>
+            </Header>
+            <City ref={x => this.city = x} changeCityStyle={this.changeCityStyle} cityName={this.cityName}/>
             <div className='content'>
                 {sliders.length ? <HomeSlider sliders={sliders}/> : null}
                 <HomeNav navList={navList}/>
