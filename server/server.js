@@ -29,11 +29,11 @@ app.use(function (req, res, next) {
 let returnData = function (res, path) {
     fs.readFile(path, 'utf8', (err, data) => {
         if (err) {
-            res.json({msg:'数据获取失败',err:1,});
+            res.json({msg: '数据获取失败', err: 1,});
             return
         }
-        data=JSON.parse(data).goodsArr[1].goods;
-        res.json({msg:'数据获取成功',err:0,data})
+        data = JSON.parse(data).goodsArr[1].goods;
+        res.json({msg: '数据获取成功', err: 0, data})
     });
 };
 
@@ -54,7 +54,7 @@ app.get(`/home`, (req, res) => {
                 res.json("出错了,等会儿再发送一次");
                 return
             }
-            data=JSON.parse(data);
+            data = JSON.parse(data);
             res.json(data)
         });
 
@@ -78,7 +78,7 @@ app.get(`/list/cake`, (req, res) => {
             }).catch(err => {
             });
         }
-            returnData(res, './dist/list/cake.json');
+        returnData(res, './dist/list/cake.json');
 
 
     });
@@ -122,7 +122,7 @@ app.get(`/list/patch`, (req, res) => {
                 console.log(err);
             });
         }
-            returnData(res, './dist/list/patch.json');
+        returnData(res, './dist/list/patch.json');
 
     });
 });
@@ -143,7 +143,7 @@ app.get(`/list/coffee`, (req, res) => {
                 console.log(err);
             });
         }
-            returnData(res, './dist/list/coffee.json');
+        returnData(res, './dist/list/coffee.json');
 
     });
 });
@@ -164,7 +164,7 @@ app.get(`/list/normal`, (req, res) => {
                 console.log(err);
             });
         }
-            returnData(res, './dist/list/normal.json');
+        returnData(res, './dist/list/normal.json');
 
     });
 });
@@ -186,112 +186,123 @@ app.get(`/list/gift`, (req, res) => {
                 res.json("数据未找到")
             });
         }
-            returnData(res, './dist/list/gift.json');
+        returnData(res, './dist/list/gift.json');
 
     });
 });
 
-app.get(`/detail`,(req,res)=>{
+app.get(`/detail`, (req, res) => {
     let dataId = req.query.id;
-    let dataName,
-        dataEnName,
-        dataTags;
-    fs.readFile(`./dist/list/cake.json`,'utf8',(err,data)=>{
-       let {name,en_name,tags} = JSON.parse(data).goodsArr[1].goods.find(item=>item.cake_goods_id==dataId);
-        dataName=name;
-            dataEnName=en_name;
-            dataTags=tags;
-    });
+    let dataName, dataEnName, dataTags;
+    let arr = ['cake', 'coffee', 'gift', 'ice', 'normal', 'patch'];
 
-  fs.readFile(`./dist/particulars/cake/${dataId}.json`,(err,data)=>{
-        if(err){
-            res.json({reg:'参数获取失败',err:1});
-          console.log(err);
-          return;
-        }
-        data=JSON.parse(data);
-        data.name=dataName;
-        data.tags=dataTags;
-        data.en_name=dataEnName;
-      console.log(data);
-      res.json({reg:'参数获取成功',err:0,data})
-    })
+    new Promise((resolve, reject) => {
+        let obj;
+        arr.forEach(item => {
+            fs.readFile(`./dist/list/${item}.json`, 'utf8', (err, data) => {
+                if (err) return;
+                let val = JSON.parse(data).goodsArr[1].goods.find(item => item.cake_goods_id == dataId) || {};
+                if (val.name) {
+                    resolve (val)
+                }
+            })
+        });
+    }).then(val => {
+        let {name, en_name, tags} = val;
+        dataName = name;
+        dataEnName = en_name;
+        dataTags = tags;
+        fs.readFile(`./dist/particulars/cake/${dataId}.json`, (err, data) => {
+
+            if (err) {
+                res.json({reg: '参数获取失败', err: 1});
+                console.log(err);
+                return;
+            }
+
+            data = JSON.parse(data);
+            data.name = dataName;
+            data.tags = dataTags;
+            data.en_name = dataEnName;
+
+            res.json({reg: '参数获取成功', err: 0, data})
+        })
+    });
 
 });
 
 app.post('/register', (req, res) => {
     let {username, password} = req.body;
     let userList = JSON.parse(fs.readFileSync('./dist/user/user.json'));
-    let user=userList.find(item => item.username === username);
-    if(user){
-        res.json({msg:'用户已存在',err:1});
-    }else{
-        password=md5(password);
-        userList.push({username,password});
-        fs.writeFile('./dist/user/user.json',JSON.stringify(userList),err=>{
+    let user = userList.find(item => item.username === username);
+    if (user) {
+        res.json({msg: '用户已存在', err: 1});
+    } else {
+        password = md5(password);
+        userList.push({username, password});
+        fs.writeFile('./dist/user/user.json', JSON.stringify(userList), err => {
             console.log(err);
         });
-        res.json({msg:'注册成功',err:0});
+        res.json({msg: '注册成功', err: 0});
     }
 
 });
 
-app.post('/login',(req,res)=>{
+app.post('/login', (req, res) => {
     let {username, password} = req.body;
     let userList = JSON.parse(fs.readFileSync('./dist/user/user.json'));
-    let user=userList.find(item => item.username === username);
-    if(user){
-        password=md5(password);
-        if(user.password===password){
-            res.json({msg:'登陆成功',err:0})
-        }else{
-            res.json({msg:'密码错误',err:1});
+    let user = userList.find(item => item.username === username);
+    if (user) {
+        password = md5(password);
+        if (user.password === password) {
+            res.json({msg: '登陆成功', err: 0})
+        } else {
+            res.json({msg: '密码错误', err: 1});
         }
-    }else{
-        res.json({msg:'用户不存在',err:1});
+    } else {
+        res.json({msg: '用户不存在', err: 1});
     }
 });
 
-app.post('/shoppingCart/UpData',(req,res)=>{
+app.post('/shoppingCart/UpData', (req, res) => {
     let {username, goods} = req.body;
     let userList = JSON.parse(fs.readFileSync('./dist/user/user.json'));
-    let user=userList.find(item => item.username === username);
-    if(!Object.prototype.toString.call(goods)==='[object Array]'){
-        res.json({err:1,msg:"参数类型错误"})
-    }else if(user){
-        userList.forEach(item=>{
-            if(item.username=username){
-                item.goods=[...goods];
+    let user = userList.find(item => item.username === username);
+    if (!Object.prototype.toString.call(goods) === '[object Array]') {
+        res.json({err: 1, msg: "参数类型错误"})
+    } else if (user) {
+        userList.forEach(item => {
+            if (item.username = username) {
+                item.goods = [...goods];
             }
         });
-        fs.writeFileSync('./dist/user/user.json',JSON.stringify(userList));
-        res.json({err:0,msg:"加入购物车成功"})
-    }else{
-        res.json({err:1,msg:"请先登陆"})
+        fs.writeFileSync('./dist/user/user.json', JSON.stringify(userList));
+        res.json({err: 0, msg: "加入购物车成功"})
+    } else {
+        res.json({err: 1, msg: "请先登陆"})
     }
 
 });
 
-app.post('/shoppingCart/download',(req,res)=>{
-    let {username,password} = req.body;
+app.post('/shoppingCart/download', (req, res) => {
+    let {username, password} = req.body;
     let userList = JSON.parse(fs.readFileSync('./dist/user/user.json'));
-    let user=userList.find(item => item.username === username);
-    if(user){
-        res.json({msg:'数据拉取成功',err:0,goods:user.goods||[]});
-    }else{
-        res.json({msg:'未知错误',err:1})
+    let user = userList.find(item => item.username === username);
+    if (user) {
+        res.json({msg: '数据拉取成功', err: 0, goods: user.goods || []});
+    } else {
+        res.json({msg: '未知错误', err: 1})
     }
 
 });
 
 app.get(`/magazine`, (req, res) => {
-            fs.readFile('./dist/magazine.json', 'utf8', (err, data) => {
-                if (err) {
-                    res.json({msg:'数据获取失败',err:1,});
-                    return
-                }
-                data=JSON.parse(data);
-                res.json({msg:'数据获取成功',err:0,data})
-            });
+    fs.readFile('./dist/magazine.json', 'utf8', (err, data) => {
+        if (err) {
+            res.json({msg: '数据获取失败', err: 1,});
+            return
+        }
+        data = JSON.parse(data);
+        res.json({msg: '数据获取成功', err: 0, data})
+    });
 });
-[1,2,4,5,6,8,9,10,11,12,13,14,18,19,20,21,24,27,29,31,55,132,156,182,183,185,194,195,198,199,249,252,256,282,294]
