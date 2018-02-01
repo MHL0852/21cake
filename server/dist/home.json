@@ -53,6 +53,7 @@
       {
         "ident": "ec81f1e3c1aebd7f5b929e10b06e91bc",
         "name": "蛋糕",
+        "type": "cake",
         "img_url": "/upload/images/b24fa9c0d277b79493fead122afe8e73.png",
         "href": "/gallery-index---0---1.html",
         "target": "_blank",
@@ -61,6 +62,7 @@
       {
         "ident": "cf47f43af1312c03570ce37c348caebf",
         "name": "咖啡",
+        "type": "coffee",
         "img_url": "/upload/images/6b2bb02a6d83ca8f36f0eaafebe3b1b3.png",
         "href": "/gallery-index---0---3.html",
         "target": "_blank",
@@ -69,6 +71,7 @@
       {
         "ident": "a2133ea14b0ae9a0b8d71417fa1b8f39",
         "name": "小切块",
+        "type": "patch",
         "img_url": "/upload/images/a22e889a75b6db374db1451015a47c24.png",
         "href": "/gallery-index---0---2.html",
         "target": "_blank",
@@ -76,7 +79,8 @@
       },
       {
         "ident": "c7cdc56eab3ca3db20c2281b87f41973",
-        "name": "企业专区",
+        "name": "设计师礼",
+        "type": "gift",
         "img_url": "/upload/images/6d777e1d3aa1681d58ea1640f53e2920.png",
         "href": "/activity-business_area-index.html",
         "target": "_blank",
