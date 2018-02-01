@@ -192,15 +192,31 @@ app.get(`/list/gift`, (req, res) => {
 });
 
 app.get(`/detail`,(req,res)=>{
-    let dataId = req.headers.id;
-    fs.readFile(`./dist/particulars/cake/${dataId}.json`,(err,data)=>{
+    let dataId = req.query.id;
+    let dataName,
+        dataEnName,
+        dataTags;
+    fs.readFile(`./dist/list/cake.json`,'utf8',(err,data)=>{
+       let {name,en_name,tags} = JSON.parse(data).goodsArr[1].goods.find(item=>item.cake_goods_id==dataId);
+        dataName=name;
+            dataEnName=en_name;
+            dataTags=tags;
+    });
+
+  fs.readFile(`./dist/particulars/cake/${dataId}.json`,(err,data)=>{
         if(err){
             res.json({reg:'参数获取失败',err:1});
-            return;
+          console.log(err);
+          return;
         }
         data=JSON.parse(data);
-        res.json({reg:'参数获取成功',err:0,data})
+        data.name=dataName;
+        data.tags=dataTags;
+        data.en_name=dataEnName;
+      console.log(data);
+      res.json({reg:'参数获取成功',err:0,data})
     })
+
 });
 
 app.post('/register', (req, res) => {
@@ -267,3 +283,15 @@ app.post('/shoppingCart/download',(req,res)=>{
     }
 
 });
+
+app.get(`/magazine`, (req, res) => {
+            fs.readFile('./dist/magazine.json', 'utf8', (err, data) => {
+                if (err) {
+                    res.json({msg:'数据获取失败',err:1,});
+                    return
+                }
+                data=JSON.parse(data);
+                res.json({msg:'数据获取成功',err:0,data})
+            });
+});
+[1,2,4,5,6,8,9,10,11,12,13,14,18,19,20,21,24,27,29,31,55,132,156,182,183,185,194,195,198,199,249,252,256,282,294]
