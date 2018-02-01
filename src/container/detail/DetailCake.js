@@ -37,7 +37,7 @@ export default class DetailCake extends React.Component {
       arr.pop();
       console.log(arr);
       console.log(this.state);
-      return <div className="detailCake">
+      return <div className="detailCakeM">
           <div className="details-data">
             <div className="pro-title">
               <h3>{this.state.en_name}</h3>
