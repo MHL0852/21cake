@@ -30,7 +30,6 @@ export default class DetailCake extends React.Component {
     let arr=[];
     for (let key in this.state.productsArr) {
       if(this.state.productsArr.hasOwnProperty(key)){
-        console.log(this.state.productsArr[key]);
         arr.push(this.state.productsArr[key]);
       }
     }
@@ -48,7 +47,7 @@ export default class DetailCake extends React.Component {
         </div>
         <div className="pro-action">
           {this.state.tags.map((item,index)=>(
-            <a href="" key={index}>{item.content} ›</a>
+            <a href="javascript:;" key={index}>{item.content} ›</a>
           ))}
         </div>
         <div className="pro-details-taste clearfix">
@@ -57,19 +56,33 @@ export default class DetailCake extends React.Component {
         <div className="pro-select">
           <div className="pro-select-card">
             <div className="card-title clearfix">
-              <a href="#">已选择2.0磅<span>></span></a>
+              <a href="#">已选择{(arr[this.state.flag]||{}).spec}<span>></span></a>
             </div>
             <div className="details-options-card">
               <ul className="details-options clearfix">
-                <li><i></i> <span>11111111</span></li>
-                <li><i></i> <span>11111111</span></li>
-                <li><i></i> <span>11111111</span></li>
-                <li><i></i> <span>11111111</span></li>
+                <li><i></i> <span>{(arr[this.state.flag]||{}).size}</span></li>
+                <li><i></i> <span>{(arr[this.state.flag]||{}).cutlery_content}</span></li>
+                <li><i></i> <span>{(arr[this.state.flag]||{}).suite_amount}</span></li>
+                <li><i></i> <span>最晚明早09:30送达</span></li>
               </ul>
             </div>
             <ul className="store-info">
-              <li><img src="../../common/images/fresh.png" alt=""/></li>
-              <li><img src="../../common/images/sweet.png" alt=""/></li>
+              <li>
+                <i></i>
+                <span>保鲜条件</span>
+                <p className="spandd">0－4℃保藏12小时，5℃食用为佳11111111</p>
+              </li>
+              <li>
+                <i></i>
+                <span>参考甜度</span>
+                <p className="sweet-list">
+                  <i className="active"></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                </p>
+              </li>
             </ul>
           </div>
         </div>

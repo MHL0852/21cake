@@ -67,16 +67,16 @@
         .details-taste-icon{
           float: left;
           margin-right: 0.2rem;
-          width: 0.8rem;
-          height: 0.8rem;
+          width: 0.5rem;
+          height: 0.5rem;
           background: url("../../common/images/micon-20.png");
           background-size: 100%;
         }
         span{
           float: left;
-          height: 0.8rem;
-          line-height: 0.8rem;
-          font-size: 0.25rem;
+          height: 0.5rem;
+          line-height: 0.5rem;
+          font-size: 0.22rem;
         }
       }
       .pro-select{
@@ -84,7 +84,7 @@
         .pro-select-card{
           background: #fff;
           box-shadow: 0 3px 10px 0 rgba(0,0,0,0.10);
-          border-radius: 0.2rem;
+          border-radius: 0.1rem;
           .card-title{
             padding: 0 0.2rem;
             height: 0.8rem;
@@ -145,15 +145,71 @@
                 }
                 span{
                   float: left;
-                  font-size: 0.24rem;
+                  font-size: 0.2rem;
                 }
               }
             }
-            .store-info{
-              li{
-                img{
-                  display: block;
+          }
+          .store-info{
+            margin: 0.2rem 0.3rem 0;
+            padding-bottom: 0.1rem;
+            li{
+              position: relative;
+              margin-bottom: 0.2rem;
+              width: 100%;
+              height: 0.3rem;
+              line-height: 0.3rem;
+              overflow: hidden;
+              color: #482618;
+              i{
+                float: left;
+                width: 0.28rem;
+                height: 0.28rem;
+              }
+              span{
+                float: left;
+                margin-left: 0.2rem;
+                font-size: 0.22rem;
+              }
+
+              &:nth-child(1){
+                i{
+                  background: url("../../common/images/fresh.png") no-repeat;
+                  background-size: 100%;
+                }
+                .spandd{
+                  position: absolute;
+                  left: 1.7rem;
                   width: 100%;
+                  height: 0.3rem;
+                  line-height: 0.3rem;
+                  font-size: 0.22rem;
+                }
+              }
+              &:nth-child(2){
+                i{
+                  background: url("../../common/images/sweet.png") no-repeat;
+                  background-size: 100%;
+                }
+                .sweet-list{
+                  position: absolute;
+                  left: 1.7rem;
+                  width: 100%;
+                  height: 0.3rem;
+                  line-height: 0.3rem;
+                  i{
+                    float: left;
+                    margin-right: 0.2rem;
+                    width: 0.28rem;
+                    height: 0.28rem;
+                    background: url("../../common/images/sweet-01.png");
+                    background-size: 100%;
+
+                    &.active{
+                      background: url("../../common/images/sweet.png");
+                      background-size: 100%;
+                    }
+                  }
                 }
               }
             }
