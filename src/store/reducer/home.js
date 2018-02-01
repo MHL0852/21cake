@@ -12,8 +12,16 @@ let initState = {
         target: ''
     }],
     bangdan: [],
-    renqi: {},
-    newProduct: {}
+    renqi: {
+        href:'',
+        banner:'',
+        contents:[]
+    },
+    newProduct: {
+        href:'',
+        banner:'',
+        contents:[]
+    }
 };
 
 function home(state = initState, action) {

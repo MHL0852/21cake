@@ -16,7 +16,6 @@ render(<Provider store={store}>
     <HashRouter>
         <App>
             <Switch>
-                <Route path='/' exact={true} component={Home}/>
                 <Route path='/home' component={Home}/>
                 <Route path='/type' component={Type}/>
                 <Route path='/shop' component={Shop}/>
