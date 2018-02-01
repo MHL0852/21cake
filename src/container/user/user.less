@@ -31,12 +31,15 @@
       }
 
       .login_body{
+
         .account{
+          display: none;
           margin-top: 25px;
           font-size: 14px;
+          color:#442818;
 
           li{
-            height: .94rem;
+            height: .9rem;
           }
 
           input{
@@ -49,6 +52,93 @@
             outline: none;
             font-size: 14px;
             color:#442818;
+          }
+
+          &.show{
+            display: block;
+          }
+        }
+
+        .phone{
+          display: none;
+          margin-top: 25px;
+          font-size: 14px;
+          color:#442818;
+
+          li{
+            height: .9rem;
+          }
+
+          .phoneNumber{
+            width: 100%;
+          }
+
+          .imgText{
+            width: 50%;
+            float: left;
+          }
+
+          .verification{
+            display: block;
+            width: 35%;
+            margin-left: 3%;
+            height: 36px;
+            float: left;
+            margin-top: 9px;
+            border: 1px solid #D5D5D5;
+          }
+
+          .refresh{
+            display: block;
+            width: 8%;
+            float: left;
+            height: .9rem;
+            margin-left: 3%;
+            text-align: center;
+            cursor: pointer;
+
+            img{
+              border: none;
+              vertical-align: middle;
+              margin-top: .3rem;
+              max-width: 85%;
+              max-height: 56%;
+            }
+          }
+
+          .sendCode{
+            display: block;
+            width: 47%;
+            font-size: 14px;
+            text-align: center;
+            line-height: 38px;
+            height: 38px;
+            margin-top: 4px;
+            float: left;
+            background: #442818;
+            color: #fff;
+            border: none;
+            outline: none;
+          }
+
+          .phoneCode{
+            width: 50%;
+            float: left;
+          }
+
+          input{
+            border: none;
+            border-bottom: 1px solid #D5D5D5;
+            height: 26px;
+            padding: 10px 0;
+            line-height: 26px;
+            outline: none;
+            font-size: 14px;
+            color:#442818;
+          }
+
+          &.show{
+            display: block;
           }
         }
 
@@ -64,7 +154,8 @@
       }
     }
     .remember{
-      
+      width: 100%;
+      height: 2rem;
     }
   }
 }

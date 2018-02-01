@@ -193,7 +193,7 @@ app.get(`/list/gift`, (req, res) => {
 
 app.get(`/detail`, (req, res) => {
     let dataId = req.query.id;
-    let dataName, dataEnName, dataTags;
+    let dataName, dataEnName, dataTags,dataImg_url;
     let arr = ['cake', 'coffee', 'gift', 'ice', 'normal', 'patch'];
 
     new Promise((resolve, reject) => {
@@ -208,10 +208,11 @@ app.get(`/detail`, (req, res) => {
             })
         });
     }).then(val => {
-        let {name, en_name, tags} = val;
+        let {name, en_name, tags,img_url} = val;
         dataName = name;
         dataEnName = en_name;
         dataTags = tags;
+        dataImg_url=img_url;
         fs.readFile(`./dist/particulars/cake/${dataId}.json`, (err, data) => {
 
             if (err) {
@@ -224,7 +225,7 @@ app.get(`/detail`, (req, res) => {
             data.name = dataName;
             data.tags = dataTags;
             data.en_name = dataEnName;
-
+            data.img_url=dataImg_url;
             res.json({reg: '参数获取成功', err: 0, data})
         })
     });
