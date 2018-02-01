@@ -5,13 +5,13 @@ import "../common/NavCommon.less";
 class NavTCommon extends React.Component {
   handleTouch=(e)=>{
     let hrefVal=e.target.parentNode.getAttribute("datat-index");
-    if(hrefVal==="right"){
-      e.target.parentNode.parentNode.className="";
-      e.target.parentNode.parentNode.className="right";
-    }else{
-      e.target.parentNode.parentNode.className="";
-      e.target.parentNode.parentNode.className="left";
-    }
+    // if(hrefVal==="right"){
+    //   e.target.parentNode.parentNode.className="";
+    //   e.target.parentNode.parentNode.className="right";
+    // }else{
+    //   e.target.parentNode.parentNode.className="";
+    //   e.target.parentNode.parentNode.className="left";
+    // }
   };
   componentDidMount(){
     let mySwiper = new Swiper('.swiper-container', {
