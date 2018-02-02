@@ -18,7 +18,8 @@ let items = [
 ];
 export default class HomeFocusDetail extends React.Component {
     render() {
-        return <div className='focus-detail' ref='div'>
+      console.log(this.props);
+      return <div className='focus-detail' ref='div'>
             <div className='focus-header'>
                 <span onClick={() => {
                     this.refs.div.style={display:'none'}

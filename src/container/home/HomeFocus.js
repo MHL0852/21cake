@@ -13,7 +13,9 @@ export default class HomeFocus extends React.Component {
           <div className="swiper-container">
             <div className="swiper-wrapper">
               {this.props.bangdan.length ? this.props.bangdan.map((item, index) => (
-                  <div key={index} className="swiper-slide"><img src={item.imageUrl} alt="" onClick={() => {this.props.showList(item.name);}}/></div>
+                  <div key={index} className="swiper-slide"><img src={item.imageUrl} alt="" onClick={() => {
+                    this.props.showList(item.name, item.en_name);
+                  }}/></div>
               )) : null}
             </div>
           </div>
