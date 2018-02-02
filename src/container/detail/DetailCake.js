@@ -1,52 +1,35 @@
 import React from 'react';
-import ajax from "axios";
 import ListCommon from "../../component/ListCommon";
+import {connect} from "react-redux";
+import actions from "../../store/actions/detail";
+@connect(state=>({...state.detail}),actions)
 export default class DetailCake extends React.Component {
-  constructor(){
-    super();
-    this.state={
-      catId:'',
-      name:'',
-      en_name:'',
-      goodsId:'',
-      productsArr:{},
-      saleTime:'',
-      tags:[],
-      flag:0
+
+  handleClickOpenBox=(e)=>{
+    if(e.target===this.openBox){
+      this.props.changeShopFlag("true");
     }
-  }
-  componentWillMount(){
-    ajax.get("http://localhost:10086/detail?id=6"
-    ).then(res=>{
-      this.setState(() =>{
-        let  {catId,name,en_name,goodsId,saleTime,tags,productsArr}=JSON.parse(JSON.stringify(res.data));
-        return{catId,name,en_name,goodsId,saleTime,tags,productsArr};
-      })
-    }).catch(res=>{
-      console.log(res);
-    });
-  }
+  };
   render() {
     let arr=[];
-    for (let key in this.state.productsArr) {
-      if(this.state.productsArr.hasOwnProperty(key)){
-        arr.push(this.state.productsArr[key]);
+    for (let key in this.props.detailData.productsArr) {
+      if(this.props.detailData.productsArr.hasOwnProperty(key)){
+        arr.push(this.props.detailData.productsArr[key]);
       }
     }
     arr.pop();
-    console.log(arr);
-    console.log(this.state);
+    let {catId,en_name,flag,goodsId,name,productsArr,saleTime,tags}=this.props.detailData;
     return <div className="detailCake">
       <div className="details-data">
         <div className="pro-title">
-          <h3>{this.state.en_name}</h3>
-          <p>{this.state.name}</p>
+          <h3>{en_name}</h3>
+          <p>{name}</p>
         </div>
         <div className="pro-price">
-          ￥ {(arr[this.state.flag]||{}).price}
+          ￥ {(arr[flag]||{}).price}
         </div>
         <div className="pro-action">
-          {this.state.tags.map((item,index)=>(
+          {tags.map((item,index)=>(
             <a href="javascript:;" key={index}>{item.content} ›</a>
           ))}
         </div>
@@ -54,15 +37,15 @@ export default class DetailCake extends React.Component {
           <i className="details-taste-icon"></i><span>红颜草莓，糖度>8% </span>
         </div>
         <div className="pro-select">
-          <div className="pro-select-card">
+          <div className="pro-select-card"  onClick={this.handleClickOpenBox}>
             <div className="card-title clearfix">
-              <a href="#">已选择{(arr[this.state.flag]||{}).spec}<span>></span></a>
+              <span>已选择{(arr[flag]||{}).spec}<span ref={x=>this.openBox=x}>></span></span>
             </div>
             <div className="details-options-card">
               <ul className="details-options clearfix">
-                <li><i></i> <span>{(arr[this.state.flag]||{}).size}</span></li>
-                <li><i></i> <span>{(arr[this.state.flag]||{}).cutlery_content}</span></li>
-                <li><i></i> <span>{(arr[this.state.flag]||{}).suite_amount}</span></li>
+                <li><i></i> <span>{(arr[flag]||{}).size}</span></li>
+                <li><i></i> <span>{(arr[flag]||{}).cutlery_content}</span></li>
+                <li><i></i> <span>{(arr[flag]||{}).suite_amount}</span></li>
                 <li><i></i> <span>最晚明早09:30送达</span></li>
               </ul>
             </div>
