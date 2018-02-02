@@ -11,7 +11,7 @@ export default class HomeSlider extends React.Component {
     }
 
     render() {
-        let opts = {
+      let opts = {
             continuous: true,
             auto: 3000,
             callback: (index) => {
@@ -22,7 +22,7 @@ export default class HomeSlider extends React.Component {
             <ReactSwipe className="carousel" swipeOptions={opts}>
                 {this.props.sliders.map((item, index) => (
 
-                    <div key={index}><a href={item.href}><img src={`https://raw.githubusercontent.com/MHL0852/21cake/21cake/server/dist${item.img_url}`} alt=""/></a></div>
+                    <div key={index}><a href={`/detail?id=${item.id}`}><img src={`https://raw.githubusercontent.com/MHL0852/21cake/21cake/server/dist${item.img_url}`} alt=""/></a></div>
                 ))}
             </ReactSwipe>
             <div className='dots'>

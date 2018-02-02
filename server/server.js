@@ -44,11 +44,6 @@ app.listen(10086, () => {
 app.use(express.static('dist'));//静态资源地址
 
 app.get(`/home`, (req, res) => {
-    let Zepto1517235725075 = function (val) {
-        fs.writeFile('./dist/home.json', JSON.stringify(val.data))
-    };
-
-    fs.exists('./dist/home.json', exists => {
         fs.readFile('./dist/home.json', 'utf8', (err, data) => {
             if (err) {
                 res.json("出错了,等会儿再发送一次");
@@ -57,10 +52,6 @@ app.get(`/home`, (req, res) => {
             data = JSON.parse(data);
             res.json(data)
         });
-
-
-    });
-
 });
 
 app.get(`/list/cake`, (req, res) => {
@@ -193,7 +184,7 @@ app.get(`/list/gift`, (req, res) => {
 
 app.get(`/detail`, (req, res) => {
     let dataId = req.query.id;
-    let dataName, dataEnName, dataTags,dataImg_url;
+    let dataName, dataEnName, dataTags, dataImg_url;
     let arr = ['cake', 'coffee', 'gift', 'ice', 'normal', 'patch'];
 
     new Promise((resolve, reject) => {
@@ -208,11 +199,11 @@ app.get(`/detail`, (req, res) => {
             })
         });
     }).then(val => {
-        let {name, en_name, tags,img_url} = val;
+        let {name, en_name, tags, img_url} = val;
         dataName = name;
         dataEnName = en_name;
         dataTags = tags;
-        dataImg_url=img_url;
+        dataImg_url = img_url;
         fs.readFile(`./dist/particulars/cake/${dataId}.json`, (err, data) => {
 
             if (err) {
@@ -225,7 +216,7 @@ app.get(`/detail`, (req, res) => {
             data.name = dataName;
             data.tags = dataTags;
             data.en_name = dataEnName;
-            data.img_url=dataImg_url;
+            data.img_url = dataImg_url;
             res.json({reg: '参数获取成功', err: 0, data})
         })
     });
@@ -239,8 +230,8 @@ app.post('/register', (req, res) => {
     if (user) {
         res.json({msg: '用户已存在', err: 1});
     } else {
-        password = md5(password);
-        userList.push({username, password});
+        // password = password;
+        userList.push({...req.body});
         fs.writeFile('./dist/user/user.json', JSON.stringify(userList), err => {
             console.log(err);
         });
@@ -318,21 +309,92 @@ app.get(`/list/classify`, (req, res) => {
             fs.readFile(`./dist/list/${item}.json`, 'utf8', (err, data) => {
                 if (err) return;
                 let val = JSON.parse(data).goodsArr[1].goods.filter(item => {
-                    let flag=false;
-                    item.tags.forEach(key=>{
-                        if (key.content===dataId){
-                           flag=true;
-                       }
+                    let flag = false;
+                    item.tags.forEach(key => {
+                        if (key.content === dataId) {
+                            flag = true;
+                        }
                     });
                     return flag
                 }) || [];
                 dataArr = [...dataArr, ...val];
             })
         });
-        setTimeout(()=>{
+        setTimeout(() => {
             resolve(dataArr)
-        },1000)
+        }, 1000)
     }).then((dataArr) => {
-        res.json({reg: '参数获取成功', err: 0, data:dataArr})
+        res.json({reg: '参数获取成功', err: 0, data: dataArr})
     });
+});
+
+app.get(`/changeHome`, (req, res) => {
+    let newData;
+    let rank = {
+        fruitCake:[
+            {url:'/upload/images/fruitCake1.png', id:"非卖品"},
+            {url:'/upload/images/fruitCake2.png', id:472},
+            {url:'/upload/images/fruitCake3.png', id:12},
+            {url:'/upload/images/fruitCake4.png', id:14},
+            {url:'/upload/images/fruitCake5.png', id:9},
+            {url:'/upload/images/fruitCake6.png', id:96}],
+        coffee:[
+            {url:'/upload/images/coffee1.png',id:"非卖品"},
+            {url:'/upload/images/coffee2.png',id:185},
+            {url:'/upload/images/coffee3.png',id:183},
+            {url:'/upload/images/coffee4.png',id:388},
+            {url:'/upload/images/coffee5.png',id:389},
+            {url:'/upload/images/coffee6.png',id:182},
+            {url:'/upload/images/coffee7.png',id:194},
+            {url:'/upload/images/coffee8.png',id:195}
+        ],
+        star: [
+            {url:'/upload/images/star1.png',id:"非卖品"},
+            {url:'/upload/images/star2.png',id:698},
+            {url:'/upload/images/star3.png',id:6},
+            {url:'/upload/images/star4.png',id:400},
+            {url:'/upload/images/star5.png',id:3},
+            {url:'/upload/images/star6.png',id:5}
+        ],
+        gift: [
+            {url:'/upload/images/gift1.png',id:"非卖品"},
+            {url:'/upload/images/gift3.png',id:405},
+            {url:'/upload/images/gift4.png',id:404}
+            ]
+    };
+    new Promise(function(resolve,reject){
+        for (let key in rank) {
+            console.log(key);
+            if (!rank.hasOwnProperty(key)) continue;
+            rank[key].forEach(function(item){
+                console.log(2);
+                if(typeof(item.id)==='number'){
+                    fs.readFile(`./dist/particulars/cake/${item.id}.json`,'utf8',function(err,data){
+                        
+                        item.data=JSON.parse(data||"{}");
+                        console.log(item.data);
+                    })
+                }
+            })
+
+        }
+
+    });
+    fs.readFile('./dist/home.json', 'utf8', (err, data) => {
+        if (err) {
+            res.json("出错了,等会儿再发送一次");
+            return
+        }
+        data = JSON.parse(data);
+        data.push(rank);
+        newData=data
+        // res.json(data)
+    });
+    setTimeout(()=>{
+        fs.writeFile('./dist/home.json',JSON.stringify(newData),err=>{
+            console.log(err||'ok');
+        });
+        res.json(newData)
+    },3000)
+
 });

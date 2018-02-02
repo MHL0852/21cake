@@ -9,6 +9,7 @@
         "target": "_self",
         "img_url": "/upload/images/a007e27b75a70299e0acd43226b800f7.jpg",
         "sort": 1,
+        "id":698,
         "special_effects": "fadeIn"
       },
       {
@@ -17,6 +18,7 @@
         "target": "_self",
         "img_url": "/upload/images/b52624cd131b935e3c5da646d55e8979.jpg",
         "sort": 2,
+        "id":631,
         "special_effects": "fadeIn"
       },
       {
@@ -25,6 +27,7 @@
         "target": "_self",
         "img_url": "/upload/images/d9a95caffac05eb62193ee56c395b480.jpg",
         "sort": 3,
+        "id":13,
         "special_effects": "fadeIn"
       },
       {
@@ -33,6 +36,7 @@
         "target": "_self",
         "img_url": "/upload/images/03ca8339fe8ebd43ce8593bf46221fcd.jpg",
         "sort": 4,
+        "id":8,
         "special_effects": "fadeIn"
       }
     ]
@@ -99,18 +103,22 @@
         "contents": [
           {
             "name": "水果蛋糕",
+            "en_name": "fruitCake",
             "imageUrl": "./server/dist/image/pic1.png"
           },
           {
             "name": "精品咖啡",
+            "en_name": "coffee",
             "imageUrl": "./server/dist/image/pic2.png"
           },
           {
             "name": "应季明星",
+            "en_name": "star",
             "imageUrl": "./server/dist/image/pic3.png"
           },
           {
-            "name": "设计师礼",
+            "name": "设计师礼品",
+            "en_name": "gift",
             "imageUrl": "./server/dist/image/pic4.png"
           }
         ]
@@ -279,6 +287,1056 @@
         "target": "_blank",
         "img_url": "/upload/images/9bfa8ea6a193c5877646c375119515ef.jpg",
         "sort": 3
+      }
+    ]
+  },
+  {
+    "fruitCake": [
+      {
+        "url": "/upload/images/fruitCake1.png",
+        "id": "非卖品"
+      },
+      {
+        "url": "/upload/images/fruitCake2.png",
+        "id": 472,
+        "data": {
+          "productsArr": {
+            "1498704135.379921": {
+              "id": "9180",
+              "size": "18x18cm",
+              "suite_amount": "适合7-8人分享",
+              "booking_hour_limited": "8",
+              "cutlery_content": "含10套餐具",
+              "price": "198.00",
+              "spec": "2.0磅",
+              "pound": "2.00",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/2.00P-full-18.00.jpg",
+              "is_default": "true",
+              "has_stock": 24449,
+              "cat_id": "3",
+              "bn": "20170629-20"
+            },
+            "1498704138.798122": {
+              "id": "9188",
+              "size": "23x23cm",
+              "suite_amount": "适合11-12人分享",
+              "booking_hour_limited": "8",
+              "cutlery_content": "含15套餐具",
+              "price": "268.00",
+              "spec": "3.0磅",
+              "pound": "3.00",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/3.00P-full-23.00.jpg",
+              "is_default": "false",
+              "has_stock": 101984,
+              "cat_id": "3",
+              "bn": "20170629-30"
+            },
+            "1498704144.113623": {
+              "id": "9196",
+              "size": "29x29cm",
+              "suite_amount": "适合15-20人分享",
+              "booking_hour_limited": "24",
+              "cutlery_content": "含20套餐具",
+              "price": "398.00",
+              "spec": "5.0磅",
+              "pound": "5.00",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/5.00P-full-29.00.jpg",
+              "is_default": "false",
+              "has_stock": 100610,
+              "cat_id": "3",
+              "bn": "20170629-50"
+            }
+          },
+          "saleTime": {
+            "date": "明天",
+            "start_time": "10:00",
+            "end_time": "18:30"
+          },
+          "catId": "3",
+          "goodsId": "472",
+          "type": "normal"
+        }
+      },
+      {
+        "url": "/upload/images/fruitCake3.png",
+        "id": 12,
+        "data": {
+          "productsArr": {
+            "1394463320.408419": {
+              "id": "367",
+              "size": "13x13cm",
+              "suite_amount": "适合3-4人分享",
+              "booking_hour_limited": "8",
+              "cutlery_content": "含5套餐具",
+              "price": "198.00",
+              "spec": "1.0磅",
+              "pound": "1.00",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/1.00P-full-13.00.jpg",
+              "is_default": "false",
+              "has_stock": 109867,
+              "cat_id": "3",
+              "bn": "201412-10"
+            },
+            "1394463321.01720": {
+              "id": "373",
+              "size": "15x15cm",
+              "suite_amount": "适合5-6人分享",
+              "booking_hour_limited": "8",
+              "cutlery_content": "含5套餐具",
+              "price": "258.00",
+              "spec": "1.5磅",
+              "pound": "1.50",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/1.50P-full-15.00.jpg",
+              "is_default": "false",
+              "has_stock": 102220,
+              "cat_id": "3",
+              "bn": "201412-15"
+            },
+            "1394463321.507721": {
+              "id": "379",
+              "size": "17x17cm",
+              "suite_amount": "适合7-8人分享",
+              "booking_hour_limited": "8",
+              "cutlery_content": "含10套餐具",
+              "price": "298.00",
+              "spec": "2.0磅",
+              "pound": "2.00",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/2.00P-full-17.00.jpg",
+              "is_default": "true",
+              "has_stock": 107005,
+              "cat_id": "3",
+              "bn": "201412-20"
+            },
+            "1394463321.998322": {
+              "id": "385",
+              "size": "22x22cm",
+              "suite_amount": "适合11-12人分享",
+              "booking_hour_limited": "8",
+              "cutlery_content": "含15套餐具",
+              "price": "458.00",
+              "spec": "3.0磅",
+              "pound": "3.00",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/3.00P-full-22.00.jpg",
+              "is_default": "false",
+              "has_stock": 100919,
+              "cat_id": "3",
+              "bn": "201412-30"
+            },
+            "1394463322.578523": {
+              "id": "391",
+              "size": "30x30cm",
+              "suite_amount": "适合15-20人分享",
+              "booking_hour_limited": "8",
+              "cutlery_content": "含20套餐具",
+              "price": "750.00",
+              "spec": "5.0磅",
+              "pound": "5.00",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/5.00P-full-30.00.jpg",
+              "is_default": "false",
+              "has_stock": 100233,
+              "cat_id": "3",
+              "bn": "201412-50"
+            },
+            "more": {
+              "id": "",
+              "size": "",
+              "suite_amount": "",
+              "booking_hour_limited": "",
+              "cutlery_content": "",
+              "price": "",
+              "has_spec_img": 1,
+              "spec": "更多",
+              "pound": "more",
+              "img_url": "/themes/wap/img/more.jpg",
+              "is_default": "false",
+              "has_stock": true
+            }
+          },
+          "saleTime": {
+            "date": "明天",
+            "start_time": "10:00",
+            "end_time": "18:30"
+          },
+          "catId": "3",
+          "goodsId": "12",
+          "type": "normal"
+        }
+      },
+      {
+        "url": "/upload/images/fruitCake4.png",
+        "id": 14,
+        "data": {
+          "productsArr": {
+            "1394516997.220919": {
+              "id": "2073",
+              "size": "13x13cm",
+              "suite_amount": "适合3-4人分享",
+              "booking_hour_limited": "8",
+              "cutlery_content": "含5套餐具",
+              "price": "198.00",
+              "spec": "1.0磅",
+              "pound": "1.00",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/1.00P-full-13.00.jpg",
+              "is_default": "false",
+              "has_stock": 101551,
+              "cat_id": "3",
+              "bn": "201414-10"
+            },
+            "1394517002.771921": {
+              "id": "2077",
+              "size": "17x17cm",
+              "suite_amount": "适合7-8人分享",
+              "booking_hour_limited": "8",
+              "cutlery_content": "含10套餐具",
+              "price": "298.00",
+              "spec": "2.0磅",
+              "pound": "2.00",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/2.00P-full-17.00.jpg",
+              "is_default": "true",
+              "has_stock": 101243,
+              "cat_id": "3",
+              "bn": "201414-20"
+            },
+            "1394517007.427422": {
+              "id": "2084",
+              "size": "23x23cm",
+              "suite_amount": "适合11-12人分享",
+              "booking_hour_limited": "8",
+              "cutlery_content": "含15套餐具",
+              "price": "458.00",
+              "spec": "3.0磅",
+              "pound": "3.00",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/3.00P-full-23.00.jpg",
+              "is_default": "false",
+              "has_stock": 100139,
+              "cat_id": "3",
+              "bn": "201414-30"
+            },
+            "1394517010.762623": {
+              "id": "2083",
+              "size": "30x30cm",
+              "suite_amount": "适合15-20人分享",
+              "booking_hour_limited": "24",
+              "cutlery_content": "含20套餐具",
+              "price": "750.00",
+              "spec": "5.0磅",
+              "pound": "5.00",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/5.00P-full-30.00.jpg",
+              "is_default": "false",
+              "has_stock": 100024,
+              "cat_id": "3",
+              "bn": "201414-501"
+            },
+            "more": {
+              "id": "",
+              "size": "",
+              "suite_amount": "",
+              "booking_hour_limited": "",
+              "cutlery_content": "",
+              "price": "",
+              "has_spec_img": 1,
+              "spec": "更多",
+              "pound": "more",
+              "img_url": "/themes/wap/img/more.jpg",
+              "is_default": "false",
+              "has_stock": true
+            }
+          },
+          "saleTime": {
+            "date": "明天",
+            "start_time": "10:00",
+            "end_time": "18:30"
+          },
+          "catId": "3",
+          "goodsId": "14",
+          "type": "normal"
+        }
+      },
+      {
+        "url": "/upload/images/fruitCake5.png",
+        "id": 9,
+        "data": {
+          "productsArr": {
+            "1394462418.54319": {
+              "id": "259",
+              "size": "13x13cm",
+              "suite_amount": "适合3-4人分享",
+              "booking_hour_limited": "8",
+              "cutlery_content": "含5套餐具",
+              "price": "198.00",
+              "spec": "1.0磅",
+              "pound": "1.00",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/1.00P-full-13.00.jpg",
+              "is_default": "false",
+              "has_stock": 102533,
+              "cat_id": "3",
+              "bn": "201409-10"
+            },
+            "1394462419.218621": {
+              "id": "265",
+              "size": "17x17cm",
+              "suite_amount": "适合7-8人分享",
+              "booking_hour_limited": "8",
+              "cutlery_content": "含10套餐具",
+              "price": "298.00",
+              "spec": "2.0磅",
+              "pound": "2.00",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/2.00P-full-17.00.jpg",
+              "is_default": "true",
+              "has_stock": 102033,
+              "cat_id": "3",
+              "bn": "201409-20"
+            },
+            "1394462419.767222": {
+              "id": "277",
+              "size": "23x23cm",
+              "suite_amount": "适合11-12人分享",
+              "booking_hour_limited": "8",
+              "cutlery_content": "含15套餐具",
+              "price": "458.00",
+              "spec": "3.0磅",
+              "pound": "3.00",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/3.00P-full-23.00.jpg",
+              "is_default": "false",
+              "has_stock": 100165,
+              "cat_id": "3",
+              "bn": "201409-30"
+            },
+            "1394462420.579823": {
+              "id": "1301",
+              "size": "30x30cm",
+              "suite_amount": "适合15-20人分享",
+              "booking_hour_limited": "5",
+              "cutlery_content": "含20套餐具",
+              "price": "750.00",
+              "spec": "5.0磅",
+              "pound": "5.00",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/5.00P-full-30.00.jpg",
+              "is_default": "false",
+              "has_stock": 100027,
+              "cat_id": "3",
+              "bn": "201409-50"
+            }
+          },
+          "saleTime": {
+            "date": "明天",
+            "start_time": "10:00",
+            "end_time": "18:30"
+          },
+          "catId": "3",
+          "goodsId": "9",
+          "type": "normal"
+        }
+      },
+      {
+        "url": "/upload/images/fruitCake6.png",
+        "id": 96,
+        "data": {}
+      }
+    ],
+    "coffee": [
+      {
+        "url": "/upload/images/coffee1.png",
+        "id": "非卖品"
+      },
+      {
+        "url": "/upload/images/coffee2.png",
+        "id": 185,
+        "data": {
+          "productsArr": {
+            "1462349216.0754114": {
+              "id": "4471",
+              "size": "10g",
+              "suite_amount": "适合1人享用",
+              "booking_hour_limited": "8",
+              "cutlery_content": "无",
+              "price": "10.00",
+              "spec": "包",
+              "pound": "0.00",
+              "has_spec_img": 0,
+              "img_url": "",
+              "is_default": "true",
+              "has_stock": 47794,
+              "cat_id": "35",
+              "bn": "201609-10"
+            }
+          },
+          "saleTime": {
+            "date": "明天",
+            "start_time": "10:00",
+            "end_time": "18:30"
+          },
+          "catId": "35",
+          "goodsId": "185",
+          "type": "normal"
+        }
+      },
+      {
+        "url": "/upload/images/coffee3.png",
+        "id": 183,
+        "data": {
+          "productsArr": {
+            "1461667141.0985112": {
+              "id": "4317",
+              "size": "",
+              "suite_amount": "适合人分享",
+              "booking_hour_limited": "8",
+              "cutlery_content": "无",
+              "price": "200.00",
+              "spec": "份",
+              "pound": "0.00",
+              "has_spec_img": 0,
+              "img_url": "",
+              "is_default": "false",
+              "has_stock": 79997,
+              "cat_id": "35",
+              "bn": "201607-10"
+            },
+            "1461933516.0129113": {
+              "id": "4367",
+              "size": "10g",
+              "suite_amount": "适合1人享用",
+              "booking_hour_limited": "8",
+              "cutlery_content": "无",
+              "price": "10.00",
+              "spec": "包",
+              "pound": "0.00",
+              "has_spec_img": 0,
+              "img_url": "",
+              "is_default": "true",
+              "has_stock": 47068,
+              "cat_id": "35",
+              "bn": "201604-20"
+            }
+          },
+          "saleTime": {
+            "date": "明天",
+            "start_time": "10:00",
+            "end_time": "18:30"
+          },
+          "catId": "35",
+          "goodsId": "183",
+          "type": "normal"
+        }
+      },
+      {
+        "url": "/upload/images/coffee4.png",
+        "id": 388,
+        "data": {
+          "productsArr": {
+            "1486362412.90398": {
+              "id": "7763",
+              "size": "10g*10包",
+              "suite_amount": "适合多人享用",
+              "booking_hour_limited": "8",
+              "cutlery_content": "无",
+              "price": "100.00",
+              "spec": "盒",
+              "pound": "0.00",
+              "has_spec_img": 0,
+              "img_url": "",
+              "is_default": "true",
+              "has_stock": 7809,
+              "cat_id": "35",
+              "bn": "20170206-10"
+            }
+          },
+          "saleTime": {
+            "date": "明天",
+            "start_time": "10:00",
+            "end_time": "18:30"
+          },
+          "catId": "35",
+          "goodsId": "388",
+          "type": "normal"
+        }
+      },
+      {
+        "url": "/upload/images/coffee5.png",
+        "id": 389,
+        "data": {
+          "productsArr": {
+            "1486476630.02798": {
+              "id": "7843",
+              "size": "10g*10包",
+              "suite_amount": "适合多人分享",
+              "booking_hour_limited": "8",
+              "cutlery_content": "",
+              "price": "100.00",
+              "spec": "盒",
+              "pound": "0.00",
+              "has_spec_img": 0,
+              "img_url": "",
+              "is_default": "true",
+              "has_stock": 617,
+              "cat_id": "35",
+              "bn": "20170206-100"
+            }
+          },
+          "saleTime": {
+            "date": "明天",
+            "start_time": "10:00",
+            "end_time": "18:30"
+          },
+          "catId": "35",
+          "goodsId": "389",
+          "type": "normal"
+        }
+      },
+      {
+        "url": "/upload/images/coffee6.png",
+        "id": 182,
+        "data": {
+          "productsArr": {
+            "1461662611.0855": {
+              "id": "4301",
+              "size": "55g",
+              "suite_amount": "适合1人享用",
+              "booking_hour_limited": "24",
+              "cutlery_content": "无",
+              "price": "15.00",
+              "spec": "份",
+              "pound": "0.00",
+              "has_spec_img": 0,
+              "img_url": "",
+              "is_default": "true",
+              "has_stock": 102310,
+              "cat_id": "36",
+              "bn": "201605-10"
+            }
+          },
+          "saleTime": {
+            "date": "明天",
+            "start_time": "15:00",
+            "end_time": "18:30"
+          },
+          "catId": "36",
+          "goodsId": "182",
+          "type": "normal"
+        }
+      },
+      {
+        "url": "/upload/images/coffee7.png",
+        "id": 194,
+        "data": {
+          "productsArr": {
+            "1462269798.1814112": {
+              "id": "4447",
+              "size": "55g",
+              "suite_amount": "适合1人享用",
+              "booking_hour_limited": "24",
+              "cutlery_content": "无",
+              "price": "15.00",
+              "spec": "份",
+              "pound": "0.00",
+              "has_spec_img": 0,
+              "img_url": "",
+              "is_default": "true",
+              "has_stock": 1002195,
+              "cat_id": "36",
+              "bn": "20160503-10"
+            }
+          },
+          "saleTime": {
+            "date": "明天",
+            "start_time": "16:00",
+            "end_time": "18:30"
+          },
+          "catId": "36",
+          "goodsId": "194",
+          "type": "normal"
+        }
+      },
+      {
+        "url": "/upload/images/coffee8.png",
+        "id": 195,
+        "data": {
+          "productsArr": {
+            "1462269747.6467112": {
+              "id": "4439",
+              "size": "55g",
+              "suite_amount": "适合1人享用",
+              "booking_hour_limited": "24",
+              "cutlery_content": "无",
+              "price": "23.00",
+              "spec": "份",
+              "pound": "0.00",
+              "has_spec_img": 0,
+              "img_url": "",
+              "is_default": "true",
+              "has_stock": 102591,
+              "cat_id": "36",
+              "bn": "20160504-110"
+            }
+          },
+          "saleTime": {
+            "date": "明天",
+            "start_time": "15:00",
+            "end_time": "18:30"
+          },
+          "catId": "36",
+          "goodsId": "195",
+          "type": "normal"
+        }
+      }
+    ],
+    "star": [
+      {
+        "url": "/upload/images/star1.png",
+        "id": "非卖品"
+      },
+      {
+        "url": "/upload/images/star2.png",
+        "id": 698,
+        "data": {
+          "productsArr": {
+            "1516586841.436999": {
+              "id": "12009",
+              "size": "",
+              "suite_amount": "适合3-4人分享",
+              "booking_hour_limited": "5",
+              "cutlery_content": "",
+              "price": "99.00",
+              "spec": "个",
+              "pound": "0.00",
+              "has_spec_img": 0,
+              "img_url": "",
+              "is_default": "true",
+              "has_stock": 799715,
+              "cat_id": "52",
+              "bn": "20180204-10"
+            }
+          },
+          "saleTime": {
+            "date": "明天",
+            "start_time": "10:00",
+            "end_time": "18:30"
+          },
+          "catId": "52",
+          "goodsId": "698",
+          "type": "normal"
+        }
+      },
+      {
+        "url": "/upload/images/star3.png",
+        "id": 6,
+        "data": {
+          "productsArr": {
+            "1394461819.901919": {
+              "id": "1817",
+              "size": "13x13cm",
+              "suite_amount": "适合3-4人分享",
+              "booking_hour_limited": "8",
+              "cutlery_content": "含5套餐具",
+              "price": "198.00",
+              "spec": "1.0磅",
+              "pound": "1.00",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/1.00P-full-13.00.jpg",
+              "is_default": "false",
+              "has_stock": 102544,
+              "cat_id": "3",
+              "bn": "201406-10"
+            },
+            "1394461821.256620": {
+              "id": "1823",
+              "size": "15x15cm",
+              "suite_amount": "适合4-5人分享",
+              "booking_hour_limited": "8",
+              "cutlery_content": "含5套餐具",
+              "price": "258.00",
+              "spec": "1.5磅",
+              "pound": "1.50",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/1.50P-full-15.00.jpg",
+              "is_default": "false",
+              "has_stock": 100856,
+              "cat_id": "3",
+              "bn": "201406-15"
+            },
+            "1394461823.125921": {
+              "id": "1829",
+              "size": "17x17cm",
+              "suite_amount": "适合7-8人分享",
+              "booking_hour_limited": "8",
+              "cutlery_content": "含10套餐具",
+              "price": "298.00",
+              "spec": "2.0磅",
+              "pound": "2.00",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/2.00P-full-17.00.jpg",
+              "is_default": "true",
+              "has_stock": 102229,
+              "cat_id": "3",
+              "bn": "201406-20"
+            },
+            "1394461823.999922": {
+              "id": "1841",
+              "size": "23x23cm",
+              "suite_amount": "适合11-12人分享",
+              "booking_hour_limited": "8",
+              "cutlery_content": "含15套餐具",
+              "price": "458.00",
+              "spec": "3.0磅",
+              "pound": "3.00",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/3.00P-full-23.00.jpg",
+              "is_default": "false",
+              "has_stock": 100290,
+              "cat_id": "3",
+              "bn": "201406-30"
+            },
+            "1394461826.350623": {
+              "id": "1853",
+              "size": "30x30cm",
+              "suite_amount": "适合15-20人分享",
+              "booking_hour_limited": "8",
+              "cutlery_content": "含20套餐具",
+              "price": "750.00",
+              "spec": "5.0磅",
+              "pound": "5.00",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/5.00P-full-30.00.jpg",
+              "is_default": "false",
+              "has_stock": 100048,
+              "cat_id": "3",
+              "bn": "201406-50"
+            },
+            "more": {
+              "id": "",
+              "size": "",
+              "suite_amount": "",
+              "booking_hour_limited": "",
+              "cutlery_content": "",
+              "price": "",
+              "has_spec_img": 1,
+              "spec": "更多",
+              "pound": "more",
+              "img_url": "/themes/wap/img/more.jpg",
+              "is_default": "false",
+              "has_stock": true
+            }
+          },
+          "saleTime": {
+            "date": "明天",
+            "start_time": "10:00",
+            "end_time": "18:30"
+          },
+          "catId": "3",
+          "goodsId": "6",
+          "type": "normal"
+        }
+      },
+      {
+        "url": "/upload/images/star4.png",
+        "id": 400,
+        "data": {
+          "productsArr": {
+            "1488349006.461219": {
+              "id": "7932",
+              "size": "13x13cm",
+              "suite_amount": "适合3-4人分享",
+              "booking_hour_limited": "8",
+              "cutlery_content": "含5套餐具",
+              "price": "198.00",
+              "spec": "1.0磅",
+              "pound": "1.00",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/1.00P-cut-13.00.jpg",
+              "is_default": "false",
+              "has_stock": 102490,
+              "cat_id": "3",
+              "bn": "20170301-10"
+            },
+            "1488349023.266220": {
+              "id": "7940",
+              "size": "15x15cm",
+              "suite_amount": "适合5-6人分享",
+              "booking_hour_limited": "8",
+              "cutlery_content": "含5套餐具",
+              "price": "258.00",
+              "spec": "1.5磅",
+              "pound": "1.50",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/1.50P-cut-15.00.jpg",
+              "is_default": "false",
+              "has_stock": 10841,
+              "cat_id": "3",
+              "bn": "20170301-15"
+            },
+            "1488349024.953121": {
+              "id": "7948",
+              "size": "17x17cm",
+              "suite_amount": "适合7-8人分享",
+              "booking_hour_limited": "8",
+              "cutlery_content": "含10套餐具",
+              "price": "298.00",
+              "spec": "2.0磅",
+              "pound": "2.00",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/2.00P-cut-17.00.jpg",
+              "is_default": "true",
+              "has_stock": 12373,
+              "cat_id": "3",
+              "bn": "20170301-20"
+            },
+            "1488349026.02822": {
+              "id": "7956",
+              "size": "23x23cm",
+              "suite_amount": "适合11-12人分享",
+              "booking_hour_limited": "8",
+              "cutlery_content": "含15套餐具",
+              "price": "458.00",
+              "spec": "3.0磅",
+              "pound": "3.00",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/3.00P-cut-23.00.jpg",
+              "is_default": "false",
+              "has_stock": 10262,
+              "cat_id": "3",
+              "bn": "20170301-30"
+            },
+            "1488349027.343723": {
+              "id": "7964",
+              "size": "30x30cm",
+              "suite_amount": "适合15-20人分享",
+              "booking_hour_limited": "8",
+              "cutlery_content": "含20套餐具",
+              "price": "750.00",
+              "spec": "5.0磅",
+              "pound": "5.00",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/5.00P-cut-30.00.jpg",
+              "is_default": "false",
+              "has_stock": 10057,
+              "cat_id": "3",
+              "bn": "20170301-50"
+            },
+            "more": {
+              "id": "",
+              "size": "",
+              "suite_amount": "",
+              "booking_hour_limited": "",
+              "cutlery_content": "",
+              "price": "",
+              "has_spec_img": 1,
+              "spec": "更多",
+              "pound": "more",
+              "img_url": "/themes/wap/img/more.jpg",
+              "is_default": "false",
+              "has_stock": true
+            }
+          },
+          "saleTime": {
+            "date": "明天",
+            "start_time": "10:00",
+            "end_time": "18:30"
+          },
+          "catId": "3",
+          "goodsId": "400",
+          "type": "normal"
+        }
+      },
+      {
+        "url": "/upload/images/star5.png",
+        "id": 3,
+        "data": {}
+      },
+      {
+        "url": "/upload/images/star6.png",
+        "id": 5,
+        "data": {
+          "productsArr": {
+            "1394461547.471819": {
+              "id": "2001",
+              "size": "13x13cm",
+              "suite_amount": "适合3-4人分享",
+              "booking_hour_limited": "8",
+              "cutlery_content": "含5套餐具",
+              "price": "198.00",
+              "spec": "1.0磅",
+              "pound": "1.00",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/1.00P-full-13.00.jpg",
+              "is_default": "false",
+              "has_stock": 101895,
+              "cat_id": "3",
+              "bn": "201405-10"
+            },
+            "1394461552.963220": {
+              "id": "2003",
+              "size": "15x15cm",
+              "suite_amount": "适合5-6人分享",
+              "booking_hour_limited": "8",
+              "cutlery_content": "含5套餐具",
+              "price": "258.00",
+              "spec": "1.5磅",
+              "pound": "1.50",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/1.50P-full-15.00.jpg",
+              "is_default": "false",
+              "has_stock": 10627,
+              "cat_id": "3",
+              "bn": "201405-15"
+            },
+            "1394461555.517221": {
+              "id": "2005",
+              "size": "17x17cm",
+              "suite_amount": "适合7-8人分享",
+              "booking_hour_limited": "8",
+              "cutlery_content": "含10套餐具",
+              "price": "298.00",
+              "spec": "2.0磅",
+              "pound": "2.00",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/2.00P-full-17.00.jpg",
+              "is_default": "true",
+              "has_stock": 101638,
+              "cat_id": "3",
+              "bn": "201405-20"
+            },
+            "1394461556.606622": {
+              "id": "2012",
+              "size": "23x23cm",
+              "suite_amount": "适合11-12人分享",
+              "booking_hour_limited": "8",
+              "cutlery_content": "含15套餐具",
+              "price": "458.00",
+              "spec": "3.0磅",
+              "pound": "3.00",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/3.00P-full-23.00.jpg",
+              "is_default": "false",
+              "has_stock": 100240,
+              "cat_id": "3",
+              "bn": "201405-30"
+            },
+            "1394461559.141223": {
+              "id": "2011",
+              "size": "30x30cm",
+              "suite_amount": "适合15-20人分享",
+              "booking_hour_limited": "8",
+              "cutlery_content": "含20套餐具",
+              "price": "750.00",
+              "spec": "5.0磅",
+              "pound": "5.00",
+              "has_spec_img": 1,
+              "img_url": "/themes/wap/img/5.00P-full-30.00.jpg",
+              "is_default": "false",
+              "has_stock": 100056,
+              "cat_id": "3",
+              "bn": "201405-50"
+            },
+            "more": {
+              "id": "",
+              "size": "",
+              "suite_amount": "",
+              "booking_hour_limited": "",
+              "cutlery_content": "",
+              "price": "",
+              "has_spec_img": 1,
+              "spec": "更多",
+              "pound": "more",
+              "img_url": "/themes/wap/img/more.jpg",
+              "is_default": "false",
+              "has_stock": true
+            }
+          },
+          "saleTime": {
+            "date": "明天",
+            "start_time": "10:00",
+            "end_time": "18:30"
+          },
+          "catId": "3",
+          "goodsId": "5",
+          "type": "normal"
+        }
+      }
+    ],
+    "gift": [
+      {
+        "url": "/upload/images/gift1.png",
+        "id": "非卖品"
+      },
+      {
+        "url": "/upload/images/gift3.png",
+        "id": 405,
+        "data": {
+          "productsArr": {
+            "1489127709.366499": {
+              "id": "8004",
+              "size": "25*18",
+              "suite_amount": "适合1人使用",
+              "booking_hour_limited": "8",
+              "cutlery_content": "",
+              "price": "8.00",
+              "spec": "个",
+              "pound": "0.00",
+              "has_spec_img": 0,
+              "img_url": "",
+              "is_default": "true",
+              "has_stock": 79904,
+              "cat_id": "52",
+              "bn": "20170310-20"
+            }
+          },
+          "saleTime": {
+            "date": "明天",
+            "start_time": "10:00",
+            "end_time": "18:30"
+          },
+          "catId": "52",
+          "goodsId": "405",
+          "type": "normal"
+        }
+      },
+      {
+        "url": "/upload/images/gift4.png",
+        "id": 404,
+        "data": {
+          "productsArr": {
+            "1489127517.650699": {
+              "id": "7996",
+              "size": "",
+              "suite_amount": "可播放音乐节奏",
+              "booking_hour_limited": "8",
+              "cutlery_content": "无",
+              "price": "80.00",
+              "spec": "个",
+              "pound": "0.00",
+              "has_spec_img": 0,
+              "img_url": "",
+              "is_default": "true",
+              "has_stock": 79961,
+              "cat_id": "52",
+              "bn": "20170310-10"
+            }
+          },
+          "saleTime": {
+            "date": "明天",
+            "start_time": "10:00",
+            "end_time": "18:30"
+          },
+          "catId": "52",
+          "goodsId": "404",
+          "type": "normal"
+        }
       }
     ]
   }

@@ -7,7 +7,7 @@ import store from "./store";
 import Home from "./container/home/Home";
 import Type from "./container/type/Type";
 import Shop from "./container/shop/Shop";
-import User from "./container/user/User";
+import User from "./container/user/";
 import Detail from "./container/detail/Detail";
 import "./common/reset.min.css";
 import Community from './container/community/Magazine';
@@ -17,12 +17,12 @@ render(<Provider store={store}>
         <App>
             <Switch>
                 <Route path='/home' component={Home}/>
-                <Route path='/focusDetail/:name' component={HomeFocusDetail}/>
                 <Route path='/type' component={Type}/>
                 <Route path='/shop' component={Shop}/>
                 <Route path='/community' component={Community}/>
                 <Route path='/user' component={User}/>
                 <Route path='/detail' component={Detail}/>
+                <Route path='/focus-detail' component={HomeFocusDetail}/>
                 <Redirect to='/home'/>
             </Switch>
         </App>
