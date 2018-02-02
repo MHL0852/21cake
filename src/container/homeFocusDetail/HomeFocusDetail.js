@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from "react-redux";
 import Header from "../../component/Header";
 import {Link} from "react-router-dom";
+import Footer from "../../component/Footer";
 
 @connect(state => ({...state.home.focus}))
 export default class HomeFocusDetail extends React.Component {
@@ -54,11 +55,15 @@ export default class HomeFocusDetail extends React.Component {
               <div key={index}>
                 <img src={`https://raw.githubusercontent.com/MHL0852/21cake/21cake/server/dist${item}`}
                      alt=""/>
-                <div className='focus-shop'>aaaaa</div>
+                <div className='focus-shop'>
+                  <p>售价：￥<span>200</span></p>
+                  <i className='iconfont icon-gouwuche-copy'></i>
+                </div>
               </div>
           ))}
         </div>
       </div>
+      <div className='focus-footer'></div>
     </div>
   }
 }
