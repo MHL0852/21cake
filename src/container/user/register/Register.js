@@ -68,18 +68,18 @@ export default class Regist extends React.Component {
   };
 
   render(){
-    return <div className="user_container">
-        <div className="mainBox">
+    return <div className="register_user_container">
+        <div className="register_mainBox">
           <h4>用户注册</h4>
             <ul className='clearfix'>
             <li className='form'>
                 <input type="text" placeholder="输入用户名" ref={x=>this._username=x}/>
             </li>
             <li  className='form'>
-                <input type="text" placeholder="密码：8-20位字符，需同时包含英文和数字" ref={x=>this._password=x}/>
+                <input type="password" placeholder="密码：8-20位字符，需同时包含英文和数字" ref={x=>this._password=x}/>
             </li>
             <li className='form'>
-                <input type="text" placeholder="确认密码" ref={x=>this._beSure=x}/>
+                <input type="password" placeholder="确认密码" ref={x=>this._beSure=x}/>
             </li>
             <li className="imgTest form">
                 <input type="text" placeholder="请输入图片字符" ref={x=>this._imgTest=x}/>
@@ -107,8 +107,8 @@ export default class Regist extends React.Component {
                 <label>
                     <input type="checkbox" ref={x=>this.agree=x}/>已阅读并同意
                 </label>
-                <Link to=''>21客会员协议</Link>和
-                <Link to=''>隐私保护政策</Link>
+                <Link to='/user/agreement'>21客会员协议</Link>和
+                <Link to='/user/privacy'>隐私保护政策</Link>
             </div>
         </div>
     </div>
