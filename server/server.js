@@ -44,20 +44,12 @@ app.listen(10086, () => {
 app.use(express.static('dist'));//静态资源地址
 
 app.get(`/home`, (req, res) => {
-        let rank = {
-            fruitCake:['/upload/images/fruitCake1.png', '/upload/images/fruitCake2.png', '/upload/images/fruitCake3.png', '/upload/images/fruitCake4.png', '/upload/images/fruitCake5.png', '/upload/images/fruitCake6.png'],
-            coffee:['/upload/images/coffee1.png', '/upload/images/coffee2.png', '/upload/images/coffee3.png', '/upload/images/coffee4.png', '/upload/images/coffee5.png', '/upload/images/coffee6.png', '/upload/images/coffee7.png'],
-            star: ['/upload/images/star1.png', '/upload/images/star2.png', '/upload/images/star3.png', '/upload/images/star4.png', '/upload/images/star5.png', '/upload/images/star6.png'],
-            gift: ['/upload/images/gift1.png', '/upload/images/gift2.png', '/upload/images/gift3.png', '/upload/images/gift4.png']
-        };
         fs.readFile('./dist/home.json', 'utf8', (err, data) => {
             if (err) {
                 res.json("出错了,等会儿再发送一次");
                 return
             }
             data = JSON.parse(data);
-            data.push(rank);
-            console.log(data);
             res.json(data)
         });
 });
@@ -238,8 +230,8 @@ app.post('/register', (req, res) => {
     if (user) {
         res.json({msg: '用户已存在', err: 1});
     } else {
-        password = md5(password);
-        userList.push({username, password});
+        // password = password;
+        userList.push({...req.body});
         fs.writeFile('./dist/user/user.json', JSON.stringify(userList), err => {
             console.log(err);
         });
@@ -334,4 +326,75 @@ app.get(`/list/classify`, (req, res) => {
     }).then((dataArr) => {
         res.json({reg: '参数获取成功', err: 0, data: dataArr})
     });
+});
+
+app.get(`/changeHome`, (req, res) => {
+    let newData;
+    let rank = {
+        fruitCake:[
+            {url:'/upload/images/fruitCake1.png', id:"非卖品"},
+            {url:'/upload/images/fruitCake2.png', id:472},
+            {url:'/upload/images/fruitCake3.png', id:12},
+            {url:'/upload/images/fruitCake4.png', id:14},
+            {url:'/upload/images/fruitCake5.png', id:9},
+            {url:'/upload/images/fruitCake6.png', id:96}],
+        coffee:[
+            {url:'/upload/images/coffee1.png',id:"非卖品"},
+            {url:'/upload/images/coffee2.png',id:185},
+            {url:'/upload/images/coffee3.png',id:183},
+            {url:'/upload/images/coffee4.png',id:388},
+            {url:'/upload/images/coffee5.png',id:389},
+            {url:'/upload/images/coffee6.png',id:182},
+            {url:'/upload/images/coffee7.png',id:194},
+            {url:'/upload/images/coffee8.png',id:195}
+        ],
+        star: [
+            {url:'/upload/images/star1.png',id:"非卖品"},
+            {url:'/upload/images/star2.png',id:698},
+            {url:'/upload/images/star3.png',id:6},
+            {url:'/upload/images/star4.png',id:400},
+            {url:'/upload/images/star5.png',id:3},
+            {url:'/upload/images/star6.png',id:5}
+        ],
+        gift: [
+            {url:'/upload/images/gift1.png',id:"非卖品"},
+            {url:'/upload/images/gift3.png',id:405},
+            {url:'/upload/images/gift4.png',id:404}
+            ]
+    };
+    new Promise(function(resolve,reject){
+        for (let key in rank) {
+            console.log(key);
+            if (!rank.hasOwnProperty(key)) continue;
+            rank[key].forEach(function(item){
+                console.log(2);
+                if(typeof(item.id)==='number'){
+                    fs.readFile(`./dist/particulars/cake/${item.id}.json`,'utf8',function(err,data){
+                        
+                        item.data=JSON.parse(data||"{}");
+                        console.log(item.data);
+                    })
+                }
+            })
+
+        }
+
+    });
+    fs.readFile('./dist/home.json', 'utf8', (err, data) => {
+        if (err) {
+            res.json("出错了,等会儿再发送一次");
+            return
+        }
+        data = JSON.parse(data);
+        data.push(rank);
+        newData=data
+        // res.json(data)
+    });
+    setTimeout(()=>{
+        fs.writeFile('./dist/home.json',JSON.stringify(newData),err=>{
+            console.log(err||'ok');
+        });
+        res.json(newData)
+    },3000)
+
 });
