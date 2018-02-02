@@ -44,23 +44,22 @@ app.listen(10086, () => {
 app.use(express.static('dist'));//静态资源地址
 
 app.get(`/home`, (req, res) => {
-    let Zepto1517235725075 = function (val) {
-        fs.writeFile('./dist/home.json', JSON.stringify(val.data))
-    };
-
-    fs.exists('./dist/home.json', exists => {
+        let rank = {
+            fruits:['/upload/images/fruitCake1.png', '/upload/images/fruitCake2.png', '/upload/images/fruitCake3.png', '/upload/images/fruitCake4.png', '/upload/images/fruitCake5.png', '/upload/images/fruitCake6.png'],
+            coffee:['/upload/images/coffee1.png', '/upload/images/coffee2.png', '/upload/images/coffee3.png', '/upload/images/coffee4.png', '/upload/images/coffee5.png', '/upload/images/coffee6.png', '/upload/images/coffee7.png'],
+            star: ['/upload/images/star1.png', '/upload/images/star2.png', '/upload/images/star3.png', '/upload/images/star4.png', '/upload/images/star5.png', '/upload/images/star6.png'],
+            gift: ['/upload/images/gift1.png', '/upload/images/gift2.png', '/upload/images/gift3.png', '/upload/images/gift4.png']
+        };
         fs.readFile('./dist/home.json', 'utf8', (err, data) => {
             if (err) {
                 res.json("出错了,等会儿再发送一次");
                 return
             }
             data = JSON.parse(data);
+            data.push(rank);
+            console.log(data);
             res.json(data)
         });
-
-
-    });
-
 });
 
 app.get(`/list/cake`, (req, res) => {
@@ -193,7 +192,7 @@ app.get(`/list/gift`, (req, res) => {
 
 app.get(`/detail`, (req, res) => {
     let dataId = req.query.id;
-    let dataName, dataEnName, dataTags,dataImg_url;
+    let dataName, dataEnName, dataTags, dataImg_url;
     let arr = ['cake', 'coffee', 'gift', 'ice', 'normal', 'patch'];
 
     new Promise((resolve, reject) => {
@@ -208,11 +207,11 @@ app.get(`/detail`, (req, res) => {
             })
         });
     }).then(val => {
-        let {name, en_name, tags,img_url} = val;
+        let {name, en_name, tags, img_url} = val;
         dataName = name;
         dataEnName = en_name;
         dataTags = tags;
-        dataImg_url=img_url;
+        dataImg_url = img_url;
         fs.readFile(`./dist/particulars/cake/${dataId}.json`, (err, data) => {
 
             if (err) {
@@ -225,7 +224,7 @@ app.get(`/detail`, (req, res) => {
             data.name = dataName;
             data.tags = dataTags;
             data.en_name = dataEnName;
-            data.img_url=dataImg_url;
+            data.img_url = dataImg_url;
             res.json({reg: '参数获取成功', err: 0, data})
         })
     });
@@ -318,21 +317,21 @@ app.get(`/list/classify`, (req, res) => {
             fs.readFile(`./dist/list/${item}.json`, 'utf8', (err, data) => {
                 if (err) return;
                 let val = JSON.parse(data).goodsArr[1].goods.filter(item => {
-                    let flag=false;
-                    item.tags.forEach(key=>{
-                        if (key.content===dataId){
-                           flag=true;
-                       }
+                    let flag = false;
+                    item.tags.forEach(key => {
+                        if (key.content === dataId) {
+                            flag = true;
+                        }
                     });
                     return flag
                 }) || [];
                 dataArr = [...dataArr, ...val];
             })
         });
-        setTimeout(()=>{
+        setTimeout(() => {
             resolve(dataArr)
-        },1000)
+        }, 1000)
     }).then((dataArr) => {
-        res.json({reg: '参数获取成功', err: 0, data:dataArr})
+        res.json({reg: '参数获取成功', err: 0, data: dataArr})
     });
 });
