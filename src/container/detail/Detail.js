@@ -1,9 +1,10 @@
 import React from 'react';
 import ajax from "axios";
 import DetailSlider from "./DetailSlider";
-// import "./detail.less";
+import "./detail.less";
 import DetailCake from "./DetailCake";
 import DetailFooter from "./DetailFooter";
+import ShopBox from "../../component/ShopBox";
 export default class Detail extends React.Component {
 
     render() {
@@ -11,6 +12,7 @@ export default class Detail extends React.Component {
             <DetailSlider/>
             <DetailCake/>
             <DetailFooter/>
+            <ShopBox/>
         </div>
     }
 }
