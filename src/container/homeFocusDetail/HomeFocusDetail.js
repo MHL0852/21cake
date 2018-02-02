@@ -2,7 +2,6 @@ import React from 'react';
 import {connect} from "react-redux";
 import Header from "../../component/Header";
 import {Link} from "react-router-dom";
-import Footer from "../../component/Footer";
 
 @connect(state => ({...state.home.focus}))
 export default class HomeFocusDetail extends React.Component {
@@ -13,7 +12,7 @@ export default class HomeFocusDetail extends React.Component {
       enName: '',
       data: [],
       page: '',
-      top: "500"
+      top: "500",
     }
   }
 
@@ -29,7 +28,7 @@ export default class HomeFocusDetail extends React.Component {
   }
 
   componentDidMount() {
-    let timer=setInterval(() => {
+    let timer = setInterval(() => {
       this.setState({top: this.state.top - 500});
       if (this.state.top <= 0) {
         clearInterval(timer);
@@ -49,14 +48,16 @@ export default class HomeFocusDetail extends React.Component {
       </Header>
       <div className='focus-detail' ref='div' style={{top: `${this.state.top}px`}}>
         <div className='focus-content'>
-          {page ? <img src={`https://raw.githubusercontent.com/MHL0852/21cake/21cake/server/dist${page}`}
+          {page ? <img src={`https://raw.githubusercontent.com/MHL0852/21cake/21cake/server/dist${page.url}`}
                        alt=""/> : null}
           {data.map((item, index) => (
               <div key={index}>
-                <img src={`https://raw.githubusercontent.com/MHL0852/21cake/21cake/server/dist${item}`}
-                     alt=""/>
+                <Link to={`/detail?id=${item.id}`}>
+                  <img src={`https://raw.githubusercontent.com/MHL0852/21cake/21cake/server/dist${item.url}`}
+                       alt=""/>
+                </Link>
                 <div className='focus-shop'>
-                  <p>售价：￥<span>200</span></p>
+                  <p>售价：￥${item.data.productsArr}</p>
                   <i className='iconfont icon-gouwuche-copy'></i>
                 </div>
               </div>
