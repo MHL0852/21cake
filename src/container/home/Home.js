@@ -12,16 +12,14 @@ import HomeList from "./HomeList";
 import HomeActive from "./HomeActive";
 import Swiper from "swiper";
 import City from "./City";
-import HomeFocusDetail from "./HomeFocusDetail";
+import HomeFocusDetail from "../homeFocusDetail/HomeFocusDetail";
 
 @connect(state => ({...state.home}), actions)
 export default class Home extends React.Component {
   constructor() {
     super();
     this.state = {
-      cityName: "北京",
-      text: '',
-      data: []
+      cityName: "北京"
     }
   }
 
@@ -57,19 +55,10 @@ export default class Home extends React.Component {
   cityName = (name) => {
     this.setState({cityName: name});
   };
-  showList = (text, enName) => {
-    this.$detail.style.top = 0;
-    this.setState({text});
-  };
 
   componentDidUpdate() {
     this.changePosition();
     this.$city = this.city.refs.cityBox;
-  }
-
-  componentDidMount() {
-    this.$detail = this.detail.refs.div;
-
   }
 
   render() {
@@ -95,7 +84,6 @@ export default class Home extends React.Component {
         <HomeActive activity={activity}/>
         <div className="lastList">没有了。</div>
       </div>
-      <HomeFocusDetail ref={x => this.detail = x} text={this.state.text}/>
     </div>
   }
 }

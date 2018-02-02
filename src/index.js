@@ -11,7 +11,7 @@ import User from "./container/user/";
 import Detail from "./container/detail/Detail";
 import "./common/reset.min.css";
 import Community from './container/community/Magazine';
-import HomeFocusDetail from "./container/home/HomeFocusDetail";
+import HomeFocusDetail from "./container/homeFocusDetail/HomeFocusDetail";
 render(<Provider store={store}>
     <HashRouter>
         <App>
@@ -22,6 +22,7 @@ render(<Provider store={store}>
                 <Route path='/community' component={Community}/>
                 <Route path='/user' component={User}/>
                 <Route path='/detail' component={Detail}/>
+                <Route path='/focus-detail' component={HomeFocusDetail}/>
                 <Redirect to='/home'/>
             </Switch>
         </App>

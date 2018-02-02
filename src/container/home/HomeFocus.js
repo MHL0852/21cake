@@ -1,9 +1,7 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 export default class HomeFocus extends React.Component {
-  componentDidMount() {
-  }
-
   render() {
     return <div>
       <div className='h7'></div>
@@ -13,9 +11,16 @@ export default class HomeFocus extends React.Component {
           <div className="swiper-container">
             <div className="swiper-wrapper">
               {this.props.bangdan.length ? this.props.bangdan.map((item, index) => (
-                  <div key={index} className="swiper-slide"><img src={item.imageUrl} alt="" onClick={() => {
-                    this.props.showList(item.name, item.en_name);
-                  }}/></div>
+                  <div key={index} className="swiper-slide">
+                    <Link to={{
+                      pathname: '/focus-detail',
+                      state: {name: item.name, enName: item.en_name}
+                    }}>
+                      <img src={item.imageUrl} alt="" onClick={() => {
+
+                      }}/>
+                    </Link>
+                  </div>
               )) : null}
             </div>
           </div>
