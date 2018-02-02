@@ -9,6 +9,7 @@
         "target": "_self",
         "img_url": "/upload/images/a007e27b75a70299e0acd43226b800f7.jpg",
         "sort": 1,
+        "id":698,
         "special_effects": "fadeIn"
       },
       {
@@ -17,6 +18,7 @@
         "target": "_self",
         "img_url": "/upload/images/b52624cd131b935e3c5da646d55e8979.jpg",
         "sort": 2,
+        "id":631,
         "special_effects": "fadeIn"
       },
       {
@@ -25,6 +27,7 @@
         "target": "_self",
         "img_url": "/upload/images/d9a95caffac05eb62193ee56c395b480.jpg",
         "sort": 3,
+        "id":13,
         "special_effects": "fadeIn"
       },
       {
@@ -33,6 +36,7 @@
         "target": "_self",
         "img_url": "/upload/images/03ca8339fe8ebd43ce8593bf46221fcd.jpg",
         "sort": 4,
+        "id":8,
         "special_effects": "fadeIn"
       }
     ]
