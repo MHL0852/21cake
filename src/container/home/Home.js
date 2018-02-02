@@ -12,13 +12,15 @@ import HomeList from "./HomeList";
 import HomeActive from "./HomeActive";
 import Swiper from "swiper";
 import City from "./City";
+import HomeFocusDetail from "./HomeFocusDetail";
 
 @connect(state => ({...state.home}), actions)
 export default class Home extends React.Component {
     constructor() {
         super();
         this.state = {
-            cityName: "北京"
+            cityName: "北京",
+            text: ''
         }
     }
 
@@ -47,12 +49,16 @@ export default class Home extends React.Component {
         });
     };
     changeCityStyle = e => {
-        if (e.target.classList.contains('city-box') || e.target.nodeName==="BUTTON") {
+        if (e.target.classList.contains('city-box') || e.target.nodeName === "BUTTON") {
             this.$city.style.display = 'none';
         }
     };
     cityName = (name) => {
-        this.setState({cityName:name});
+        this.setState({cityName: name});
+    };
+    showList = (text) => {
+      this.$detail.style.top = 0;
+        this.setState({text});
     };
 
     componentDidUpdate() {
@@ -60,6 +66,9 @@ export default class Home extends React.Component {
         this.$city = this.city.refs.cityBox;
     }
 
+    componentDidMount() {
+        this.$detail = this.detail.refs.div;
+    }
 
     render() {
         let {sliders, navList, activity, bangdan, newProduct, renqi} = this.props;
@@ -74,7 +83,7 @@ export default class Home extends React.Component {
             <div className='content'>
                 {sliders.length ? <HomeSlider sliders={sliders}/> : null}
                 <HomeNav navList={navList}/>
-                <HomeFocus bangdan={bangdan}/>
+                <HomeFocus bangdan={bangdan} showList={this.showList}/>
                 <HomeList list={newProduct}>
                     <h3>廿一客·<span>新品</span></h3>
                 </HomeList>
@@ -84,6 +93,7 @@ export default class Home extends React.Component {
                 <HomeActive activity={activity}/>
                 <div className="lastList">没有了。</div>
             </div>
+            <HomeFocusDetail ref={x => this.detail = x} text={this.state.text}/>
         </div>
     }
 }

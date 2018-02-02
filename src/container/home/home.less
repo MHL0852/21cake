@@ -201,3 +201,38 @@
   height: 7px;
   background: #F4F4F4;
 }
+
+.focus-detail {
+  position: fixed;
+  top: 100%;
+  z-index:105;
+  transition: all 0.1s;
+  margin-bottom: 0.8rem;
+  .focus-header {
+    padding:0 10px;
+    height:0.8rem;
+    background: #fff;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items: center;
+    p{font-size:0.3rem;}
+    span{
+      display: block;
+      height: 100%;
+    }
+    span:nth-child(1){
+      width:0.3rem;
+       background: url("../../common/images/close.png") no-repeat 0 50%;
+      background-size: 100%;
+     }
+    span:last-child{
+      width:0.35rem;
+      background: url("../../common/images/share.png") no-repeat 0 50%;
+      background-size: 100%;
+    }
+  }
+  img {
+    width: 100%;
+  }
+}
