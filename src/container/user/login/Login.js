@@ -1,5 +1,5 @@
 import React from 'react';
-import './user.less';
+import './login.less';
 import {Link} from 'react-router-dom'
 
 export default class User extends React.Component {
