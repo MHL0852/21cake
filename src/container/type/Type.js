@@ -6,7 +6,6 @@ import "../../common/NavCommon.less";
 import "../../common/index.less";
 import NavTCommon from "../../component/NavTCommon";
 import TypeCommon from "../../component/TypeCommon";
-
 export default class Type extends React.Component {
   render() {
     return (
