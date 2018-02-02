@@ -45,7 +45,7 @@ app.use(express.static('dist'));//静态资源地址
 
 app.get(`/home`, (req, res) => {
         let rank = {
-            fruits:['/upload/images/fruitCake1.png', '/upload/images/fruitCake2.png', '/upload/images/fruitCake3.png', '/upload/images/fruitCake4.png', '/upload/images/fruitCake5.png', '/upload/images/fruitCake6.png'],
+            fruitCake:['/upload/images/fruitCake1.png', '/upload/images/fruitCake2.png', '/upload/images/fruitCake3.png', '/upload/images/fruitCake4.png', '/upload/images/fruitCake5.png', '/upload/images/fruitCake6.png'],
             coffee:['/upload/images/coffee1.png', '/upload/images/coffee2.png', '/upload/images/coffee3.png', '/upload/images/coffee4.png', '/upload/images/coffee5.png', '/upload/images/coffee6.png', '/upload/images/coffee7.png'],
             star: ['/upload/images/star1.png', '/upload/images/star2.png', '/upload/images/star3.png', '/upload/images/star4.png', '/upload/images/star5.png', '/upload/images/star6.png'],
             gift: ['/upload/images/gift1.png', '/upload/images/gift2.png', '/upload/images/gift3.png', '/upload/images/gift4.png']
