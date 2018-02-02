@@ -10,7 +10,6 @@
     position: absolute;
     bottom: 1rem;
     width: 100%;
-    height: 3rem;
     background: #fff;
     box-shadow: 0px -2px 4px 0px rgba(0,0,0,0.1);
 
@@ -30,9 +29,64 @@
       width: 100%;
       height: 100%;
       .details-price{
+        margin-bottom: 0.3rem;
         width: 100%;
-        font-size: 0.3rem;
+        font-size: 0.28rem;
         font-weight: bold;
+        color: #482618;
+      }
+      .details-options-r{
+        width: 100%;
+        margin-bottom: 0.2rem;
+        li{
+          float: left;
+          box-sizing: border-box;
+          padding-left: 0.4rem;
+          padding-bottom: 0.2rem;
+          width: 50%;
+          overflow: hidden;
+          height: 0.5rem;
+          line-height: 0.5rem;
+          font-size: 0.25rem;
+          &:nth-child(1){
+            background: url("../common/images/size.png") left no-repeat;
+            background-size: 0.3rem 0.3rem;
+          }
+          &:nth-child(2){
+            background: url("../common/images/unmber.png") left no-repeat;
+            background-size: 0.3rem 0.3rem;
+          }
+          &:nth-child(3){
+            background: url("../common/images/laid.png") left no-repeat;
+            background-size: 0.15rem 0.3rem;
+            background-position: 0.06rem;
+          }
+          &:nth-child(4){
+            background: url("../common/images/time.png") left no-repeat;
+            background-size: 0.3rem 0.3rem;
+          }
+        }
+      }
+      .details-options{
+        width: 100%;
+        img{
+          display: block;
+          margin-bottom: 0.15rem;
+          width: 100%;
+          background: black;
+        }
+      }
+      .normal-box{
+        width: 100%;
+        p{
+          font-size: 0.24rem;
+        }
+        .details-suspension-size{
+          margin: 0.2rem 0;
+          li{
+            font-size: 0.3rem;
+          }
+        }
       }
     }
   }
