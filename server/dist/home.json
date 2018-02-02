@@ -99,18 +99,22 @@
         "contents": [
           {
             "name": "水果蛋糕",
+            "en_name":"fruitCake",
             "imageUrl": "./server/dist/image/pic1.png"
           },
           {
             "name": "精品咖啡",
+            "en_name":"coffee",
             "imageUrl": "./server/dist/image/pic2.png"
           },
           {
             "name": "应季明星",
+            "en_name":"star",
             "imageUrl": "./server/dist/image/pic3.png"
           },
           {
             "name": "设计师礼品",
+            "en_name":"gift",
             "imageUrl": "./server/dist/image/pic4.png"
           }
         ]

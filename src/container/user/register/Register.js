@@ -39,13 +39,17 @@ export default class Regist extends React.Component {
             <li className='form'>
                 <input type="text" placeholder="请选择生日"/>
             </li>
-            <li></li>
+            <li>
+
+            </li>
             <li className="register">
                 <button>注册</button>
             </li>
-            <li>
-                <input type="checkbox"/>已阅读并同意
-                <Link to=''>21客会员协议</Link>和
+            <li className="agree">
+                <label>
+                    <input type="checkbox"/>'已阅读并同意'
+                </label>
+                <Link to=''>21客会员协议</Link>'和'
                 <Link to=''>隐私保护政策</Link>
             </li>
             </ul>
