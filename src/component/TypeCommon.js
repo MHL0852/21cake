@@ -34,7 +34,7 @@ export default class TypeCommon extends React.Component {
             <li id={`list-goods-${item.cake_goods_id}`} key={index}>
               <a href={`loalhost:9000/#/detail/${item.img_url}`} className="list-item-link">
                 <div className="item-link-img">
-                  <img src={`https://raw.githubusercontent.com/MHL0852/21cake/21cake/server/dist${item.img_url}`} alt=""/>
+                  <img src={`https://github.com/MHL0852/21cake/tree/21cake/server/dist${item.img_url}`} alt=""/>
                 </div>
                 <h3>
                   {item.en_name}

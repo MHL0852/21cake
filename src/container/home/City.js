@@ -34,7 +34,8 @@ export default class City extends React.Component {
                         <span data-city='wuxi' className={city == 'wuxi' ? 'active' : ''}>无锡</span>
                         <span data-city='suzhou' className={city == 'suzhou' ? 'active' : ''}>苏州</span>
                         <span data-city='guangzhou' className={city == 'guangzhou' ? 'active' : ''}>广州</span>
-                        <span data-city='shenzhen' className={city == 'shenzhen' ? 'active' : ''}>深圳</span></li>
+                        <span data-city='shenzhen' className={city == 'shenzhen' ? 'active' : ''}>深圳</span>
+                    </li>
                 </ul>
                 <p>*切换城市将清空购物车</p>
                 <button onClick={e => {

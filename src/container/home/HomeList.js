@@ -15,25 +15,13 @@ export default class HomeList extends React.Component {
                             <div className="swiper-wrapper">
                                 {contents.length ? contents.map((item, index) => (
                                     <div key={index} className="swiper-slide">
-                                        <img src={`http://static.21cake.com/${item.imageUrl}`} alt=""/>
+                                        <img src={`https://raw.githubusercontent.com/MHL0852/21cake/21cake/server/dist${item.imageUrl}`} alt=""/>
                                         <span>{item.name}</span>
                                     </div>
                                 )) : null}
                             </div>
                         </div>
                     </div>
-
-
-                    {/*<div className='product-list'>*/}
-                    {/*<ul>*/}
-                    {/*{contents.length ? contents.map((item, index) => (*/}
-                    {/*<li key={index}>*/}
-                    {/*<img src={`http://static.21cake.com/${item.imageUrl}`} alt=""/>*/}
-                    {/*<span>{item.name}</span>*/}
-                    {/*</li>*/}
-                    {/*)) : null}*/}
-                    {/*</ul>*/}
-                    {/*</div>*/}
                 </div>
             </div>
         </div>

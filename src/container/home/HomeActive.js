@@ -4,7 +4,8 @@ import {Link} from "react-router-dom";
 export default class HomeActive extends React.Component {
     render() {
         let {img_url,remain,name,description,href} = this.props.activity[0];
-        img_url = img_url ? `http://static.21cake.com/${img_url}` : '';
+        // img_url = img_url ? `http://static.21cake.com/${img_url}` : '';//旧地址
+        img_url = img_url ? `https://raw.githubusercontent.com/MHL0852/21cake/21cake/server/dist${img_url}` : '';
         return <div className='box activity'>
             <h3>廿一客·<span>活动</span></h3>
             <div className="act-list">
