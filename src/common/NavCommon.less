@@ -11,7 +11,7 @@
     position: absolute;
     left: 0;
     top: 0;
-    width: 8rem;
+    width: 7.18rem;
     li{
       float: left;
       height: 0.7rem;
@@ -29,6 +29,13 @@
         color: #000000;
       }
     }
-
+    &.left{
+      transition-duration: 300ms!important;
+      transform:translateX(0)!important;
+    }
+    &.right{
+      transition-duration: 300ms!important;
+      transform:translateX(-45px)!important;
+    }
   }
 }

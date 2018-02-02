@@ -1,12 +1,11 @@
 import React from 'react';
-import {Route,Redirect} from "react-router-dom";
+import {Route} from "react-router-dom";
 import "../../common/LIstCommon.less";
 import "./types.less";
 import "../../common/NavCommon.less";
 import "../../common/index.less";
 import NavTCommon from "../../component/NavTCommon";
 import TypeCommon from "../../component/TypeCommon";
-import Home from "../home/Home";
 export default class Type extends React.Component {
   render() {
     return (
@@ -20,8 +19,6 @@ export default class Type extends React.Component {
           <Route path='/type/coffee'  component={TypeCommon}/>
           <Route path='/type/normal'  component={TypeCommon}/>
           <Route path='/type/gift' component={TypeCommon}/>
-          {/*<Route path='/type*' component={Home}/>*/}
-          {/*<Redirect to='/type'/>*/}
         </div>
       </div>
     )
