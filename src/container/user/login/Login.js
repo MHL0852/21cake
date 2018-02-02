@@ -15,7 +15,7 @@ export default class User extends React.Component {
         return <div className="user_container">
             <div className="mainBox">
                 <div className="loginBox">
-                    <ul className="login_header">
+                    <ul className="login_header clearfix">
                         <li className={this.state.loginFrom === "account" ? 'active' : null} onClick={() => {
                             this.setState({
                                 loginFrom: 'account'
@@ -29,9 +29,9 @@ export default class User extends React.Component {
                         }}>手机验证码登录
                         </li>
                     </ul>
-                    <ul className="login_body">
+                    <ul className="login_body clearfix">
                         <li className={'account' + ' ' + (this.state.loginFrom === "account" ? 'show' : '')}>
-                            <ul>
+                            <ul className="clearfix">
                                 <li>
                                     <input type="text" placeholder="用户名/邮箱地址"/>
                                 </li>
@@ -42,7 +42,7 @@ export default class User extends React.Component {
                             </ul>
                         </li>
                         <li className={"phone" + ' ' + (this.state.loginFrom === "phone" ? 'show' : '')}>
-                            <ul>
+                            <ul className="clearfix">
                                 <li>
                                     <input type="text" placeholder="手机号" className="phoneNumber"/>
                                 </li>
