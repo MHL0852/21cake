@@ -1,5 +1,7 @@
 import React from 'react';
 import './register.less';
+import {Link} from 'react-router-dom';
+import './register.less'
 
 export default class Regist extends React.Component {
   constructor(){
@@ -12,6 +14,7 @@ export default class Regist extends React.Component {
     return <div className="user_container">
         <div className="mainBox">
           <h5>用户注册</h5>
+            <ul>
             <li>
                 <input type="text" placeholder="输入用户名"/>
             </li>
@@ -31,9 +34,15 @@ export default class Regist extends React.Component {
                 <input type="text" placeholder="请选择生日"/>
             </li>
             <li></li>
-
-
-
+            <li>
+                <button>注册</button>
+            </li>
+            <li>
+                <input type="checkbox"/>已阅读并同意
+                <Link to=''>21客会员协议</Link>和
+                <Link to=''>隐私保护政策</Link>
+            </li>
+            </ul>
         </div>
     </div>
   }
