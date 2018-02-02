@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link,withRouter} from "react-router-dom";
 
 export default class HomeFocus extends React.Component {
     render() {
@@ -10,7 +11,7 @@ export default class HomeFocus extends React.Component {
                     <div className="swiper-container">
                         <div className="swiper-wrapper">
                             {this.props.bangdan.length ? this.props.bangdan.map((item, index) => (
-                                <div key={index} className="swiper-slide"><img src={item.imageUrl} alt=""/></div>
+                                <div key={index} className="swiper-slide"><Link to={`/focusDetail/${item.name}`}><img src={item.imageUrl} alt=""/></Link></div>
                             )) : null}
                         </div>
                     </div>
@@ -19,3 +20,4 @@ export default class HomeFocus extends React.Component {
         </div>
     }
 }
+withRouter(HomeFocus);

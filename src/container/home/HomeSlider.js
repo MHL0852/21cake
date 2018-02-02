@@ -21,8 +21,8 @@ export default class HomeSlider extends React.Component {
         return <div className='slider'>
             <ReactSwipe className="carousel" swipeOptions={opts}>
                 {this.props.sliders.map((item, index) => (
-                    <div key={index}><a href={item.href}><img src={`http://static.21cake.com/${item.img_url}`} alt=""/></a></div>
-                    // <div key={index}><a href={item.href}><img src={`https://raw.githubusercontent.com/MHL0852/21cake/21cake/server/dist${item.img_url}`} alt=""/></a></div>
+
+                    <div key={index}><a href={item.href}><img src={`https://raw.githubusercontent.com/MHL0852/21cake/21cake/server/dist${item.img_url}`} alt=""/></a></div>
                 ))}
             </ReactSwipe>
             <div className='dots'>

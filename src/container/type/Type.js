@@ -6,7 +6,7 @@ import "../../common/NavCommon.less";
 import "../../common/index.less";
 import NavTCommon from "../../component/NavTCommon";
 import TypeCommon from "../../component/TypeCommon";
-import Home from "../home/home";
+import Home from "../home/Home";
 export default class Type extends React.Component {
   render() {
     return (
