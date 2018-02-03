@@ -9,7 +9,7 @@ export default class HomeList extends React.Component {
             <div className='box list'>
                 {this.props.children}
                 <div>
-                    <a href={href}><img src={banner} alt=""/></a>
+                  <Link to='/home'><img src={banner} alt=""/></Link>
                     <div className='product-list'>
                         <div className="swiper-container">
                             <div className="swiper-wrapper">

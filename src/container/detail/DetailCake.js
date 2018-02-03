@@ -3,22 +3,23 @@ import ListCommon from "../../component/ListCommon";
 import {connect} from "react-redux";
 import actions from "../../store/actions/detail";
 import ShopBox from "../../component/ShopBox";
+import TypeCommon from "../../component/TypeCommon";
 @connect(state=>({...state.detail}),actions)
 export default class DetailCake extends React.Component {
-
   handleClickOpenBox=(e)=>{
     if(e.target===this.openBox){
       this.props.changeShopFlag({top:"0"});
+      this.props.tabShopTab({tab:true});
+      this.props.changeShopData({flag:0});
     }
   };
   render() {
     let arr=[];
     for (let key in this.props.detailData.productsArr) {
       if(this.props.detailData.productsArr.hasOwnProperty(key)){
-        arr.push(this.props.detailData.productsArr[key]);
+        arr=[...arr,this.props.detailData.productsArr[key]];
       }
     }
-    arr.pop();
     let {catId,en_name,goodsId,name,productsArr,saleTime,tags}=this.props.detailData;
     return<div>
       <div className="detailCake">
@@ -87,10 +88,9 @@ export default class DetailCake extends React.Component {
         </div>
         <div className="recommend-list">
           <p className="recommend-list-p">· 推荐商品 ·</p>
-          <ListCommon/>
+          <TypeCommon urlAdrs="list/recommend" location={{pathname:"recommend"}}/>
         </div>
       </div>
-      {/*<ShopBox detailData={this.props.detailData}/>*/}
     </div>
 
   }

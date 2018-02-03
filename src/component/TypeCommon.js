@@ -33,7 +33,7 @@ export default class TypeCommon extends React.Component {
         <ul className="clearfix">
           {this.state.cakeList.map((item,index)=>(
             <li key={index}>
-              <Link to={`/detail/${item.cake_goods_id}`} className="list-item-link">
+              <Link to={`/detail/?id=${item.cake_goods_id}`} className="list-item-link">
                 <div className="item-link-img">
                   <img src={`https://raw.githubusercontent.com/MHL0852/21cake/21cake/server/dist${item.img_url}`} alt=""/>
                 </div>
