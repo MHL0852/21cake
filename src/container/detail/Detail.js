@@ -19,7 +19,6 @@ export default class Detail extends React.Component {
       productsArr:{},
       saleTime:'',
       tags:[],
-      flag:0,
       adrs:''
     }
   }

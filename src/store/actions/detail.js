@@ -8,8 +8,10 @@ let actions = {
     }
   },
   changeShopFlag(payloads){
-    console.log(payloads);
     return {type:Types.CHANGE_SHOPFLAG,payloads}
+  },
+  changeShopData(flag){
+    return {type:Types.CHANGE_SHOPDATA,flag}
   }
 };
 export default actions;

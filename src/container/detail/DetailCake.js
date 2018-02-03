@@ -19,7 +19,7 @@ export default class DetailCake extends React.Component {
       }
     }
     arr.pop();
-    let {catId,en_name,flag,goodsId,name,productsArr,saleTime,tags}=this.props.detailData;
+    let {catId,en_name,goodsId,name,productsArr,saleTime,tags}=this.props.detailData;
     return<div>
       <div className="detailCake">
         <div className="details-data">
@@ -28,7 +28,7 @@ export default class DetailCake extends React.Component {
             <p>{name}</p>
           </div>
           <div className="pro-price">
-            ￥ {(arr[flag]||{}).price}
+            ￥ {(arr[this.props.flag]||{}).price}
           </div>
           <div className="pro-action">
             {tags.map((item,index)=>(
@@ -41,13 +41,13 @@ export default class DetailCake extends React.Component {
           <div className="pro-select">
             <div className="pro-select-card"  onClick={this.handleClickOpenBox}>
               <div className="card-title clearfix">
-                <span>已选择{(arr[flag]||{}).spec}<span ref={x=>this.openBox=x}>></span></span>
+                <span>已选择{(arr[this.props.flag]||{}).spec}<span ref={x=>this.openBox=x}>></span></span>
               </div>
               <div className="details-options-card">
                 <ul className="details-options clearfix">
-                  <li><i></i> <span>{(arr[flag]||{}).size}</span></li>
-                  <li><i></i> <span>{(arr[flag]||{}).cutlery_content}</span></li>
-                  <li><i></i> <span>{(arr[flag]||{}).suite_amount}</span></li>
+                  <li><i></i> <span>{(arr[this.props.flag]||{}).size}</span></li>
+                  <li><i></i> <span>{(arr[this.props.flag]||{}).cutlery_content}</span></li>
+                  <li><i></i> <span>{(arr[this.props.flag]||{}).suite_amount}</span></li>
                   <li><i></i> <span>最晚明早09:30送达</span></li>
                 </ul>
               </div>
