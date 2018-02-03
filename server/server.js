@@ -404,3 +404,10 @@ app.get(`/changeHome`, (req, res) => {
     },3000)
 
 });
+app.get(`/list/recommend`,(req,res)=>{
+    fs.readFile('./dist/list/cake.json','utf8',(err,data)=>{
+        data = JSON.parse(data).goodsArr[1].goods;
+        let recommend=[data[1],data[2],data[3],data[4]];
+        res.json({reg: '参数获取成功', err: 0, data:recommend})
+    });
+});

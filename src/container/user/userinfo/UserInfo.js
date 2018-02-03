@@ -8,13 +8,15 @@ import d from "../../../common/images/member2.png";
 export default class UserInfo extends React.Component {
   checkout = () => {
     let info = JSON.parse(localStorage.getItem('user'));
-    if(!info.isLogin){
-      console.log(this.props);
+    if (!info.isLogin) {
+      this.props.history.push('/user/login');
     }
   };
+  componentWillMount(){
+    this.checkout();
+  }
 
   render() {
-    this.checkout();
     return <div className='userInfo'>
       <h3>我的廿一客</h3>
       <div className='user-content'>
