@@ -13,10 +13,10 @@ export default class ShopBox extends React.Component {
     if(e.target===this.shopBox||e.target===this.closeIcon||this.props.boxFlag){
       this.props.changeShopFlag({top:"100%"});
       this.props.tabShopTab({tab:true});
+      this.props.changeShopData({flag:0});
     }
   };
   changeId=(e)=>{
-    console.log(this.props.flag);
     e.target.parentNode.childNodes.forEach((item,index)=>{
       if(item.innerText==e.target.dataset.spec){
         this.props.changeShopData({flag:index});

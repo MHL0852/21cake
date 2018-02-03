@@ -9,13 +9,14 @@ export default class DetailCake extends React.Component {
   handleClickOpenBox=(e)=>{
     if(e.target===this.openBox){
       this.props.changeShopFlag({top:"0"});
+      this.props.tabShopTab({tab:true});
+      this.props.changeShopData({flag:0});
     }
   };
   render() {
     let arr=[];
     for (let key in this.props.detailData.productsArr) {
       if(this.props.detailData.productsArr.hasOwnProperty(key)){
-        console.log(this.props.detailData.productsArr[key]);
         arr=[...arr,this.props.detailData.productsArr[key]];
       }
     }

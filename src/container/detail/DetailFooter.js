@@ -14,9 +14,6 @@ export default class DetailFooter extends React.Component {
     }
   };
   render() {
-    console.log(this.props);
-    console.log(this.props);
-    console.log(this.props.tab);
     return <div onClick={this.handlShoping}>
       <div className="detailFooter" style={{display:this.props.tab?'block':'none'}} ref={x => this.shopingBox1 = x}>
         <div className="detailFooter-left">立即购买</div>
