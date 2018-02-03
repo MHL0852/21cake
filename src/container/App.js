@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import Header from "../component/Header";
 import Footer from "../component/Footer";
-class App extends Component {
+import {withRouter} from "react-router-dom";
+@withRouter
+export default class App extends Component {
     componentWillMount(){
         (function () {
             let computed = function () {
@@ -27,4 +29,3 @@ class App extends Component {
         );
     }
 }
-export default App;
