@@ -12,7 +12,7 @@ import {connect} from "react-redux";
 import actions from "../../store/actions/detail";
 @connect(state=>({...state.detail}),actions)
 export default class Detail extends React.Component {
-  constructor(){
+  constructor(props){
     super();
     this.state={
       catId:'',
@@ -24,6 +24,7 @@ export default class Detail extends React.Component {
       tags:[],
       adrs:''
     }
+
   }
   closeShopBox=(e)=>{
     this.props.changeShopFlag({top:"100%"});
