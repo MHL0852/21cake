@@ -12,6 +12,7 @@ import Detail from "./container/detail/Detail";
 import "./common/reset.min.css";
 import Community from './container/community/Magazine';
 import HomeFocusDetail from "./container/homeFocusDetail/HomeFocusDetail";
+
 render(<Provider store={store}>
     <HashRouter>
         <App>
