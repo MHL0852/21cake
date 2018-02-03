@@ -236,8 +236,8 @@ app.post('/register', (req, res) => {
     if (user) {
         res.json({msg: '用户已存在', err: 1});
     } else {
-        // password = password;
-        userList.push({...req.body});
+        password = md5(password);
+        userList.push({...req.body,password});
         fs.writeFile('./dist/user/user.json', JSON.stringify(userList), err => {
             console.log(err);
         });
@@ -252,6 +252,7 @@ app.post('/login', (req, res) => {
     let user = userList.find(item => item.username === username);
     if (user) {
         password = md5(password);
+        console.log(user.password,password);
         if (user.password === password) {
             res.json({msg: '登陆成功', err: 0})
         } else {

@@ -45,15 +45,11 @@ export default class Regist extends React.Component {
               password:this._password.value,
               birthday:this._birthday.value
           }).then(res=>{
-              this._username.value='';
-              this._birthday.value='';
-              this._password.value='';
-              this._imgTest.value='';
-              this._beSure.value='';
               if(res.err===0){
                   this.setState({
                       tip:'注册成功，即将跳转到主页'
                   });
+                  localStorage.setItem('user',JSON.stringify({user:this._username.value,isLogin:true}));
                   setTimeout(()=>{
                       this.props.history.push('/home')
                   },2000);
@@ -62,6 +58,11 @@ export default class Regist extends React.Component {
                     tip:'用户名已存在，请重新申请'
                 });
               }
+              this._username.value='';
+              this._birthday.value='';
+              this._password.value='';
+              this._imgTest.value='';
+              this._beSure.value='';
           })
       }
 
