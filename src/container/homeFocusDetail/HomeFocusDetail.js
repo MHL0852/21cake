@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from "react-redux";
 import Header from "../../component/Header";
 import {Link} from "react-router-dom";
+import fn from '../../common/computed';
 
 @connect(state => ({...state.home.focus}))
 export default class HomeFocusDetail extends React.Component {
@@ -50,18 +51,22 @@ export default class HomeFocusDetail extends React.Component {
         <div className='focus-content'>
           {page ? <img src={`https://raw.githubusercontent.com/MHL0852/21cake/21cake/server/dist${page.url}`}
                        alt=""/> : null}
-          {data.map((item, index) => (
-              <div key={index}>
-                <Link to={`/detail?id=${item.id}`}>
-                  <img src={`https://raw.githubusercontent.com/MHL0852/21cake/21cake/server/dist${item.url}`}
-                       alt=""/>
-                </Link>
-                <div className='focus-shop'>
-                  <p>售价：￥${item.data.productsArr}</p>
-                  <i className='iconfont icon-gouwuche-copy'></i>
+          {data.map((item, index) => {
+            let arr = fn(item.data);
+            console.log(arr);
+            return (
+                <div key={index}>
+                  <Link to={`/detail?id=${item.id}`}>
+                    <img src={`https://raw.githubusercontent.com/MHL0852/21cake/21cake/server/dist${item.url}`}
+                         alt=""/>
+                  </Link>
+                  <div className='focus-shop'>
+                    <p>售价：￥{arr.min}-{arr.max}</p>
+                    <i className='iconfont icon-gouwuche-copy'></i>
+                  </div>
                 </div>
-              </div>
-          ))}
+            )
+          })}
         </div>
       </div>
       <div className='focus-footer'></div>
