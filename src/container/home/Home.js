@@ -3,7 +3,7 @@ import Header from "../../component/Header";
 import {Link} from "react-router-dom";
 import HomeSlider from "./HomeSlider";
 import {connect} from "react-redux";
-import actions from "../../store/actions/home";
+import action from "../../store/actions";
 import "./home.less";
 import "../../common/LIstCommon.less";
 import HomeFocus from "./HomeFocus";
@@ -12,9 +12,8 @@ import HomeList from "./HomeList";
 import HomeActive from "./HomeActive";
 import Swiper from "swiper";
 import City from "./City";
-import HomeFocusDetail from "../homeFocusDetail/HomeFocusDetail";
 
-@connect(state => ({...state.home}), actions)
+@connect(state => ({...state.home}), action.home)
 export default class Home extends React.Component {
   constructor() {
     super();
