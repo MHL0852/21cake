@@ -27,7 +27,6 @@ export default class ShopBox extends React.Component {
     })
   };
   render() {
-
     let arr=[];
     for (let key in this.props.detailData.productsArr) {
       if(this.props.detailData.productsArr.hasOwnProperty(key)){

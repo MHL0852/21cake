@@ -1,6 +1,13 @@
 import * as Types from "../action-types";
 
 let initState = {
+  catId:'',
+  name:'',
+  en_name:'',
+  goodsId:'',
+  productsArr:{},
+  saleTime:'',
+  tags:[],
   top:'100%',
   flag:0,
   tab:true
@@ -8,6 +15,10 @@ let initState = {
 
 function detail(state = initState, action) {
   switch (action.type) {
+    // case Types.GET_DETAIL:
+    //   return{
+    //     ...state.detail
+    //   };
     case Types.CHANGE_SHOPFLAG:
       return {
         ...state,top:action.payloads.top
