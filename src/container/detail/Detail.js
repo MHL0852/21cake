@@ -46,6 +46,7 @@ export default class Detail extends React.Component {
     });
   }
   render() {
+    console.log(this.props);
     return <div className="detail">
       <Header>
         <div className='focus-header detailHeader' onClick={this.closeShopBox}>

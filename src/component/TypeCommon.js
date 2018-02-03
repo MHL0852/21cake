@@ -48,9 +48,9 @@ export default class TypeCommon extends React.Component {
             ¥ {item.price}/{item.spec}
           </span>
               </Link>
-              <a href="#" className="list-item-cart">
+              <Link to={"/shop"} className="list-item-cart">
                 <i className='iconfont icon-gouwuche-copy'></i>
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

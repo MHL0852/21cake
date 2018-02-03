@@ -21,7 +21,7 @@ export default class DetailFooter extends React.Component {
       </div>
       <div className="detailFooter" style={{display:this.props.tab?'none':'block'}} ref={x => this.shopingBox2 = x}>
         <Link to={
-          { pathname:"/shop",hash:`?`}
+          { pathname:"/shop",state:{id:0,goodsId:0,num:1}}
         } className="detailFooter-left" >立即购买</Link>
         <div className="detailFooter-right" >加入购物车</div>
       </div>

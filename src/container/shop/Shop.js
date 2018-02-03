@@ -5,7 +5,8 @@ import './index.less'
 
 export default class Shop extends React.Component {
     render() {
-        return <div className="shopping_container">
+      console.log(this.props);
+      return <div className="shopping_container">
 <h5 className="shopping_title">·满150免配送服务费·</h5>
             <ul className= 'shopping_box_all'>
                 <li className="shopping_box_goods">
