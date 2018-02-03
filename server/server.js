@@ -198,13 +198,13 @@ app.get(`/detail`, (req, res) => {
                 }
             })
         });
-    }).then(val => {
+    }).then((val) => {
         let {name, en_name, tags, img_url} = val;
         dataName = name;
         dataEnName = en_name;
         dataTags = tags;
         dataImg_url = img_url;
-        fs.readFile(`./dist/particulars/cake/${dataId}.json`, (err, data) => {
+       fs.readFile(`./dist/particulars/cake/${dataId}.json`,async  (err, data) => {
 
             if (err) {
                 res.json({reg: '参数获取失败', err: 1});
@@ -217,10 +217,16 @@ app.get(`/detail`, (req, res) => {
             data.tags = dataTags;
             data.en_name = dataEnName;
             data.img_url = dataImg_url;
-            res.json({reg: '参数获取成功', err: 0, data})
+            let newData=data;
+           await fs.readFile('./dist/list/cake.json','utf8',(err,data)=>{
+               data = JSON.parse(data).goodsArr[1].goods;
+               let recommend=[data[1],data[2],data[3],data[4]];
+
+               newData.recommend=recommend;
+               res.json({reg: '参数获取成功', err: 0, data:newData})
+           });
         })
     });
-
 });
 
 app.post('/register', (req, res) => {
