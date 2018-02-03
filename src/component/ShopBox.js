@@ -1,45 +1,53 @@
 import React from 'react';
 import "../common/ShopBox.less";
 import "../common/index.less";
-import a from "../common/images/2.00P-full-17.00.jpg";
 import {connect} from "react-redux";
 import actions from "../store/actions/detail";
-@connect(state=>{
-    console.log(state);
-    return {...state.detail}
-}
-  ,actions)
+@connect(state=>({...state.detail}),actions)
 export default class ShopBox extends React.Component {
   constructor(props){
     super();
-    this.state={flagOpen:props.boxFlag,selectId:0,top:"100%"};
+    // console.log(props);
+    this.state={selectId:0,top:props.top};
   }
   handleClickShopBox=(e)=>{
     if(e.target===this.shopBox||e.target===this.closeIcon||this.props.boxFlag){
-      this.props.changeShopFlag("false");
-      this.setState({flagOpen:this.props.boxFlag});
-      this.setState({
-        top:'100%'
-      })
+      this.props.changeShopFlag({top:"100%"});
+      this.setState({flagOpen:this.props.boxFlag,top:this.props.top});
     }
   };
-
-  componentDidMount(){
-    console.log(this.props.boxFlag,111111);
-    console.log(1);
-    if(this.props.boxFlag){
-      this.setState({
-        top:"0"
-      })
-    }
-    this.changePorcs=(e)=>{
-      let indexData=e.target.dataset.poric;
-      e.target.className="active";
-    };
-  }
+  // changePorcs=(e)=>{
+  //   let indexData=e.target.dataset.poric;
+  //   e.target.className="active";
+  // };
+  // componentWillReceiveProps(nextProps){
+  //   console.log(nextProps.boxFlag);
+  //   if(nextProps.boxFlag){
+  //     this.setState({
+  //       boxFlag:true
+  //     });
+  //   }else{
+  //     this.setState({
+  //       boxFlag:false
+  //     });
+  //   }
+  // }
+  // // shouldComponentUpdate(nextProps, nextState){
+  // //   console.log(nextProps, this.props);
+  // //   console.log(nextState, this.state);
+  // //   if (this.props==nextProps) {
+  // //     return false
+  // //   } else {
+  // //     return true
+  // //   }
+  // // }
+  // componentWillUpdate(){
+  //   // console.log(this.props.boxFlag);
+  //   let flsg=this.props.boxFlag;
+  //   this.shopBox.style.top=flsg?"100%":"0"
+  // }
   render() {
-    console.log(this.state);
-    let x=this.props.boxFlag?'0':'-100px';
+    // console.log(this.state.flagOpen);
     let arr=[];
     for (let key in this.props.detailData.productsArr) {
       if(this.props.detailData.productsArr.hasOwnProperty(key)){
@@ -47,10 +55,10 @@ export default class ShopBox extends React.Component {
       }
     }
     arr.pop();
-    let {catId,en_name,flag,goodsId,name,productsArr,saleTime,tags}=this.props.detailData;//////////////////////////////////////
-    // console.log(arr);
-    // console.log(this.props.detailData);
-    return <div className={"shopBoxBob"}  ref={x=>this.shopBox=x} onClick={this.handleClickShopBox}>
+    let {catId,en_name,flag,goodsId,name,productsArr,saleTime,tags}=this.props.detailData;
+    console.log(arr);
+    console.log(this.props.detailData);
+    return <div className={"shopBoxBob"} style={{top:this.props.top}}  ref={x=>this.shopBox=x} onClick={this.handleClickShopBox}>
       <div className="shopBox" >
         <i className="close-icon" ref={x=>this.closeIcon=x}></i>
         <div className="details-suspension-content">

@@ -1,10 +1,13 @@
 import React from 'react';
 import ajax from "axios";
+import {Link} from "react-router-dom";
 import "./detail.less";
 import DetailSlider from "./DetailSlider";
 import DetailCake from "./DetailCake";
 import DetailFooter from "./DetailFooter";
 import ShopBox from "../../component/ShopBox";
+import Header from "../../component/Header";
+import '../../common/index.less';
 export default class Detail extends React.Component {
   constructor(){
     super();
@@ -36,8 +39,15 @@ export default class Detail extends React.Component {
     });
   }
     render() {
-      // console.log(this.state);
       return <div className="detail">
+        <Header>
+          <div className='focus-header detailHeader'>
+            <span><Link to={"/type"}>&lt;</Link></span>
+            <p>{this.state.name}</p>
+            <span></span>
+          </div>
+        </Header>
+
         <DetailSlider/>
         <DetailCake detailData={this.state}/>
         <DetailFooter/>

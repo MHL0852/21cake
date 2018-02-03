@@ -1,15 +1,14 @@
 import * as Types from "../action-types";
 
 let initState = {
-    boxFlag:false
+  top:'0'
 };
 
 function detail(state = initState, action) {
-  console.log(action);
   switch (action.type) {
     case Types.CHANGE_SHOPFLAG:
       return {
-        ...state,boxFlag:action.flag
+        ...state,top:action.payloads.top
       };
   }
   return state;

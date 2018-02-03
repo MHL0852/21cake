@@ -7,8 +7,9 @@ let actions = {
       dispatch({type: Types.GET_DETAIL, payload: getDetail()});
     }
   },
-  changeShopFlag(flag){
-    return {type:Types.CHANGE_SHOPFLAG,flag}
+  changeShopFlag(payloads){
+    console.log(payloads);
+    return {type:Types.CHANGE_SHOPFLAG,payloads}
   }
 };
 export default actions;
