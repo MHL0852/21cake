@@ -1,5 +1,6 @@
 import React from 'react';
 import ajax from "axios/index";
+import {Link} from "react-router-dom";
 import "../common/NavCommon.less";
 export default class TypeCommon extends React.Component {
   constructor(){
@@ -31,10 +32,10 @@ export default class TypeCommon extends React.Component {
       <div className="listCommon">
         <ul className="clearfix">
           {this.state.cakeList.map((item,index)=>(
-            <li id={`list-goods-${item.cake_goods_id}`} key={index}>
-              <a href={`loalhost:9000/#/detail/${item.img_url}`} className="list-item-link">
+            <li key={index}>
+              <Link to={`/detail/${item.cake_goods_id}`} className="list-item-link">
                 <div className="item-link-img">
-                  <img src={`https://github.com/MHL0852/21cake/tree/21cake/server/dist${item.img_url}`} alt=""/>
+                  <img src={`https://raw.githubusercontent.com/MHL0852/21cake/21cake/server/dist${item.img_url}`} alt=""/>
                 </div>
                 <h3>
                   {item.en_name}
@@ -46,7 +47,7 @@ export default class TypeCommon extends React.Component {
                 <span className="price">
             ¥ {item.price}/{item.spec}
           </span>
-              </a>
+              </Link>
               <a href="#" className="list-item-cart">
                 <i className='iconfont icon-gouwuche-copy'></i>
               </a>

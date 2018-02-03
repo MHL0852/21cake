@@ -6,6 +6,12 @@ let actions = {
     return function (dispatch, getState) {
       dispatch({type: Types.GET_DETAIL, payload: getDetail()});
     }
+  },
+  changeShopFlag(payloads){
+    return {type:Types.CHANGE_SHOPFLAG,payloads}
+  },
+  changeShopData(flag){
+    return {type:Types.CHANGE_SHOPDATA,flag}
   }
 };
 export default actions;
