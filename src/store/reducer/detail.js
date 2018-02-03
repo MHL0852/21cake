@@ -1,7 +1,7 @@
 import * as Types from "../action-types";
 
 let initState = {
-  top:'0'
+  top:'100%'
 };
 
 function detail(state = initState, action) {

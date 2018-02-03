@@ -7,7 +7,6 @@ import actions from "../store/actions/detail";
 export default class ShopBox extends React.Component {
   constructor(props){
     super();
-    // console.log(props);
     this.state={selectId:0,top:props.top};
   }
   handleClickShopBox=(e)=>{
@@ -16,38 +15,7 @@ export default class ShopBox extends React.Component {
       this.setState({flagOpen:this.props.boxFlag,top:this.props.top});
     }
   };
-  // changePorcs=(e)=>{
-  //   let indexData=e.target.dataset.poric;
-  //   e.target.className="active";
-  // };
-  // componentWillReceiveProps(nextProps){
-  //   console.log(nextProps.boxFlag);
-  //   if(nextProps.boxFlag){
-  //     this.setState({
-  //       boxFlag:true
-  //     });
-  //   }else{
-  //     this.setState({
-  //       boxFlag:false
-  //     });
-  //   }
-  // }
-  // // shouldComponentUpdate(nextProps, nextState){
-  // //   console.log(nextProps, this.props);
-  // //   console.log(nextState, this.state);
-  // //   if (this.props==nextProps) {
-  // //     return false
-  // //   } else {
-  // //     return true
-  // //   }
-  // // }
-  // componentWillUpdate(){
-  //   // console.log(this.props.boxFlag);
-  //   let flsg=this.props.boxFlag;
-  //   this.shopBox.style.top=flsg?"100%":"0"
-  // }
   render() {
-    // console.log(this.state.flagOpen);
     let arr=[];
     for (let key in this.props.detailData.productsArr) {
       if(this.props.detailData.productsArr.hasOwnProperty(key)){
