@@ -2,7 +2,8 @@ import * as Types from "../action-types";
 
 let initState = {
   top:'100%',
-  flag:0
+  flag:0,
+  tab:true
 };
 
 function detail(state = initState, action) {
@@ -14,6 +15,10 @@ function detail(state = initState, action) {
     case Types.CHANGE_SHOPDATA:
       return{
         ...state,flag:action.flag.flag
+      };
+    case Types.TAB_SHOPBTN:
+      return{
+        ...state,tab:action.tab.tab
       }
   }
   return state;

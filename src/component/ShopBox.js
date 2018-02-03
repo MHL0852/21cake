@@ -12,11 +12,11 @@ export default class ShopBox extends React.Component {
   handleClickShopBox=(e)=>{
     if(e.target===this.shopBox||e.target===this.closeIcon||this.props.boxFlag){
       this.props.changeShopFlag({top:"100%"});
-      // this.setState({flagOpen:this.props.boxFlag,top:this.props.top});
+      this.props.tabShopTab({tab:true});
+      this.props.changeShopData({flag:0});
     }
   };
   changeId=(e)=>{
-    console.log(this.props.flag);
     e.target.parentNode.childNodes.forEach((item,index)=>{
       if(item.innerText==e.target.dataset.spec){
         this.props.changeShopData({flag:index});
@@ -27,15 +27,13 @@ export default class ShopBox extends React.Component {
     })
   };
   render() {
-    console.log(this.props);
+
     let arr=[];
     for (let key in this.props.detailData.productsArr) {
       if(this.props.detailData.productsArr.hasOwnProperty(key)){
         arr.push(this.props.detailData.productsArr[key]);
       }
     }
-    arr.pop();
-    console.log(this.props);
     let {catId,en_name,goodsId,name,productsArr,saleTime,tags}=this.props.detailData;
     let {selectId}=this.state;
     return <div className={"shopBoxBob"} style={{top:this.props.top}}  ref={x=>this.shopBox=x} onClick={this.handleClickShopBox}>
@@ -50,12 +48,12 @@ export default class ShopBox extends React.Component {
               <li>{(arr[this.props.flag]||{}).cutlery_content}</li>
               <li>最晚明早09:30送达</li>
             </ul>
-            <img src={(arr[this.props.flag]||{}).img_url} alt=""/>
+            <img src={"https://raw.githubusercontent.com/MHL0852/21cake/21cake/server/dist"+(arr[this.props.flag]||{}).img_url} alt=""/>
             <div className="normal-box">
               <p>商品规格</p>
               <div className="details-suspension-size">
                 <ul onClick={this.changePorcs}>
-                  <li >
+                  <li>
                     {arr.map((item,index)=>(
                       <span key={index}  data-specid={index}  data-spec={item.spec} className={this.props.flag==index ? 'active' : ''} onClick={this.changeId}>{item.spec}</span>
                     ))}

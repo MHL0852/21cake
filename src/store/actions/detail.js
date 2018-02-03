@@ -12,6 +12,9 @@ let actions = {
   },
   changeShopData(flag){
     return {type:Types.CHANGE_SHOPDATA,flag}
+  },
+  tabShopTab(tab){
+    return {type:Types.TAB_SHOPBTN,tab}
   }
 };
 export default actions;
