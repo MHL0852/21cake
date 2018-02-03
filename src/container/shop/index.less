@@ -1,6 +1,7 @@
 @import "../community/reset";
 
 .shopping_container {
+  margin-top:.915rem;
   .shopping_title {
     height: 38px;
     line-height: 38px;
@@ -55,16 +56,42 @@
       }
 
       .shopping_box_number {
+        background: #F7F7F7;
         position: absolute;
-        bottom: 0;
-        right: 0;
+        bottom: 1rem;
+        right: 0.5rem;
         display: block;
         float: left;
-        height: 26px;
-        width: 26px;
-        font-size: 26px;
+        height: 18px;
+        width: 60px;
+        font-size: 12px;
         line-height: 26px;
         text-align: center;
+      .shopping_box_minus{
+        background: #F0F0F0;
+        display: inline-block;
+        float: left;
+        height: 18px;
+        width: 18px;
+        img{
+          width: 12px;
+          margin-bottom: 5px;
+        }
+      }
+        .shopping_box_number{
+          display: inline-block;
+          float:left;
+        }
+        .shopping_box_add{
+          background: #F0F0F0;
+          display: inline-block;
+          float:right;
+          width: 18px;
+          height: 18px;
+          img{
+            width: 12px;
+          }
+        }
       }
     }
   }

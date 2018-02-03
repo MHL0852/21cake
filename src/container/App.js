@@ -18,7 +18,7 @@ class App extends Component {
         })();
     }
     render() {
-        let user=JSON.parse(localStorage.getItem('user'));
+        let user=localStorage.getItem('user');
         if(!user){
             localStorage.setItem('user',"{username:'',isLogin:false}");
         }
