@@ -15,6 +15,9 @@ let actions = {
   },
   tabShopTab(tab){
     return {type:Types.TAB_SHOPBTN,tab}
+  },
+  pushGoodsDetail(goods){
+    return {type:Types.PUSH_GOODS_DETAIL,goods}
   }
 };
 export default actions;

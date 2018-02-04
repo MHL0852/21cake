@@ -20,6 +20,7 @@ export default class ShopBox extends React.Component {
     e.target.parentNode.childNodes.forEach((item,index)=>{
       if(item.innerText==e.target.dataset.spec){
         this.props.changeShopData({flag:index});
+        this.props.pushGoodsDetail({...this.props,goodsSizeId:JSON.stringify(index)});
         item.className="active";
       }else{
         item.className="";
@@ -27,12 +28,14 @@ export default class ShopBox extends React.Component {
     })
   };
   render() {
+    console.log(this.props);
     let arr=[];
     for (let key in this.props.detailData.productsArr) {
       if(this.props.detailData.productsArr.hasOwnProperty(key)){
         arr.push(this.props.detailData.productsArr[key]);
       }
     }
+    console.log(this.props);
     let {catId,en_name,goodsId,name,productsArr,saleTime,tags}=this.props.detailData;
     let {selectId}=this.state;
     return <div className={"shopBoxBob"} style={{top:this.props.top}}  ref={x=>this.shopBox=x} onClick={this.handleClickShopBox}>

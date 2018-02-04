@@ -1,16 +1,19 @@
 import * as Types from "../action-types";
 
 let initState = {
-  catId:'',
-  name:'',
-  en_name:'',
-  goodsId:'',
-  productsArr:{},
-  saleTime:'',
-  tags:[],
+  // catId:'',
+  // name:'',
+  // en_name:'',
+  // goodsId:'',
+  // productsArr:{},
+  // saleTime:'',
+  // tags:[],
   top:'100%',
   flag:0,
-  tab:true
+  tab:true,
+  goodsId:'',
+  goodsSizeId:'',
+  shopingDetail:[{id:'',goodsSId:''}]
 };
 
 function detail(state = initState, action) {
@@ -30,7 +33,11 @@ function detail(state = initState, action) {
     case Types.TAB_SHOPBTN:
       return{
         ...state,tab:action.tab.tab
-      }
+      };
+    case Types.PUSH_GOODS_DETAIL:
+      return{
+        ...state,goodsId:action.goods.goodsId,goodsSizeId:action.goods.goodsSizeId,num:action.goods.num
+      };
   }
   return state;
 }

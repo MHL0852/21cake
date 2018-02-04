@@ -4,8 +4,28 @@ import {connect} from "react-redux";
 import actions from "../../store/actions/detail";
 import ShopBox from "../../component/ShopBox";
 import TypeCommon from "../../component/TypeCommon";
+import a from "../../common/images/detailShow1.jpg";
+import b from "../../common/images/detailShow2.jpg";
+import c from "../../common/images/detailShow3.jpg";
+import d from "../../common/images/detailShow4.jpg";
+import e from "../../common/images/detailShow5.jpg";
+import f from "../../common/images/detailShow6.jpg";
 @connect(state=>({...state.detail}),actions)
 export default class DetailCake extends React.Component {
+  constructor(){
+    super();
+    this.state={
+      showImg : [
+        {src: a},
+        {src: b},
+        {src: c},
+        {src: d},
+        {src: e},
+        {src: f}
+      ]
+    }
+  }
+
   handleClickOpenBox=(e)=>{
     if(e.target===this.openBox){
       this.props.changeShopFlag({top:"0"});
@@ -78,12 +98,9 @@ export default class DetailCake extends React.Component {
           /温暖、绵延，日常题材的一闪灵感/<br/>
         </div>
         <div className="details-img">
-          <img src="http://static.21cake.com/public/images/ba/90/3a/6c3e24d18f5e96b22cf81081b8e5909d.jpg?1516843014#w" alt=""/>
-          <img src="http://static.21cake.com/public/images/3b/25/a3/fd79841480c665cbe24140d0ecf06b06.jpg?1516843019#h" alt=""/>
-          <img src="http://static.21cake.com/public/images/b3/06/5d/10242fd31658dcf020d4564260dfcbc5.jpg?1516843037#h" alt=""/>
-          <img src="http://static.21cake.com/public/images/74/c3/bf/22eb18f37e4724f666962753a8be9e2e.jpg?1516843048#h" alt=""/>
-          <img src="http://static.21cake.com/public/images/3b/aa/8c/28183c8dfb88f28a4d79cf058ccd25fe.jpg?1516843053#h" alt=""/>
-          <img src="http://static.21cake.com/public/images/af/b0/a9/17209e7010249c250653edd183cf8692.jpg?1516843062#h" alt=""/>
+          {this.state.showImg.map((item, index) => (
+            <img key={index} src={item.src}/>
+          ))}
           <span>以上图片仅供参考，请以收到实物为准。</span>
         </div>
         <div className="recommend-list">
