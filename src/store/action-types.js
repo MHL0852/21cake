@@ -3,8 +3,7 @@ export const GET_DETAIL='GET_DETAIL';
 export const CHANGE_SHOPFLAG='CHANGE_SHOPFLAG';
 export const CHANGE_SHOPDATA='CHANGE_SHOPDATA';
 export const TAB_SHOPBTN='TAB_SHOPBTN';
-<<<<<<< HEAD
+
 export const PUSH_GOODS_DETAIL='PUSH_GOODS_DETAIL';
-=======
+
 export const CHANGE_LIST='CHANGE_LIST';
->>>>>>> 8f17badc704524ecf865ad1712b98612ee88bd25
