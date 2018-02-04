@@ -1,104 +1,71 @@
 import React from 'react';
 import './login.less';
-import {Link} from 'react-router-dom';
-import com from '../../../common/computed';
+import {Link,withRouter} from 'react-router-dom';
+import axios from 'axios';
 
 export default class User extends React.Component {
     constructor() {
         super();
         this.state = {
             loginFrom: 'account',
-            tip:'',
-            username:'',
-            password:''
+            tip: '',
+            username: '',
+            password: ''
         };
-        let data={
-            "productsArr": {
-                "1394461414.07419": {
-                    "id": "99",
-                    "size": "13x13cm",
-                    "suite_amount": "适合3-4人分享",
-                    "booking_hour_limited": "8",
-                    "cutlery_content": "含5套餐具",
-                    "price": "198.00",
-                    "spec": "1.0磅",
-                    "pound": "1.00",
-                    "has_spec_img": 1,
-                    "img_url": "/themes/wap/img/1.00P-full-13.00.jpg",
-                    "is_default": "false",
-                    "has_stock": 100536,
-                    "cat_id": "3",
-                    "bn": "201404-10"
-                },
-                "1394461415.461121": {
-                    "id": "111",
-                    "size": "17x17cm",
-                    "suite_amount": "适合7-8人分享",
-                    "booking_hour_limited": "8",
-                    "cutlery_content": "含10套餐具",
-                    "price": "298.00",
-                    "spec": "2.0磅",
-                    "pound": "2.00",
-                    "has_spec_img": 1,
-                    "img_url": "/themes/wap/img/2.00P-full-17.00.jpg",
-                    "is_default": "true",
-                    "has_stock": 100399,
-                    "cat_id": "3",
-                    "bn": "201404-20"
-                },
-                "1394461415.938122": {
-                    "id": "117",
-                    "size": "23x23cm",
-                    "suite_amount": "适合11-12人分享",
-                    "booking_hour_limited": "8",
-                    "cutlery_content": "含15套餐具",
-                    "price": "458.00",
-                    "spec": "3.0磅",
-                    "pound": "3.00",
-                    "has_spec_img": 1,
-                    "img_url": "/themes/wap/img/3.00P-full-23.00.jpg",
-                    "is_default": "false",
-                    "has_stock": 100045,
-                    "cat_id": "3",
-                    "bn": "201404-30"
-                },
-                "1394461416.45323": {
-                    "id": "123",
-                    "size": "26x26cm",
-                    "suite_amount": "适合15-20人分享",
-                    "booking_hour_limited": "8",
-                    "cutlery_content": "含20套餐具",
-                    "price": "750.00",
-                    "spec": "5.0磅",
-                    "pound": "5.00",
-                    "has_spec_img": 1,
-                    "img_url": "/themes/wap/img/5.00P-full-26.00.jpg",
-                    "is_default": "false",
-                    "has_stock": 100015,
-                    "cat_id": "3",
-                    "bn": "201404-50"
+    }
+
+    login=()=> {
+        if(!this._username.value){
+            this.setState({
+                tip:'请输入用户名'
+            })
+        }
+        if(!this._password.value){
+            this.setState({
+                tip:'请输入密码'
+            })
+        }
+        if(this._remember.checked){
+            let val={username:this._username.value,password:this._password.value};
+            localStorage.setItem('loginInfo',JSON.stringify({...val}))
+        }
+        axios.post('http://localhost:10086/login', {
+            username: this._username.value,
+            password: this._password.value
+        }).then(
+            val => {
+                if(val.err===0){
+                    localStorage.setItem('user',JSON.stringify({user:this._username.value,isLogin:true}));
+                    this.setState({
+                        tip:'登录成功，稍后将为您跳转到首页'
+                    });
+                   let timer = setTimeout(()=>{
+                        this.props.history.push('/home');
+                        this.setState({
+                            tip:''
+                        });
+                        clearTimeout(timer)
+                    },2000)
                 }
-            },
-            "saleTime": {
-                "date": "明天",
-                "start_time": "10:00",
-                "end_time": "18:30"
-            },
-            "catId": "3",
-            "goodsId": "4",
-            "type": "normal"
-        };
-       let res = com(data);
-        console.log(res);
-    }
-
-    login(){
-
-    }
-
-    changeValue(val){
-
-    }
+            }
+        ).catch(
+            err => {
+                this.setState({
+                    tip:err
+                })
+            }
+        )
+    };
+    nameChangeValue=(e)=>{
+        this.setState({
+            username: e.target.value
+        })
+    };
+    worldChangeValue=e=>{
+        this.setState({
+            password: e.target.value
+        })
+    };
 
     render() {
         return <div className="user_container">
@@ -122,16 +89,17 @@ export default class User extends React.Component {
                         <li className={'account' + ' ' + (this.state.loginFrom === "account" ? 'show' : '')}>
                             <ul className="clearfix">
                                 <li>
-                                    <input type="text" placeholder="用户名/邮箱地址" ref={x=>this._username=x} value={this.state.username} onChange={(value)=>{
-                                        this.changeValue(value)
-                                    }}/>
+                                    <input type="text" placeholder="用户名/邮箱地址" ref={x => this._username = x}
+                                           value={this.state.username} onChange={this.nameChangeValue}/>
                                 </li>
                                 <li>
-                                    <input type="password" placeholder="填写密码" ref={x=>{this._password=x}} value={this.state.username} onChange={(value)=>{
-                                        this.changeValue(value)
-                                    }}/>
+                                    <input type="password" placeholder="填写密码" ref={x => {
+                                        this._password = x
+                                    }} value={this.state.password} onChange={ this.worldChangeValue}/>
                                 </li>
-                                <li></li>
+                                <li>
+                                    {this.state.tip}
+                                </li>
                             </ul>
                         </li>
                         <li className={"phone" + ' ' + (this.state.loginFrom === "phone" ? 'show' : '')}>
@@ -151,7 +119,9 @@ export default class User extends React.Component {
                                     <button className="sendCode">发送验证码</button>
                                 </li>
                                 <li>
-                                    {this.state.tip}
+                                    <h3>
+                                        {this.state.tip}
+                                    </h3>
                                 </li>
                             </ul>
 
@@ -161,19 +131,19 @@ export default class User extends React.Component {
                     <button className="login_footer" onClick={this.login}>登录</button>
                 </div>
                 <div className={"remember" + ' ' + (this.state.loginFrom === "phone" ? 'pho' : '')}>
-                    <input type="checkbox"/>记住账号
+                    <input type="checkbox" ref={x=>this._remember=x}/>记住账号
                     <Link style={{
                         display: 'inline-block',
                         float: 'right',
                         marginLeft: '18px',
-                        fontSize:'0.22rem',
+                        fontSize: '0.22rem',
                         lineHeight: '18px'
                     }} to='/user/register' className="forget">忘记密码</Link>
                     <Link style={{
                         display: 'inline-block',
                         float: 'right',
                         marginLeft: '18px',
-                        fontSize:'0.22rem',
+                        fontSize: '0.22rem',
                         lineHeight: '18px'
                     }} to='/user/register' className="toRegister">去注册</Link>
                 </div>

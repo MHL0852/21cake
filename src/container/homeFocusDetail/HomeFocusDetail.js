@@ -3,8 +3,9 @@ import {connect} from "react-redux";
 import Header from "../../component/Header";
 import {Link} from "react-router-dom";
 import fn from '../../common/computed';
-
-@connect(state => ({...state.home.focus}))
+import ShopBox from "../../component/ShopBox";
+import action from "../../store/actions"
+@connect(state => ({...state.home.focus, ...state.detail}), action.detail)
 export default class HomeFocusDetail extends React.Component {
   constructor() {
     super();
@@ -14,8 +15,19 @@ export default class HomeFocusDetail extends React.Component {
       data: [],
       page: '',
       top: "500",
+      proData: {}
     }
   }
+
+  handleClickOpenBox = (e) => {
+    if (e.target.nodeName === 'I') {
+      this.setState({proData: this.props[e.target.dataset.name][e.target.dataset.index].data});
+      this.props.changeShopFlag({top: "0"});
+      this.props.tabShopTab({tab: true});
+      this.props.changeShopData({flag: 0});
+    }
+
+  };
 
   componentWillMount() {
     let {location} = this.props;
@@ -38,7 +50,7 @@ export default class HomeFocusDetail extends React.Component {
   }
 
   render() {
-    let {name, data, page} = this.state;
+    let {name, data, enName, page} = this.state;
     return <div>
       <Header>
         <div className='focus-header'>
@@ -53,7 +65,6 @@ export default class HomeFocusDetail extends React.Component {
                        alt=""/> : null}
           {data.map((item, index) => {
             let arr = fn(item.data);
-            console.log(arr);
             return (
                 <div key={index}>
                   <Link to={`/detail?id=${item.id}`}>
@@ -62,11 +73,13 @@ export default class HomeFocusDetail extends React.Component {
                   </Link>
                   <div className='focus-shop'>
                     <p>售价：￥{arr.min}-{arr.max}</p>
-                    <i className='iconfont icon-gouwuche-copy'></i>
+                    <i className='iconfont icon-gouwuche-copy' data-name={enName} data-index={index}
+                       onClick={this.handleClickOpenBox}></i>
                   </div>
                 </div>
             )
           })}
+          <ShopBox detailData={this.state.proData} sure={true}/>
         </div>
       </div>
       <div className='focus-footer'></div>
